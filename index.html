@@ -1,4 +1,10 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>NAT CAT Zoning</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@500;600;700&family=Noto+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -126,9 +132,18 @@
     color:#fff;font-weight:700;font-size:15px;flex:none;
     box-shadow:0 2px 6px rgba(0,0,0,.18);
   }
-  .brand-text{display:flex;flex-direction:column;line-height:1.25;}
+  .brand-text{display:flex;flex-direction:column;line-height:1.25;flex:1 1 auto;min-width:0;}
   .brand-word{font-weight:700;font-size:15.5px;letter-spacing:.2px;}
   .brand-sub{font-size:11.5px;color:var(--text-muted);}
+  .theme-toggle{
+    flex:none;width:30px;height:30px;border-radius:8px;
+    border:1px solid var(--border);background:var(--surface-2);color:var(--text-muted);
+    display:flex;align-items:center;justify-content:center;cursor:pointer;
+  }
+  .theme-toggle:hover{color:var(--text);border-color:var(--brand);}
+  .theme-toggle .icon-moon{display:none;}
+  :root[data-theme="dark"] .theme-toggle .icon-sun{display:none;}
+  :root[data-theme="dark"] .theme-toggle .icon-moon{display:block;}
 
   .nav-group-label{
     font-size:11px;color:var(--text-muted);
@@ -341,6 +356,22 @@
     .sidebar-foot{display:none;}
   }
 </style>
+</head>
+<body>
+
+
+<script>
+(function(){
+  // Default to light on every device regardless of system dark mode;
+  // only switch when the viewer picks dark via the in-page toggle.
+  try{
+    var saved = localStorage.getItem('natcat_theme');
+    document.documentElement.setAttribute('data-theme', saved === 'dark' ? 'dark' : 'light');
+  }catch(e){
+    document.documentElement.setAttribute('data-theme','light');
+  }
+})();
+</script>
 
 <div class="app">
   <aside class="sidebar">
@@ -350,6 +381,10 @@
         <span class="brand-word">NAT CAT Zoning</span>
         <span class="brand-sub">Chia Tai · Risk Map</span>
       </div>
+      <button type="button" class="theme-toggle" id="themeToggle" aria-label="สลับโหมดสว่าง/มืด" title="สลับโหมดสว่าง/มืด">
+        <svg class="icon-sun" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7"/></svg>
+        <svg class="icon-moon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 14.3A8.4 8.4 0 1 1 9.7 4a6.7 6.7 0 0 0 10.3 10.3Z"/></svg>
+      </button>
     </div>
     <div class="nav-group-label">มุมมอง</div>
     <ul class="nav" id="nav"></ul>
@@ -418,6 +453,16 @@
 <script>
 (function(){
   "use strict";
+  var themeToggleBtn = document.getElementById('themeToggle');
+  if(themeToggleBtn){
+    themeToggleBtn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+      var next = cur === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      try{ localStorage.setItem('natcat_theme', next); }catch(e){}
+    });
+  }
+
   var DATA = window.NATCAT_DATA || {records:[],regionMap:{},regionNames:{}};
   var RECORDS = DATA.records;
   var REGION_NAMES = DATA.regionNames;
@@ -817,3 +862,6 @@
   render();
 })();
 </script>
+
+</body>
+</html>
