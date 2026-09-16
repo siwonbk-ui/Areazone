@@ -170,11 +170,6 @@
   .nav-count{margin-left:auto;font-size:11px;color:var(--text-muted);font-variant-numeric:tabular-nums;}
   .nav button.active .nav-count{color:var(--brand-dark);}
 
-  .sidebar-foot{
-    margin-top:18px;padding:12px 10px;border-radius:10px;
-    background:var(--surface-2);font-size:11.5px;color:var(--text-muted);line-height:1.5;
-  }
-
   /* mobile: sidebar becomes a horizontal scroll bar on top */
   .sidebar-toggle{display:none;}
 
@@ -348,8 +343,6 @@
 
   .empty{padding:40px 10px;text-align:center;color:var(--text-muted);font-size:13px;}
 
-  footer.note{margin-top:26px;font-size:11px;color:var(--text-muted);line-height:1.6;border-top:1px solid var(--border);padding-top:14px;}
-
   .hamburger-btn, .sidebar-close{
     display:none;flex:none;width:34px;height:34px;border-radius:9px;
     border:1px solid var(--border);background:var(--surface);color:var(--text);
@@ -407,9 +400,6 @@
     </div>
     <div class="nav-group-label">มุมมอง</div>
     <ul class="nav" id="nav"></ul>
-    <div class="sidebar-foot">
-      ข้อมูลระดับความเสี่ยงภัยธรรมชาติรายอำเภอ เกณฑ์อ้างอิงตามคอลัมน์ O ของไฟล์ NAT CAT.xlsx (Zoning Natural Catastrophe) — ใช้เพื่อประกอบการพิจารณาภายในเท่านั้น
-    </div>
   </aside>
   <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
@@ -468,7 +458,6 @@
         <div class="grid" id="grid"></div>
         <div class="empty" id="emptyState" hidden>ไม่พบข้อมูลที่ตรงกับคำค้นหา</div>
       </div>
-      <footer class="note" id="footNote"></footer>
     </div>
   </main>
 </div>
@@ -614,14 +603,6 @@
   document.getElementById('refToggle').addEventListener('click', function(){
     document.getElementById('refPanel').classList.toggle('open');
   });
-
-  document.getElementById('footNote').innerHTML =
-    'เกณฑ์สี (อ้างอิงคำต่อคำจาก'+(DATA.legendSource||'ไฟล์ NAT CAT.xlsx')+'): ' +
-    '<b>แดง</b> = '+(REF_TEXT.veryhigh||'')+' · ' +
-    '<b>ส้ม</b> = '+(REF_TEXT.high||'')+' · ' +
-    '<b>เหลือง</b> = '+(REF_TEXT.medium||'')+' · ' +
-    '<b>เขียว</b> = '+(REF_TEXT.low||'')+' · ' +
-    '<b>ขาว/ไม่มีสี</b> = '+(REF_TEXT.none||'');
 
   // ---- Thailand map ----
   var mapSvg = document.getElementById('mapSvg');
