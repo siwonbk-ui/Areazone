@@ -339,21 +339,26 @@
 
   footer.note{margin-top:26px;font-size:11px;color:var(--text-muted);line-height:1.6;border-top:1px solid var(--border);padding-top:14px;}
 
+  .hamburger-btn, .sidebar-close{
+    display:none;flex:none;width:34px;height:34px;border-radius:9px;
+    border:1px solid var(--border);background:var(--surface);color:var(--text);
+    align-items:center;justify-content:center;cursor:pointer;align-self:center;
+  }
+  .sidebar-overlay{display:none;position:fixed;inset:0;background:rgba(20,14,12,.45);z-index:40;}
+
   @media (max-width:860px){
     .app{flex-direction:column;}
+    .hamburger-btn{display:flex;}
+    .sidebar-close{display:flex;margin-left:auto;}
     .sidebar{
-      width:100%;flex:none;position:sticky;top:0;height:auto;
-      display:flex;align-items:center;gap:8px;padding:10px 12px;
-      overflow-x:auto;border-right:none;border-bottom:1px solid var(--border);
-      z-index:6;
+      position:fixed;top:0;left:0;height:100vh;height:100dvh;
+      width:min(280px,82vw);z-index:50;
+      transform:translateX(-100%);
+      transition:transform .25s ease;
+      box-shadow:0 12px 34px rgba(20,14,12,.32);
     }
-    .brand{border-bottom:none;padding:0;margin:0;flex:none;}
-    .brand-sub{display:none;}
-    .nav-group-label{display:none;}
-    .nav{flex-direction:row;flex:none;}
-    .nav button{white-space:nowrap;padding:8px 12px;}
-    .nav-count{display:none;}
-    .sidebar-foot{display:none;}
+    .sidebar.open{transform:translateX(0);}
+    .sidebar-overlay.open{display:block;}
   }
 </style>
 </head>
@@ -385,6 +390,9 @@
         <svg class="icon-sun" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7"/></svg>
         <svg class="icon-moon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 14.3A8.4 8.4 0 1 1 9.7 4a6.7 6.7 0 0 0 10.3 10.3Z"/></svg>
       </button>
+      <button type="button" class="sidebar-close" id="sidebarClose" aria-label="ปิดเมนู">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+      </button>
     </div>
     <div class="nav-group-label">มุมมอง</div>
     <ul class="nav" id="nav"></ul>
@@ -392,10 +400,14 @@
       ข้อมูลระดับความเสี่ยงภัยธรรมชาติรายอำเภอ เกณฑ์อ้างอิงตามคอลัมน์ O ของไฟล์ NAT CAT.xlsx (Zoning Natural Catastrophe) — ใช้เพื่อประกอบการพิจารณาภายในเท่านั้น
     </div>
   </aside>
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
   <main class="main">
     <div class="topbar">
       <div class="topbar-head">
+        <button type="button" class="hamburger-btn" id="navToggle" aria-label="เปิดเมนู">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+        </button>
         <div>
           <div class="eyebrow">Natural Catastrophe Zoning</div>
           <h1 id="pageTitle">ภาพรวมประเทศไทย</h1>
@@ -453,6 +465,23 @@
 <script>
 (function(){
   "use strict";
+  // ---- mobile off-canvas nav drawer ----
+  var sidebarEl = document.querySelector('.sidebar');
+  var sidebarOverlayEl = document.getElementById('sidebarOverlay');
+  function openSidebar(){
+    sidebarEl.classList.add('open');
+    sidebarOverlayEl.classList.add('open');
+  }
+  function closeSidebar(){
+    sidebarEl.classList.remove('open');
+    sidebarOverlayEl.classList.remove('open');
+  }
+  var navToggleBtn = document.getElementById('navToggle');
+  if(navToggleBtn) navToggleBtn.addEventListener('click', openSidebar);
+  var sidebarCloseBtn = document.getElementById('sidebarClose');
+  if(sidebarCloseBtn) sidebarCloseBtn.addEventListener('click', closeSidebar);
+  sidebarOverlayEl.addEventListener('click', closeSidebar);
+
   var themeToggleBtn = document.getElementById('themeToggle');
   if(themeToggleBtn){
     themeToggleBtn.addEventListener('click', function(){
@@ -534,7 +563,7 @@
     btn.type='button';
     btn.dataset.tab = item.key;
     btn.innerHTML = '<span class="nav-dot"></span><span>'+item.label+'</span>'+(item.count!=null ? '<span class="nav-count">'+item.count+'</span>' : '');
-    btn.addEventListener('click', function(){ state.tab = item.key; render(); });
+    btn.addEventListener('click', function(){ state.tab = item.key; render(); closeSidebar(); });
     li.appendChild(btn);
     navEl.appendChild(li);
   });
