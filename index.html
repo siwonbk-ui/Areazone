@@ -256,6 +256,17 @@
   .th-province:hover{filter:brightness(0.92);}
   .th-province.muted{cursor:default;opacity:.22;}
   .th-province.dim{opacity:.32;}
+  .th-label{
+    font-family:'Noto Sans Thai',sans-serif;font-weight:600;
+    font-size:.14px;fill:#20140f;
+    paint-order:stroke fill;stroke:rgba(255,255,255,.88);stroke-width:.05px;stroke-linejoin:round;
+    text-anchor:middle;dominant-baseline:middle;
+    pointer-events:none;user-select:none;
+    transition:opacity .12s;
+  }
+  .th-label.muted{opacity:.18;}
+  .th-label.dim{opacity:.25;}
+  .th-label.hidden-label{display:none;}
   .map-tooltip{
     position:absolute;pointer-events:none;z-index:9;
     background:var(--text);color:var(--bg);
@@ -618,6 +629,8 @@
   var mapWrap = document.getElementById('mapWrap');
   var pathByName = {};
 
+  var labelByName = {};
+
   function initMap(){
     var TH_MAP = window.TH_MAP;
     if(!TH_MAP){ mapWrap.hidden = true; return; }
@@ -633,6 +646,17 @@
       path.addEventListener('click', function(){ onProvinceClick(tp.name_th); });
       mapSvg.appendChild(path);
       pathByName[tp.name_th] = path;
+    });
+    // province name labels — drawn after all fills so they sit on top,
+    // pointer-events off so hover/click still hit the province shape underneath.
+    TH_MAP.provinces.forEach(function(tp){
+      var label = document.createElementNS('http://www.w3.org/2000/svg','text');
+      label.setAttribute('class','th-label');
+      label.setAttribute('x', tp.cx);
+      label.setAttribute('y', tp.cy);
+      label.textContent = tp.name_th;
+      mapSvg.appendChild(label);
+      labelByName[tp.name_th] = label;
     });
   }
 
@@ -719,11 +743,14 @@
 
     TH_MAP.provinces.forEach(function(tp){
       var path = pathByName[tp.name_th];
+      var label = labelByName[tp.name_th];
       var p = byProvince[tp.name_th];
       var inRegion = !activeRegion || DATA.regionMap[tp.name_th] === activeRegion;
       var matchesQ = !query || matchesQuery(p, query);
       path.classList.toggle('muted', !inRegion);
       path.classList.toggle('dim', inRegion && !matchesQ);
+      label.classList.toggle('muted', !inRegion);
+      label.classList.toggle('dim', inRegion && !matchesQ);
       var color = p ? provinceColorFor(p, hazardKey) : null;
       path.style.fill = color ? 'var(--risk-'+levelKeyForColor(color)+')' : 'var(--risk-none-bg)';
     });
