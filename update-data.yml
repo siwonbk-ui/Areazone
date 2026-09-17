@@ -1,0 +1,67 @@
+name: Update NAT CAT data
+
+# รันอัตโนมัติทุกวัน และสั่งรันเองได้ (n8n เรียกผ่าน workflow_dispatch)
+on:
+  schedule:
+    - cron: '0 0 * * *'        # 00:00 UTC = 07:00 น. ไทย
+  workflow_dispatch:
+    inputs:
+      force:
+        description: 'สร้างข้อมูลใหม่แม้แหล่งข้อมูลไม่เปลี่ยน'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: natcat-data
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: ติดตั้ง dependency
+        run: pip install -r pipeline/requirements.txt
+
+      - name: ตรวจว่าแหล่งข้อมูลเปลี่ยนหรือไม่
+        id: check
+        run: |
+          RESULT=$(python pipeline/pipeline.py --check)
+          echo "$RESULT"
+          echo "changed=$(echo "$RESULT" | python -c 'import json,sys; print(str(json.load(sys.stdin)["changed"]).lower())')" >> "$GITHUB_OUTPUT"
+
+      - name: สร้างข้อมูลใหม่
+        if: steps.check.outputs.changed == 'true' || inputs.force
+        run: python pipeline/pipeline.py --out data_updated.js ${{ inputs.force && '--force' || '' }}
+
+      - name: Commit และ push ถ้ามีการเปลี่ยนแปลง
+        id: commit
+        run: |
+          git config user.name  "natcat-data-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data_updated.js pipeline/sources_state.json
+          if git diff --staged --quiet; then
+            echo "ไม่มีการเปลี่ยนแปลงของข้อมูล"
+            echo "updated=false" >> "$GITHUB_OUTPUT"
+          else
+            git commit -m "chore(data): ปรับปรุงข้อมูล NAT CAT จากแหล่งข้อมูลเปิดภาครัฐ"
+            git push
+            echo "updated=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: สรุปผลการรัน
+        run: |
+          {
+            echo "### ผลการปรับปรุงข้อมูล NAT CAT"
+            echo ""
+            echo "- แหล่งข้อมูลเปลี่ยน: \`${{ steps.check.outputs.changed }}\`"
+            echo "- Commit ข้อมูลใหม่: \`${{ steps.commit.outputs.updated }}\`"
+          } >> "$GITHUB_STEP_SUMMARY"
