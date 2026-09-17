@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>NAT CAT Zoning</title>
+<title>NAT CAT Zoning Updated</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@500;600;700&family=Noto+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
-<script src="data.js"></script>
+<script src="data_updated.js"></script>
 <script src="map_paths.js"></script>
 <style>
   :root{
@@ -231,6 +231,34 @@
   .ref-list li{display:flex;align-items:flex-start;gap:8px;font-size:12px;line-height:1.5;}
   .ref-chip{width:13px;height:13px;border-radius:4px;flex:none;margin-top:2px;}
   .ref-source{margin-top:10px;font-size:11px;color:var(--text-muted);border-top:1px dashed var(--border);padding-top:8px;}
+  .src-item{border-top:1px dashed var(--border);padding:8px 0;}
+  .src-item:first-child{border-top:none;}
+  .src-head{display:flex;align-items:center;gap:7px;font-size:12.5px;margin-bottom:3px;}
+  .src-dot{width:9px;height:9px;border-radius:3px;flex:none;}
+  .src-lv{font-size:10.5px;color:var(--text-muted);border:1px solid var(--border);border-radius:5px;padding:1px 5px;}
+  .src-line{font-size:11.5px;color:var(--text-muted);line-height:1.55;}
+  .src-k{display:inline-block;min-width:58px;color:var(--text);font-weight:600;}
+  .src-line a{color:var(--brand);word-break:break-all;}
+  .ev-line{font-size:10.5px;color:var(--text-muted);margin-top:2px;}
+  .filter-tools{margin-left:auto;display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+  .region-filter{
+    display:flex;align-items:center;gap:7px;
+    font-size:11.5px;color:var(--text-muted);
+  }
+  .clear-filters{
+    display:flex;align-items:center;gap:5px;
+    border:1px solid var(--brand);background:var(--brand-tint);color:var(--brand-dark);
+    border-radius:8px;padding:6px 10px;font-size:11.5px;font-weight:600;cursor:pointer;
+    font-family:'Noto Sans Thai',sans-serif;
+  }
+  .clear-filters:hover{background:var(--brand);color:#fff;}
+  .region-filter select{
+    font-family:'Noto Sans Thai',sans-serif;font-size:12px;font-weight:600;
+    color:var(--text);background:var(--surface);
+    border:1px solid var(--border);border-radius:8px;padding:6px 9px;cursor:pointer;
+  }
+  .region-filter select:hover{border-color:var(--brand);}
+  .region-filter select:focus-visible{outline:2px solid var(--focus);outline-offset:1px;}
 
   .content{padding:18px clamp(16px,3vw,32px) 40px;}
 
@@ -388,7 +416,7 @@
       <div class="brand-mark">CT</div>
       <div class="brand-text">
         <span class="brand-word">NAT CAT Zoning</span>
-        <span class="brand-sub">Chia Tai · Risk Map</span>
+        <span class="brand-sub">ฉบับปรับปรุงจากข้อมูลเปิดภาครัฐ</span>
       </div>
       <button type="button" class="theme-toggle" id="themeToggle" aria-label="สลับโหมดสว่าง/มืด" title="สลับโหมดสว่าง/มืด">
         <svg class="icon-sun" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7"/></svg>
@@ -424,14 +452,26 @@
       </div>
       <div class="legend-row">
         <div class="legend" id="legend"></div>
+        <div class="filter-tools">
+          <div class="region-filter" id="regionFilter">
+            <label for="mapRegion">ดูเฉพาะภาค</label>
+            <select id="mapRegion"></select>
+          </div>
+          <button type="button" class="clear-filters" id="clearFilters" hidden>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+            ล้างตัวกรอง
+          </button>
+        </div>
         <button type="button" class="ref-toggle" id="refToggle">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="12" cy="12" r="9"/><line x1="12" y1="11" x2="12" y2="16.5"/><circle cx="12" cy="7.7" r="0.6" fill="currentColor" stroke="none"/></svg>
-          Reference
+          แหล่งข้อมูล
         </button>
       </div>
       <div class="ref-panel" id="refPanel">
-        <h3>เกณฑ์อ้างอิง (Reference)</h3>
+        <h3>เกณฑ์สี</h3>
         <ul class="ref-list" id="refList"></ul>
+        <h3 style="margin-top:14px">แหล่งข้อมูลรายภัย (Sources)</h3>
+        <div id="srcList"></div>
         <div class="ref-source" id="refSource"></div>
       </div>
     </div>
@@ -496,12 +536,17 @@
   var RECORDS = DATA.records;
   var REGION_NAMES = DATA.regionNames;
   var HAZARDS = [
-    {key:'all',   label:'ภาพรวมทุกภัย'},
-    {key:'eq',    label:'แผ่นดินไหว'},
-    {key:'hail',  label:'ลูกเห็บ'},
-    {key:'wind',  label:'วาตภัย'},
-    {key:'flood', label:'น้ำท่วม'}
+    {key:'all',     label:'ภาพรวมทุกภัย'},
+    {key:'eq',      label:'แผ่นดินไหว'},
+    {key:'hail',    label:'ลูกเห็บ'},
+    {key:'wind',    label:'วาตภัย'},
+    {key:'flood',   label:'น้ำท่วม'},
+    {key:'drought', label:'ภัยแล้ง'},
+    {key:'slide',   label:'ดินโคลนถล่ม'}
   ];
+  var HAZ_KEYS = ['eq','hail','wind','flood','drought','slide'];
+  var HAZ_SHORT = {eq:'ไหว', hail:'ลูกเห็บ', wind:'ลม', flood:'น้ำ', drought:'แล้ง', slide:'ดิน'};
+  var HAZ_META = DATA.hazardMeta || [];
   // Reference / criteria — read verbatim from column O of NAT CAT.xlsx (see DATA.legend).
   var REF_TEXT = {}; // level key -> verbatim text from the workbook
   (DATA.legend || []).forEach(function(l){ REF_TEXT[l.level] = l.text; });
@@ -511,7 +556,7 @@
     {key:'high',     match:'orange', label:'สูง'},
     {key:'medium',   match:'yellow', label:'ปานกลาง'},
     {key:'low',      match:'green',  label:'ต่ำ'},
-    {key:'none',     match:null,     label:'ไม่เสี่ยง'}
+    {key:'none',     match:null,     label:'ไม่พบข้อมูล'}
   ];
   var RANK = {red:4, orange:3, yellow:2, green:1};
   var COLOR_TO_LEVELKEY = {red:'veryhigh', orange:'high', yellow:'medium', green:'low'};
@@ -519,7 +564,7 @@
   var REGION_ORDER = ['north','northeast','central','east','west','south'];
 
   // ---- state ----
-  var state = { tab:'map', hazard:'all', query:'', selectedProvince:null };
+  var state = { tab:'map', hazard:'all', query:'', selectedProvince:null, mapRegion:'' };
 
   // ---- group records by province ----
   var byProvince = {};
@@ -540,7 +585,7 @@
   }
 
   function districtColorFor(d, hazardKey){
-    if(hazardKey === 'all') return worstColor([d.eq,d.hail,d.wind,d.flood]);
+    if(hazardKey === 'all') return worstColor(HAZ_KEYS.map(function(k){ return d[k]; }));
     return d[hazardKey];
   }
   function provinceColorFor(p, hazardKey){
@@ -570,7 +615,8 @@
 
   // ---- build hazard segmented control ----
   var segEl = document.getElementById('hazardSeg');
-  var hazardSwatch = {eq:'var(--risk-veryhigh)', hail:'var(--risk-high)', wind:'var(--risk-medium)', flood:'var(--risk-low)'};
+  var hazardSwatch = {eq:'var(--risk-veryhigh)', hail:'var(--risk-high)', wind:'var(--risk-medium)',
+                      flood:'var(--risk-low)', drought:'var(--risk-high)', slide:'var(--risk-none)'};
   HAZARDS.forEach(function(h){
     var btn = document.createElement('button');
     btn.type='button';
@@ -578,6 +624,40 @@
     btn.innerHTML = (h.key==='all' ? '' : '<span class="swatch" style="background:'+hazardSwatch[h.key]+'"></span>') + h.label;
     btn.addEventListener('click', function(){ state.hazard = h.key; render(); });
     segEl.appendChild(btn);
+  });
+
+  // ---- region picker for the risk-map tab ----
+  var regionSelect = document.getElementById('mapRegion');
+  (function(){
+    var opts = [['', 'ทั้งประเทศ']].concat(REGION_ORDER.map(function(r){ return [r, REGION_NAMES[r]]; }));
+    opts.forEach(function(o){
+      var el = document.createElement('option');
+      el.value = o[0]; el.textContent = o[1];
+      regionSelect.appendChild(el);
+    });
+    regionSelect.addEventListener('change', function(){
+      state.mapRegion = regionSelect.value;
+      // a province selected outside the new region would be unreachable on the map
+      if(state.selectedProvince && state.mapRegion &&
+         DATA.regionMap[state.selectedProvince] !== state.mapRegion){
+        state.selectedProvince = null;
+      }
+      render();
+    });
+  })();
+
+  // ---- clear all filters ----
+  function filtersActive(){
+    return state.hazard !== 'all' || !!state.mapRegion ||
+           !!state.query.trim() || !!state.selectedProvince;
+  }
+  document.getElementById('clearFilters').addEventListener('click', function(){
+    state.hazard = 'all';
+    state.mapRegion = '';
+    state.query = '';
+    state.selectedProvince = null;
+    document.getElementById('searchBox').value = '';
+    render();
   });
 
   // ---- legend (compact chips, full verbatim text on hover) ----
@@ -599,7 +679,25 @@
     li.innerHTML = chip + '<span>' + (REF_TEXT[l.key] || l.label) + '</span>';
     refListEl.appendChild(li);
   });
-  document.getElementById('refSource').textContent = 'อ้างอิง: ' + (DATA.legendSource || 'ไฟล์ NAT CAT.xlsx');
+  (function(){
+    var box = document.getElementById('srcList');
+    HAZ_META.forEach(function(h){
+      var d = document.createElement('div');
+      d.className = 'src-item';
+      d.innerHTML =
+        '<div class="src-head"><span class="src-dot" style="background:'+(hazardSwatch[h.key]||'var(--risk-none)')+'"></span>' +
+        '<b>'+h.label+'</b> <span class="src-lv">ระดับ'+h.level+'</span></div>' +
+        '<div class="src-line"><span class="src-k">ที่มา</span> '+h.source+'</div>' +
+        '<div class="src-line"><span class="src-k">ข้อมูล ณ</span> '+h.asof+'</div>' +
+        '<div class="src-line"><span class="src-k">วิธีจัดชั้น</span> '+h.method+'</div>' +
+        '<div class="src-line"><a href="'+h.url+'" target="_blank" rel="noopener">'+h.url+'</a></div>';
+      box.appendChild(d);
+    });
+  })();
+  document.getElementById('refSource').innerHTML =
+    'รวบรวมและจัดชั้นโดย Claude จากชุดข้อมูลเปิดของหน่วยงานราชการไทย · ' +
+    'ไม่ใช่เอกสารทางการของหน่วยงานใด และไม่ได้ทดแทนไฟล์ NAT CAT ฉบับภายในของบริษัท ' +
+    '— ควรให้ผู้รับผิดชอบตรวจสอบก่อนนำไปใช้ตัดสินใจ';
   document.getElementById('refToggle').addEventListener('click', function(){
     document.getElementById('refPanel').classList.toggle('open');
   });
@@ -644,7 +742,7 @@
   function showTooltip(name, ev){
     var p = byProvince[name];
     if(!p) return;
-    var haz = [['eq','แผ่นดินไหว'],['hail','ลูกเห็บ'],['wind','วาตภัย'],['flood','น้ำท่วม']];
+    var haz = HAZARDS.filter(function(h){ return h.key !== 'all'; }).map(function(h){ return [h.key, h.label]; });
     var rows = haz.map(function(pair){
       var c = provinceColorFor(p, pair[0]);
       var lvl = levelKeyForColor(c);
@@ -652,7 +750,9 @@
       var dotStyle = c ? 'background:var(--risk-'+lvl+')' : 'background:transparent;border:1.5px solid var(--risk-none)';
       return '<div class="tt-row"><span class="tt-dot" style="'+dotStyle+'"></span>'+pair[1]+': '+lvlLabel+'</div>';
     }).join('');
-    mapTooltip.innerHTML = '<b>'+name+'</b>' + rows;
+    var f68 = flood68Text(name);
+    mapTooltip.innerHTML = '<b>'+name+'</b>' + rows +
+      (f68 ? '<div class="tt-row" style="opacity:.75;margin-top:3px">'+f68+'</div>' : '');
     mapTooltip.style.display = 'block';
     moveTooltip(ev);
   }
@@ -685,13 +785,15 @@
     panel.innerHTML =
       '<div class="pd-head">' +
         badgeHtml(pColor,false) +
-        '<div><div class="p-name">'+p.name+'</div><div class="p-meta">'+p.districts.length+' อำเภอ · '+REGION_NAMES[p.region]+'</div></div>' +
+        '<div><div class="p-name">'+p.name+'</div><div class="p-meta">'+p.districts.length+' อำเภอ · '+REGION_NAMES[p.region]+
+          (flood68Text(p.name) ? ' · ' + flood68Text(p.name) : '') + '</div></div>' +
         '<button type="button" class="pd-close" id="pdClose" aria-label="ปิด">✕</button>' +
       '</div>' +
       '<div class="p-body open" style="display:block">' +
         districts.map(function(d){
           return '<div class="d-row"><div><div class="d-name">'+d.district+'</div>' +
             '<div class="d-postal">'+(d.postal||'')+(d.postal_office?(' · '+d.postal_office):'')+'</div>' +
+            evidenceHtml(d) +
             (d.note ? '<div class="d-note">'+d.note+'</div>' : '') +
             '</div>' + dotRow(d) + '</div>';
         }).join('') +
@@ -764,8 +866,29 @@
     return '<div class="'+(small?'p-dot none':'p-badge none')+'">'+(small?'':'—')+'</div>';
   }
 
+  var FLOOD68 = DATA.flood2568 || {};
+  function flood68Text(prov){
+    var f = FLOOD68[prov];
+    if(!f || !f.times) return '';
+    return 'ปภ. 2568: อุทกภัย ' + f.times + ' ครั้ง · ' + f.amphoe + ' อำเภอ · ' + f.tambon + ' ตำบล';
+  }
+  function fmt(n){ return (n||0).toLocaleString('th-TH'); }
+  function evidenceHtml(d){
+    var e = d.ev; if(!e) return '';
+    var bits = [];
+    if(e.eqZone) bits.push('แผ่นดินไหว: '+e.eqZone);
+    if(e.floodArea) bits.push('น้ำท่วมซ้ำซาก 8–10/4–7/<3 ครั้ง: '+fmt(e.floodArea[0])+'/'+fmt(e.floodArea[1])+'/'+fmt(e.floodArea[2])+' ไร่');
+    if(e.floodDays) bits.push('อุทกภัยที่รายงาน '+e.floodDays+' วัน/6 ปี' + (e.floodAgri ? ' (เกษตรเสียหาย '+fmt(e.floodAgri)+' ไร่)' : ''));
+    if(e.droughtArea) bits.push('แล้งซ้ำซาก ≥6/4–5/<3 ครั้ง: '+fmt(e.droughtArea[0])+'/'+fmt(e.droughtArea[1])+'/'+fmt(e.droughtArea[2])+' ไร่');
+    if(e.windDays) bits.push('วาตภัย '+e.windDays+' วัน/6 ปี');
+    if(e.hailDays) bits.push('พายุฤดูร้อน '+e.hailDays+' วัน/6 ปี');
+    if(e.slideDays) bits.push('ดินโคลนถล่ม '+e.slideDays+' วัน/6 ปี');
+    if(e.windAgri) bits.push('เกษตรเสียหายจากวาตภัย '+fmt(e.windAgri)+' ไร่');
+    return bits.length ? '<div class="ev-line">'+bits.join(' · ')+'</div>' : '';
+  }
+
   function dotRow(d){
-    var order = [['eq','EQ'],['hail','ลูกเห็บ'],['wind','ลม'],['flood','น้ำ']];
+    var order = HAZ_KEYS.map(function(k){ return [k, HAZ_SHORT[k]]; });
     return '<div class="d-dots">'+order.map(function(pair){
       var c = d[pair[0]];
       var dot = c ? '<div class="d-dot" style="background:var(--risk-'+levelKeyForColor(c)+')"></div>' : '<div class="d-dot none"></div>';
@@ -788,7 +911,7 @@
       {k:'high',     label:'สูง',     color:'var(--risk-high)'},
       {k:'medium',   label:'ปานกลาง', color:'var(--risk-medium)'},
       {k:'low',      label:'ต่ำ',     color:'var(--risk-low)'},
-      {k:'none',     label:'ไม่เสี่ยง', color:'var(--risk-none)'}
+      {k:'none',     label:'ไม่พบข้อมูล', color:'var(--risk-none)'}
     ];
     var statsEl = document.getElementById(elId || 'stats');
     statsEl.innerHTML = '<div class="stat-card" style="--stat-color:var(--brand)"><div class="stat-num">'+totalDistricts+'</div><div class="stat-label">อำเภอทั้งหมด'+(list.length?(' · '+list.length+' จังหวัด'):'')+'</div></div>' +
@@ -807,6 +930,8 @@
       b.classList.toggle('active', b.dataset.hazard === state.hazard);
     });
 
+    document.getElementById('clearFilters').hidden = !filtersActive();
+
     var isMapTab = state.tab === 'map';
     var isOverview = state.tab === 'overview';
     var q = state.query.trim();
@@ -816,14 +941,25 @@
     document.getElementById('listTabContent').hidden = isMapTab;
 
     if(isMapTab){
+      var mapRegion = state.mapRegion || '';
+      var mapScope = mapRegion
+        ? provincesAll.filter(function(p){ return p.region === mapRegion; })
+        : provincesAll;
+      regionSelect.value = mapRegion;
+      document.getElementById('regionFilter').hidden = false;
+
       document.getElementById('pageTitle').textContent = 'แผนที่ระดับความเสี่ยง';
-      document.getElementById('pageLede').textContent = 'ภาพรวมระดับความเสี่ยงภัยธรรมชาติทั่วประเทศไทย บนแผนที่รายจังหวัด (' + provincesAll.length + ' จังหวัด)';
-      document.getElementById('mapTitle').textContent = 'แผนที่ระดับความเสี่ยง — ' + hazardLabel;
-      updateMap(null, state.hazard, q);
-      renderStats(provincesAll, state.hazard, 'mapStats');
+      document.getElementById('pageLede').textContent = mapRegion
+        ? 'ระดับความเสี่ยงภัยธรรมชาติใน' + REGION_NAMES[mapRegion] + ' (' + mapScope.length + ' จังหวัด)'
+        : 'ภาพรวมระดับความเสี่ยงภัยธรรมชาติทั่วประเทศไทย บนแผนที่รายจังหวัด (' + provincesAll.length + ' จังหวัด)';
+      document.getElementById('mapTitle').textContent =
+        'แผนที่ระดับความเสี่ยง — ' + hazardLabel + (mapRegion ? ' · ' + REGION_NAMES[mapRegion] : '');
+      updateMap(mapRegion || null, state.hazard, q);
+      renderStats(mapScope, state.hazard, 'mapStats');
       renderProvinceDetail(state.hazard);
       return;
     }
+    document.getElementById('regionFilter').hidden = true;
 
     var scopeList = isOverview ? provincesAll : provincesAll.filter(function(p){return p.region===state.tab;});
 
@@ -855,7 +991,7 @@
 
       var dotsHtml = '';
       if(state.hazard === 'all'){
-        var haz = [['eq'],['hail'],['wind'],['flood']];
+        var haz = HAZ_KEYS.map(function(k){ return [k]; });
         dotsHtml = '<div class="p-dots">' + haz.map(function(pair){
           var c = provinceColorFor(p, pair[0]);
           return c ? '<div class="p-dot" style="background:var(--risk-'+levelKeyForColor(c)+')"></div>' : '<div class="p-dot none"></div>';
