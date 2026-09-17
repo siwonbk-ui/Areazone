@@ -1,0 +1,263 @@
+{
+ "storm": {
+  "metadata_modified": "2026-06-09T04:31:02.142391",
+  "resources": {
+   "76449584-e939-4dbc-8253-b4f4faaa2a0e": {
+    "name": "2562_สถิติรายปีการเกิดวาตภัย",
+    "format": "XLS",
+    "url": "https://catalog.disaster.go.th/dataset/32ab6f0a-142a-4b60-ab5e-7f2b057957b7/resource/76449584-e939-4dbc-8253-b4f4faaa2a0e/download/gd030_strom_stat2562_final.xls",
+    "modified": "2024-08-16T09:10:09.597695"
+   },
+   "ec79d60c-311a-4015-acfe-dfe6b5b85746": {
+    "name": "2563_สถิติรายปีการเกิดวาตภัย",
+    "format": "XLS",
+    "url": "https://catalog.disaster.go.th/dataset/32ab6f0a-142a-4b60-ab5e-7f2b057957b7/resource/ec79d60c-311a-4015-acfe-dfe6b5b85746/download/gd030_strom_stat2563_final.xlsx",
+    "modified": "2024-08-20T03:56:02.455506"
+   },
+   "05034ec8-9bc3-496e-81c9-cabfb7ac1ac3": {
+    "name": "2564_สถิติรายปีการเกิดวาตภัย",
+    "format": "XLSX",
+    "url": "https://catalog.disaster.go.th/dataset/32ab6f0a-142a-4b60-ab5e-7f2b057957b7/resource/05034ec8-9bc3-496e-81c9-cabfb7ac1ac3/download/gd030_strom_stat2564_final.xlsx",
+    "modified": "2024-08-16T09:24:14.499648"
+   },
+   "c973744c-45aa-437f-ad29-43377b63d855": {
+    "name": "2565_สถิติรายปีการเกิดวาตภัย",
+    "format": "XLS",
+    "url": "https://catalog.disaster.go.th/dataset/32ab6f0a-142a-4b60-ab5e-7f2b057957b7/resource/c973744c-45aa-437f-ad29-43377b63d855/download/gd030_strom_stat2565_final.xls",
+    "modified": "2024-08-16T09:27:27.961678"
+   },
+   "7513553e-99f2-4ec5-a3b5-2e16252c7fbf": {
+    "name": "2566_สถิติรายปีการเกิดวาตภัย",
+    "format": "XLSX",
+    "url": "https://catalog.disaster.go.th/dataset/32ab6f0a-142a-4b60-ab5e-7f2b057957b7/resource/7513553e-99f2-4ec5-a3b5-2e16252c7fbf/download/gd030_strom_stat2566_final.xlsx",
+    "modified": "2024-08-16T09:33:15.667440"
+   },
+   "a075b2d5-ba33-4e6d-82d2-593ee6e1fe39": {
+    "name": "2562_สถิติรายปีการเกิดวาตภัย",
+    "format": "CSV",
+    "url": "https://catalog.disaster.go.th/dataset/32ab6f0a-142a-4b60-ab5e-7f2b057957b7/resource/a075b2d5-ba33-4e6d-82d2-593ee6e1fe39/download/gd030_strom_2562.csv",
+    "modified": "2024-08-21T03:05:10.340054"
+   },
+   "b0ec0b50-e5f7-4cc0-88a5-35d533b66bdf": {
+    "name": "2563_สถิติรายปีการเกิดวาตภัย",
+    "format": "CSV",
+    "url": "https://catalog.disaster.go.th/dataset/32ab6f0a-142a-4b60-ab5e-7f2b057957b7/resource/b0ec0b50-e5f7-4cc0-88a5-35d533b66bdf/download/gd030_strom_2563_final.csv",
+    "modified": "2024-08-21T03:12:44.028743"
+   },
+   "1777610a-e3ce-48ff-9441-8db12b79cd9a": {
+    "name": "2564_สถิติรายปีการเกิดวาตภัย",
+    "format": "CSV",
+    "url": "https://catalog.disaster.go.th/dataset/32ab6f0a-142a-4b60-ab5e-7f2b057957b7/resource/1777610a-e3ce-48ff-9441-8db12b79cd9a/download/gd030_strom_2564_final.csv",
+    "modified": "2024-08-21T03:18:00.157641"
+   },
+   "63325a32-7349-45c0-838e-3a2932f2774d": {
+    "name": "2565_สถิติรายปีการเกิดวาตภัย",
+    "format": "CSV",
+    "url": "https://catalog.disaster.go.th/dataset/32ab6f0a-142a-4b60-ab5e-7f2b057957b7/resource/63325a32-7349-45c0-838e-3a2932f2774d/download/gd030_strom_2565_final.csv",
+    "modified": "2024-08-21T03:22:04.787805"
+   },
+   "083f75f0-6a1e-4610-9e85-53a22414aac0": {
+    "name": "2566_สถิติรายปีการเกิดวาตภัย",
+    "format": "CSV",
+    "url": "https://catalog.disaster.go.th/dataset/32ab6f0a-142a-4b60-ab5e-7f2b057957b7/resource/083f75f0-6a1e-4610-9e85-53a22414aac0/download/gd030_strom_2566_final.csv",
+    "modified": "2024-08-21T03:27:27.231018"
+   },
+   "2e85805b-8597-452c-8e88-451cdf17a769": {
+    "name": "2567_สถิติรายปีการเกิดวาตภัย",
+    "format": "XLSX",
+    "url": "https://catalog.disaster.go.th/dataset/32ab6f0a-142a-4b60-ab5e-7f2b057957b7/resource/2e85805b-8597-452c-8e88-451cdf17a769/download/2567__final.xlsx",
+    "modified": "2025-05-30T07:06:11.761986"
+   },
+   "77e2129e-d03d-4018-b8d2-5f65aa865a4a": {
+    "name": "2568_สถิติรายปีการเกิดวาตภัย",
+    "format": "XLSX",
+    "url": "https://catalog.disaster.go.th/dataset/32ab6f0a-142a-4b60-ab5e-7f2b057957b7/resource/77e2129e-d03d-4018-b8d2-5f65aa865a4a/download/untitled.xlsx",
+    "modified": "2026-05-27T04:57:00.405281"
+   }
+  }
+ },
+ "flood": {
+  "metadata_modified": "2026-06-09T03:46:36.892369",
+  "resources": {
+   "8fc427a8-9588-4305-969a-f259edeeda02": {
+    "name": "2562_สถิติรายปีการเกิดอุทกภัย",
+    "format": "XLSX",
+    "url": "https://catalog.disaster.go.th/dataset/b3f55bb3-0f35-4fda-b41c-f337aaf4f605/resource/8fc427a8-9588-4305-969a-f259edeeda02/download/gd027_flood_stat2562_final.xlsx",
+    "modified": "2024-08-14T10:23:23.778616"
+   },
+   "f2b60941-1741-435e-9ebe-9a866b01aa25": {
+    "name": "2563_สถิติรายปีการเกิดอุทกภัย",
+    "format": "XLSX",
+    "url": "https://catalog.disaster.go.th/dataset/b3f55bb3-0f35-4fda-b41c-f337aaf4f605/resource/f2b60941-1741-435e-9ebe-9a866b01aa25/download/gd027_flood_stat2563_final4.xlsx",
+    "modified": "2024-08-15T04:40:53.607430"
+   },
+   "ea061318-5317-45e8-a59a-9e23a4544267": {
+    "name": "2564_สถิติรายปีการเกิดอุทกภัย",
+    "format": "XLSX",
+    "url": "https://catalog.disaster.go.th/dataset/b3f55bb3-0f35-4fda-b41c-f337aaf4f605/resource/ea061318-5317-45e8-a59a-9e23a4544267/download/gd027_flood_stat2564_final.xlsx",
+    "modified": "2024-08-14T10:49:32.459184"
+   },
+   "12f1a8e2-069c-46b8-88c7-7cf4d1e1b4a9": {
+    "name": "2565_สถิติรายปีการเกิดอุทกภัย",
+    "format": "XLSX",
+    "url": "https://catalog.disaster.go.th/dataset/b3f55bb3-0f35-4fda-b41c-f337aaf4f605/resource/12f1a8e2-069c-46b8-88c7-7cf4d1e1b4a9/download/gd027_flood_stat2565_final.xlsx",
+    "modified": "2024-08-14T10:55:24.253830"
+   },
+   "744a20f4-441f-494a-b2ae-140e96540f9c": {
+    "name": "2566_สถิติรายปีการเกิดอุทกภัย",
+    "format": "XLSX",
+    "url": "https://catalog.disaster.go.th/dataset/b3f55bb3-0f35-4fda-b41c-f337aaf4f605/resource/744a20f4-441f-494a-b2ae-140e96540f9c/download/gd027_flood_stat2566_final.xlsx",
+    "modified": "2024-08-14T11:01:33.610733"
+   },
+   "8c477d58-3ae9-436f-9e3d-f7d302fe8197": {
+    "name": "2562_สถิติรายปีการเกิดอุทกภัย",
+    "format": "CSV",
+    "url": "https://catalog.disaster.go.th/dataset/b3f55bb3-0f35-4fda-b41c-f337aaf4f605/resource/8c477d58-3ae9-436f-9e3d-f7d302fe8197/download/gd027_flood_stat2562_final.csv",
+    "modified": "2024-08-14T11:04:44.765323"
+   },
+   "27e81e82-7cdc-4fe9-94b9-f3ca193c2328": {
+    "name": "2563_สถิติรายปีการเกิดอุทกภัย",
+    "format": "CSV",
+    "url": "https://catalog.disaster.go.th/dataset/b3f55bb3-0f35-4fda-b41c-f337aaf4f605/resource/27e81e82-7cdc-4fe9-94b9-f3ca193c2328/download/gd027_flood_2563_final.csv",
+    "modified": "2024-08-21T06:44:28.186143"
+   },
+   "beb61961-ded4-447d-a348-8a39623e95d4": {
+    "name": "2564_สถิติรายปีการเกิดอุทกภัย",
+    "format": "CSV",
+    "url": "https://catalog.disaster.go.th/dataset/b3f55bb3-0f35-4fda-b41c-f337aaf4f605/resource/beb61961-ded4-447d-a348-8a39623e95d4/download/gd027_flood_2564_final.csv",
+    "modified": "2024-08-21T06:51:34.391389"
+   },
+   "bc36c686-79f3-4574-a654-54cf0ef00d82": {
+    "name": "2565_สถิติรายปีการเกิดอุทกภัย",
+    "format": "CSV",
+    "url": "https://catalog.disaster.go.th/dataset/b3f55bb3-0f35-4fda-b41c-f337aaf4f605/resource/bc36c686-79f3-4574-a654-54cf0ef00d82/download/gd027_flood_2565_final.csv",
+    "modified": "2024-08-21T06:55:38.853604"
+   },
+   "af2370d1-d2d0-4844-a16d-e6af34926e71": {
+    "name": "2566_สถิติรายปีการเกิดอุทกภัย",
+    "format": "CSV",
+    "url": "https://catalog.disaster.go.th/dataset/b3f55bb3-0f35-4fda-b41c-f337aaf4f605/resource/af2370d1-d2d0-4844-a16d-e6af34926e71/download/gd027_flood_2566_final.csv",
+    "modified": "2024-08-21T07:00:29.809134"
+   },
+   "dde2eddc-28f5-40bf-8a62-28bc68f02af8": {
+    "name": "2567_สถิติรายปีการเกิดอุทกภัย",
+    "format": "XLSX",
+    "url": "https://catalog.disaster.go.th/dataset/b3f55bb3-0f35-4fda-b41c-f337aaf4f605/resource/dde2eddc-28f5-40bf-8a62-28bc68f02af8/download/2567__final.xlsx",
+    "modified": "2025-05-30T06:36:59.527753"
+   },
+   "9eae087c-8931-4a74-9968-200cdb3d2fb3": {
+    "name": "2568_สถิติรายปีการเกิดอุทกภัย",
+    "format": "XLSX",
+    "url": "https://catalog.disaster.go.th/dataset/b3f55bb3-0f35-4fda-b41c-f337aaf4f605/resource/9eae087c-8931-4a74-9968-200cdb3d2fb3/download/untitled.xlsx",
+    "modified": "2026-05-27T04:17:03.741115"
+   }
+  }
+ },
+ "slide": {
+  "metadata_modified": "2026-06-09T04:32:58.807796",
+  "resources": {
+   "d1f7805f-80c2-4ec0-ba7e-c6a25302770b": {
+    "name": "2562_สถิติรายปีการเกิดดินโคลนถล่ม",
+    "format": "XLSX",
+    "url": "https://catalog.disaster.go.th/dataset/016d235e-6d62-4d72-aeae-769b1ab0db31/resource/d1f7805f-80c2-4ec0-ba7e-c6a25302770b/download/2562_final.xlsx",
+    "modified": "2024-08-14T08:01:43.386960"
+   },
+   "722eab00-5c23-41af-b54c-c441edff1f73": {
+    "name": "2563_สถิติรายปีการเกิดดินโคลนถล่ม",
+    "format": "XLS",
+    "url": "https://catalog.disaster.go.th/dataset/016d235e-6d62-4d72-aeae-769b1ab0db31/resource/722eab00-5c23-41af-b54c-c441edff1f73/download/2563_final.xls",
+    "modified": "2024-08-14T08:06:57.153962"
+   },
+   "7ccda119-dc1a-4ed2-9d3e-c55501069011": {
+    "name": "2564_สถิติรายปีการเกิดดินโคลนถล่ม",
+    "format": "XLS",
+    "url": "https://catalog.disaster.go.th/dataset/016d235e-6d62-4d72-aeae-769b1ab0db31/resource/7ccda119-dc1a-4ed2-9d3e-c55501069011/download/2564_final.xlsx",
+    "modified": "2024-08-14T09:08:03.855259"
+   },
+   "e6dce0a5-61a2-4864-a0f8-0577219268e5": {
+    "name": "2565_สถิติรายปีการเกิดดินโคลนถล่ม",
+    "format": "XLS",
+    "url": "https://catalog.disaster.go.th/dataset/016d235e-6d62-4d72-aeae-769b1ab0db31/resource/e6dce0a5-61a2-4864-a0f8-0577219268e5/download/2565_final.xls",
+    "modified": "2024-08-14T08:21:47.482267"
+   },
+   "ed51d46d-7774-4a72-abfa-ff88898bf0a8": {
+    "name": "2566_สถิติรายปีการเกิดดินโคลนถล่ม",
+    "format": "XLSX",
+    "url": "https://catalog.disaster.go.th/dataset/016d235e-6d62-4d72-aeae-769b1ab0db31/resource/ed51d46d-7774-4a72-abfa-ff88898bf0a8/download/-2566_final.xlsx",
+    "modified": "2024-08-14T09:50:04.299697"
+   },
+   "bb266ae3-05bf-4982-a5c7-ad2d292589cd": {
+    "name": "2562_สถิติรายปีการเกิดดินโคลนถล่ม",
+    "format": "CSV",
+    "url": "https://catalog.disaster.go.th/dataset/016d235e-6d62-4d72-aeae-769b1ab0db31/resource/bb266ae3-05bf-4982-a5c7-ad2d292589cd/download/gd029_2562_final.csv",
+    "modified": "2024-08-20T09:16:44.859787"
+   },
+   "5af125f7-6453-4db2-9297-296684a33d87": {
+    "name": "2563_สถิติรายปีการเกิดดินโคลนถล่ม",
+    "format": "CSV",
+    "url": "https://catalog.disaster.go.th/dataset/016d235e-6d62-4d72-aeae-769b1ab0db31/resource/5af125f7-6453-4db2-9297-296684a33d87/download/gd029_2563_final.csv",
+    "modified": "2024-08-20T09:21:15.192607"
+   },
+   "58463291-523d-4d3f-a396-ffccfe9a7adc": {
+    "name": "2564_สถิติรายปีการเกิดดินโคลนถล่ม",
+    "format": "CSV",
+    "url": "https://catalog.disaster.go.th/dataset/016d235e-6d62-4d72-aeae-769b1ab0db31/resource/58463291-523d-4d3f-a396-ffccfe9a7adc/download/gd029_2564_final.csv",
+    "modified": "2024-08-20T09:23:32.431269"
+   },
+   "dcca418c-59c9-46fa-aa33-70aa26390829": {
+    "name": "2565_สถิติรายปีการเกิดดินโคลนถล่ม",
+    "format": "CSV",
+    "url": "https://catalog.disaster.go.th/dataset/016d235e-6d62-4d72-aeae-769b1ab0db31/resource/dcca418c-59c9-46fa-aa33-70aa26390829/download/gd029_2565_final.csv",
+    "modified": "2024-08-20T09:26:04.494316"
+   },
+   "ab44b1fd-00d1-41fc-bd56-31c5da29910c": {
+    "name": "2566_สถิติรายปีการเกิดดินโคลนถล่ม",
+    "format": "CSV",
+    "url": "https://catalog.disaster.go.th/dataset/016d235e-6d62-4d72-aeae-769b1ab0db31/resource/ab44b1fd-00d1-41fc-bd56-31c5da29910c/download/gd029_2566_final.csv",
+    "modified": "2024-08-20T09:28:42.718360"
+   },
+   "485c5bc1-1140-4f21-93f7-c7bac2e9de19": {
+    "name": "2567_สถิติรายปีการเกิดดินโคลนถล่ม",
+    "format": "XLSX",
+    "url": "https://catalog.disaster.go.th/dataset/016d235e-6d62-4d72-aeae-769b1ab0db31/resource/485c5bc1-1140-4f21-93f7-c7bac2e9de19/download/2567__final.xlsx",
+    "modified": "2025-05-30T07:11:20.202016"
+   },
+   "8a9212bb-80b3-49f4-89b6-332385508f1a": {
+    "name": "2568_สถิติรายปีการเกิดดินโคลนถล่ม",
+    "format": "XLSX",
+    "url": "https://catalog.disaster.go.th/dataset/016d235e-6d62-4d72-aeae-769b1ab0db31/resource/8a9212bb-80b3-49f4-89b6-332385508f1a/download/untitled.xlsx",
+    "modified": "2026-05-27T06:11:16.791099"
+   }
+  }
+ },
+ "lddflood": {
+  "metadata_modified": "2026-03-30T09:44:37.143606",
+  "resources": {
+   "4cca8923-3269-4674-b370-dbdd277bc87c": {
+    "name": "สถิติพื้นที่น้ำท่วมซ้ำซากรายตำบล",
+    "format": "CSV",
+    "url": "https://lddcatalog.ldd.go.th/dataset/6584195b-74df-4100-9cc1-8ac9a0ce7dd0/resource/4cca8923-3269-4674-b370-dbdd277bc87c/download/sumflood.csv",
+    "modified": "2026-03-30T09:44:05.503181",
+    "id": "4cca8923-3269-4674-b370-dbdd277bc87c"
+   }
+  }
+ },
+ "lddrought": {
+  "metadata_modified": "2025-10-07T02:53:34.242953",
+  "resources": {
+   "433c3815-6918-45c6-8a0f-a35245088480": {
+    "name": "พจนานุกรมข้อมูลพื้นที่แล้งซ้ำซาก",
+    "format": "CSV",
+    "url": "https://lddcatalog.ldd.go.th/dataset/f2ea827d-8b8b-4de6-9fa9-acc73dea1278/resource/433c3815-6918-45c6-8a0f-a35245088480/download/datadict_drought.csv",
+    "modified": "2024-06-28T02:30:18.144584"
+   },
+   "b394ac5a-03be-4673-9a42-beafd3117e35": {
+    "name": "สถิติพื้นที่แล้งซ้ำซากรายตำบล",
+    "format": "CSV",
+    "url": "https://lddcatalog.ldd.go.th/dataset/f2ea827d-8b8b-4de6-9fa9-acc73dea1278/resource/b394ac5a-03be-4673-9a42-beafd3117e35/download/csv.csv",
+    "modified": "2024-07-02T07:15:56.177263",
+    "id": "b394ac5a-03be-4673-9a42-beafd3117e35"
+   }
+  }
+ }
+}
