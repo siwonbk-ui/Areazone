@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>NAT CAT Zoning Updated</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@500;600;700&family=Noto+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="data_updated.js"></script>
+<script src="map_paths.js"></script>
+<style>
+  :root{
+    --bg:#FAF7F4;
+    --surface:#FFFFFF;
+    --surface-2:#F3EEE9;
+    --border:#E6DED7;
+    --text:#241C1A;
+    --text-muted:#786D68;
+    --brand:#C8102E;
+    --brand-dark:#8E0B20;
+    --brand-tint:#FBE7EA;
+    --accent-green:#1F7A4D;
+    --focus:#8E0B20;
+
+    --risk-veryhigh:#D7263D;
+    --risk-veryhigh-bg:#FBE7E9;
+    --risk-high:#EE8B2E;
+    --risk-high-bg:#FDEEDD;
+    --risk-medium:#D9A400;
+    --risk-medium-bg:#FBF3D3;
+    --risk-low:#2E8B4F;
+    --risk-low-bg:#E4F2E7;
+    --risk-none:#8A7F79;
+    --risk-none-bg:#F1ECE7;
+
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#1C1613;
+      --surface:#241C19;
+      --surface-2:#2C2320;
+      --border:#3C312C;
+      --text:#F3ECE7;
+      --text-muted:#B8ABA3;
+      --brand:#FF4560;
+      --brand-dark:#FF6B7F;
+      --brand-tint:#3A1A20;
+      --accent-green:#4FC57C;
+
+      --risk-veryhigh:#FF5468;
+      --risk-veryhigh-bg:#3D1A20;
+      --risk-high:#FFA25C;
+      --risk-high-bg:#3D2A16;
+      --risk-medium:#F0CB4E;
+      --risk-medium-bg:#3A3316;
+      --risk-low:#57CE81;
+      --risk-low-bg:#173523;
+      --risk-none:#A79A92;
+      --risk-none-bg:#2E2622;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#1C1613;
+    --surface:#241C19;
+    --surface-2:#2C2320;
+    --border:#3C312C;
+    --text:#F3ECE7;
+    --text-muted:#B8ABA3;
+    --brand:#FF4560;
+    --brand-dark:#FF6B7F;
+    --brand-tint:#3A1A20;
+    --accent-green:#4FC57C;
+
+    --risk-veryhigh:#FF5468;
+    --risk-veryhigh-bg:#3D1A20;
+    --risk-high:#FFA25C;
+    --risk-high-bg:#3D2A16;
+    --risk-medium:#F0CB4E;
+    --risk-medium-bg:#3A3316;
+    --risk-low:#57CE81;
+    --risk-low-bg:#173523;
+    --risk-none:#A79A92;
+    --risk-none-bg:#2E2622;
+    color-scheme: dark;
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Noto Sans Thai','Prompt',sans-serif;
+    padding-inline:0;
+  }
+  h1,h2,h3,.brand-word,.nav-label,.seg button,.section-title{
+    font-family:'Prompt','Noto Sans Thai',sans-serif;
+  }
+
+  .app{
+    display:flex;
+    min-height:100vh;
+  }
+
+  /* ---------- Sidebar ---------- */
+  .sidebar{
+    width:250px;
+    flex:0 0 250px;
+    background:var(--surface);
+    border-right:1px solid var(--border);
+    padding:20px 14px calc(20px + env(safe-area-inset-bottom,0px));
+    position:sticky;
+    top:0;
+    align-self:flex-start;
+    height:100vh;
+    overflow-y:auto;
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:6px 8px 18px;
+    border-bottom:1px solid var(--border);
+    margin-bottom:14px;
+  }
+  .brand-mark{
+    width:36px;height:36px;border-radius:9px;
+    background:linear-gradient(155deg,var(--brand),var(--brand-dark));
+    display:flex;align-items:center;justify-content:center;
+    color:#fff;font-weight:700;font-size:15px;flex:none;
+    box-shadow:0 2px 6px rgba(0,0,0,.18);
+  }
+  .brand-text{display:flex;flex-direction:column;line-height:1.25;flex:1 1 auto;min-width:0;}
+  .brand-word{font-weight:700;font-size:15.5px;letter-spacing:.2px;}
+  .brand-sub{font-size:11.5px;color:var(--text-muted);}
+  .theme-toggle{
+    flex:none;width:30px;height:30px;border-radius:8px;
+    border:1px solid var(--border);background:var(--surface-2);color:var(--text-muted);
+    display:flex;align-items:center;justify-content:center;cursor:pointer;
+  }
+  .theme-toggle:hover{color:var(--text);border-color:var(--brand);}
+  .theme-toggle .icon-moon{display:none;}
+  :root[data-theme="dark"] .theme-toggle .icon-sun{display:none;}
+  :root[data-theme="dark"] .theme-toggle .icon-moon{display:block;}
+
+  .nav-group-label{
+    font-size:11px;color:var(--text-muted);
+    text-transform:uppercase;letter-spacing:.08em;
+    padding:10px 10px 6px;font-weight:600;
+  }
+  .nav{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px;}
+  .nav button{
+    width:100%;display:flex;align-items:center;gap:10px;
+    padding:9px 10px;border-radius:9px;border:1px solid transparent;
+    background:transparent;color:var(--text);
+    font-size:13.5px;font-weight:500;cursor:pointer;text-align:left;
+    font-family:'Noto Sans Thai',sans-serif;
+  }
+  .nav button:hover{background:var(--surface-2);}
+  .nav button.active{
+    background:var(--brand-tint);
+    color:var(--brand-dark);
+    font-weight:700;
+    border-color:var(--brand);
+  }
+  .nav-dot{width:8px;height:8px;border-radius:50%;background:var(--border);flex:none;}
+  .nav button.active .nav-dot{background:var(--brand);}
+  .nav-count{margin-left:auto;font-size:11px;color:var(--text-muted);font-variant-numeric:tabular-nums;}
+  .nav button.active .nav-count{color:var(--brand-dark);}
+
+  /* mobile: sidebar becomes a horizontal scroll bar on top */
+  .sidebar-toggle{display:none;}
+
+  /* ---------- Main ---------- */
+  .main{flex:1 1 auto;min-width:0;display:flex;flex-direction:column;}
+  .topbar{
+    position:sticky;top:0;z-index:5;
+    background:var(--bg);
+    padding:18px clamp(16px,3vw,32px) 10px;
+    border-bottom:1px solid var(--border);
+  }
+  .topbar-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:12px;}
+  .eyebrow{font-size:11.5px;color:var(--brand);font-weight:700;text-transform:uppercase;letter-spacing:.09em;}
+  h1{font-size:22px;margin:2px 0 0;font-weight:700;}
+  .lede{font-size:12.5px;color:var(--text-muted);margin-top:4px;max-width:60ch;}
+
+  .controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:10px;}
+  .seg{display:inline-flex;background:var(--surface-2);border:1px solid var(--border);border-radius:10px;padding:3px;gap:2px;flex-wrap:wrap;}
+  .seg button{
+    border:none;background:transparent;padding:6.5px 12px;border-radius:8px;
+    font-size:12.5px;font-weight:600;color:var(--text-muted);cursor:pointer;
+    display:flex;align-items:center;gap:6px;white-space:nowrap;
+  }
+  .seg button .swatch{width:9px;height:9px;border-radius:3px;}
+  .seg button.active{background:var(--surface);color:var(--text);box-shadow:0 1px 3px rgba(0,0,0,.12);}
+
+  .search{
+    display:flex;align-items:center;gap:7px;
+    border:1px solid var(--border);background:var(--surface);
+    border-radius:10px;padding:7px 11px;min-width:220px;flex:1 1 220px;max-width:340px;
+  }
+  .search svg{flex:none;opacity:.55;}
+  .search input{
+    border:none;outline:none;background:transparent;color:var(--text);
+    font-size:13px;width:100%;font-family:'Noto Sans Thai',sans-serif;
+  }
+  .search input::placeholder{color:var(--text-muted);}
+
+  .legend-row{
+    display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:12px;padding-top:10px;border-top:1px dashed var(--border);
+  }
+  .legend{display:flex;flex-wrap:wrap;gap:14px;}
+  .legend-item{display:flex;align-items:center;gap:6px;font-size:11.5px;color:var(--text-muted);cursor:help;}
+  .legend-chip{width:13px;height:13px;border-radius:4px;flex:none;}
+  .ref-toggle{
+    margin-left:auto;display:flex;align-items:center;gap:5px;
+    border:1px solid var(--border);background:var(--surface);color:var(--text-muted);
+    border-radius:8px;padding:5px 10px;font-size:11.5px;font-weight:600;cursor:pointer;
+    font-family:'Noto Sans Thai',sans-serif;
+  }
+  .ref-toggle:hover{color:var(--text);border-color:var(--brand);}
+  .ref-panel{
+    display:none;margin-top:10px;background:var(--surface);border:1px solid var(--border);
+    border-radius:10px;padding:12px 14px;
+  }
+  .ref-panel.open{display:block;}
+  .ref-panel h3{margin:0 0 8px;font-size:12.5px;}
+  .ref-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;}
+  .ref-list li{display:flex;align-items:flex-start;gap:8px;font-size:12px;line-height:1.5;}
+  .ref-chip{width:13px;height:13px;border-radius:4px;flex:none;margin-top:2px;}
+  .ref-source{margin-top:10px;font-size:11px;color:var(--text-muted);border-top:1px dashed var(--border);padding-top:8px;}
+  .src-item{border-top:1px dashed var(--border);padding:8px 0;}
+  .src-item:first-child{border-top:none;}
+  .src-head{display:flex;align-items:center;gap:7px;font-size:12.5px;margin-bottom:3px;}
+  .src-dot{width:9px;height:9px;border-radius:3px;flex:none;}
+  .src-lv{font-size:10.5px;color:var(--text-muted);border:1px solid var(--border);border-radius:5px;padding:1px 5px;}
+  .src-line{font-size:11.5px;color:var(--text-muted);line-height:1.55;}
+  .src-k{display:inline-block;min-width:58px;color:var(--text);font-weight:600;}
+  .src-line a{color:var(--brand);word-break:break-all;}
+  .ev-line{font-size:10.5px;color:var(--text-muted);margin-top:2px;}
+  .filter-tools{margin-left:auto;display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+  .region-filter{
+    display:flex;align-items:center;gap:7px;
+    font-size:11.5px;color:var(--text-muted);
+  }
+  .clear-filters{
+    display:flex;align-items:center;gap:5px;
+    border:1px solid var(--brand);background:var(--brand-tint);color:var(--brand-dark);
+    border-radius:8px;padding:6px 10px;font-size:11.5px;font-weight:600;cursor:pointer;
+    font-family:'Noto Sans Thai',sans-serif;
+  }
+  .clear-filters:hover{background:var(--brand);color:#fff;}
+  .region-filter select{
+    font-family:'Noto Sans Thai',sans-serif;font-size:12px;font-weight:600;
+    color:var(--text);background:var(--surface);
+    border:1px solid var(--border);border-radius:8px;padding:6px 9px;cursor:pointer;
+  }
+  .region-filter select:hover{border-color:var(--brand);}
+  .region-filter select:focus-visible{outline:2px solid var(--focus);outline-offset:1px;}
+
+  .content{padding:18px clamp(16px,3vw,32px) 40px;}
+
+  /* map */
+  .map-card{
+    background:var(--surface);border:1px solid var(--border);border-radius:14px;
+    padding:14px 14px 10px;margin-bottom:20px;position:relative;
+  }
+  .map-card-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px;flex-wrap:wrap;}
+  .map-card-head h2{font-size:13px;margin:0;font-weight:700;}
+  .map-card-hint{font-size:11px;color:var(--text-muted);}
+  .map-svg-wrap{width:100%;max-width:560px;margin:0 auto;position:relative;}
+  .map-svg-wrap svg{width:100%;height:auto;display:block;overflow:visible;}
+  .th-province{
+    stroke:var(--surface);stroke-width:1;vector-effect:non-scaling-stroke;
+    cursor:pointer;transition:opacity .12s, filter .12s, fill .15s;
+  }
+  .th-province:hover{filter:brightness(0.92);}
+  .th-province.muted{display:none;}
+  .th-province.dim{opacity:.32;}
+  .th-label{
+    font-family:'Noto Sans Thai',sans-serif;font-weight:600;
+    font-size:.14px;fill:#20140f;
+    paint-order:stroke fill;stroke:rgba(255,255,255,.88);stroke-width:.05px;stroke-linejoin:round;
+    text-anchor:middle;dominant-baseline:middle;
+    pointer-events:none;user-select:none;
+    transition:opacity .12s;
+  }
+  .th-label.muted{display:none;}
+  .th-label.dim{opacity:.25;}
+  .th-label.hidden-label{display:none;}
+  .map-tooltip{
+    position:absolute;pointer-events:none;z-index:9;
+    background:var(--text);color:var(--bg);
+    font-size:11.5px;line-height:1.5;border-radius:8px;padding:7px 10px;
+    box-shadow:0 4px 14px rgba(0,0,0,.22);white-space:nowrap;
+    transform:translate(-50%,-120%);display:none;
+  }
+  .map-tooltip b{font-weight:700;}
+  .map-tooltip .tt-row{display:flex;align-items:center;gap:6px;}
+  .map-tooltip .tt-dot{width:8px;height:8px;border-radius:50%;flex:none;}
+
+  .province-detail{padding:14px 15px;}
+  .pd-head{display:flex;align-items:center;gap:12px;}
+  .pd-close{
+    margin-left:auto;border:1px solid var(--border);background:var(--surface-2);
+    color:var(--text-muted);border-radius:8px;width:26px;height:26px;flex:none;
+    display:flex;align-items:center;justify-content:center;cursor:pointer;
+  }
+  .pd-close:hover{color:var(--text);}
+  .pd-hint{
+    display:flex;align-items:center;gap:10px;color:var(--text-muted);font-size:12.5px;
+    padding:16px 2px;
+  }
+
+  /* stat cards */
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-bottom:20px;}
+  .stat-card{
+    background:var(--surface);border:1px solid var(--border);border-radius:12px;
+    padding:13px 14px;display:flex;flex-direction:column;gap:4px;
+    border-left:4px solid var(--stat-color,var(--border));
+  }
+  .stat-num{font-size:24px;font-weight:700;font-variant-numeric:tabular-nums;font-family:'Prompt',sans-serif;}
+  .stat-label{font-size:11.5px;color:var(--text-muted);}
+
+  .section-title{font-size:13px;font-weight:700;margin:0 0 10px;display:flex;align-items:center;gap:8px;}
+  .section-title .count{font-weight:500;color:var(--text-muted);font-size:12px;}
+
+  /* province grid */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(252px,1fr));gap:10px;}
+  .p-card{
+    background:var(--surface);border:1px solid var(--border);border-radius:12px;
+    overflow:hidden;
+  }
+  .p-head{
+    width:100%;display:flex;align-items:center;gap:10px;padding:12px 13px;
+    background:transparent;border:none;cursor:pointer;text-align:left;color:var(--text);
+    font-family:inherit;
+  }
+  .p-head:hover{background:var(--surface-2);}
+  .p-badge{
+    width:34px;height:34px;border-radius:9px;flex:none;
+    display:flex;align-items:center;justify-content:center;
+    font-size:11px;font-weight:700;color:#fff;
+  }
+  .p-badge.none{color:var(--risk-none);border:2px dashed var(--risk-none);background:transparent;}
+  .p-name{font-size:13.5px;font-weight:700;line-height:1.25;}
+  .p-meta{font-size:11px;color:var(--text-muted);}
+  .p-dots{margin-left:auto;display:flex;gap:4px;flex:none;}
+  .p-dot{width:9px;height:9px;border-radius:50%;}
+  .p-dot.none{background:transparent;border:1.5px dashed var(--risk-none);}
+  .p-chev{margin-left:6px;flex:none;color:var(--text-muted);transition:transform .15s;}
+  .p-card.open .p-chev{transform:rotate(180deg);}
+
+  .p-body{display:none;border-top:1px solid var(--border);}
+  .p-card.open .p-body{display:block;}
+  .d-row{
+    display:flex;align-items:center;gap:10px;padding:8px 13px;font-size:12.5px;
+    border-top:1px solid var(--border);
+  }
+  .d-row:first-child{border-top:none;}
+  .d-name{font-weight:600;}
+  .d-postal{color:var(--text-muted);font-variant-numeric:tabular-nums;font-size:11.5px;}
+  .d-note{color:var(--text-muted);font-size:11px;margin-top:1px;}
+  .d-dots{margin-left:auto;display:flex;gap:8px;flex:none;}
+  .d-dot-wrap{display:flex;flex-direction:column;align-items:center;gap:2px;}
+  .d-dot{width:11px;height:11px;border-radius:50%;}
+  .d-dot.none{background:transparent;border:1.5px dashed var(--risk-none);}
+  .d-dot-label{font-size:8.5px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.03em;}
+
+  .empty{padding:40px 10px;text-align:center;color:var(--text-muted);font-size:13px;}
+
+  .hamburger-btn, .sidebar-close{
+    display:none;flex:none;width:34px;height:34px;border-radius:9px;
+    border:1px solid var(--border);background:var(--surface);color:var(--text);
+    align-items:center;justify-content:center;cursor:pointer;align-self:center;
+  }
+  .sidebar-overlay{display:none;position:fixed;inset:0;background:rgba(20,14,12,.45);z-index:40;}
+
+  @media (max-width:860px){
+    .app{flex-direction:column;}
+    .hamburger-btn{display:flex;}
+    .sidebar-close{display:flex;margin-left:auto;}
+    .sidebar{
+      position:fixed;top:0;left:0;height:100vh;height:100dvh;
+      width:min(280px,82vw);z-index:50;
+      transform:translateX(-100%);
+      transition:transform .25s ease;
+      box-shadow:0 12px 34px rgba(20,14,12,.32);
+    }
+    .sidebar.open{transform:translateX(0);}
+    .sidebar-overlay.open{display:block;}
+  }
+</style>
+</head>
+<body>
+
+
+<script>
+(function(){
+  // Default to light on every device regardless of system dark mode;
+  // only switch when the viewer picks dark via the in-page toggle.
+  try{
+    var saved = localStorage.getItem('natcat_theme');
+    document.documentElement.setAttribute('data-theme', saved === 'dark' ? 'dark' : 'light');
+  }catch(e){
+    document.documentElement.setAttribute('data-theme','light');
+  }
+})();
+</script>
+
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-mark">CT</div>
+      <div class="brand-text">
+        <span class="brand-word">NAT CAT Zoning</span>
+        <span class="brand-sub">ฉบับปรับปรุงจากข้อมูลเปิดภาครัฐ</span>
+      </div>
+      <button type="button" class="theme-toggle" id="themeToggle" aria-label="สลับโหมดสว่าง/มืด" title="สลับโหมดสว่าง/มืด">
+        <svg class="icon-sun" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7"/></svg>
+        <svg class="icon-moon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 14.3A8.4 8.4 0 1 1 9.7 4a6.7 6.7 0 0 0 10.3 10.3Z"/></svg>
+      </button>
+      <button type="button" class="sidebar-close" id="sidebarClose" aria-label="ปิดเมนู">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+      </button>
+    </div>
+    <div class="nav-group-label">มุมมอง</div>
+    <ul class="nav" id="nav"></ul>
+  </aside>
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <main class="main">
+    <div class="topbar">
+      <div class="topbar-head">
+        <button type="button" class="hamburger-btn" id="navToggle" aria-label="เปิดเมนู">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+        </button>
+        <div>
+          <div class="eyebrow">Natural Catastrophe Zoning</div>
+          <h1 id="pageTitle">ภาพรวมประเทศไทย</h1>
+          <div class="lede" id="pageLede">ระดับความเสี่ยงภัยธรรมชาติรายจังหวัด/อำเภอ ทั่วประเทศ</div>
+        </div>
+      </div>
+      <div class="controls">
+        <div class="seg" id="hazardSeg"></div>
+        <div class="search">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input id="searchBox" type="text" placeholder="ค้นหาจังหวัด, อำเภอ หรือรหัสไปรษณีย์">
+        </div>
+      </div>
+      <div class="legend-row">
+        <div class="legend" id="legend"></div>
+        <div class="filter-tools">
+          <div class="region-filter" id="regionFilter">
+            <label for="mapRegion">ดูเฉพาะภาค</label>
+            <select id="mapRegion"></select>
+          </div>
+          <button type="button" class="clear-filters" id="clearFilters" hidden>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+            ล้างตัวกรอง
+          </button>
+        </div>
+        <button type="button" class="ref-toggle" id="refToggle">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="12" cy="12" r="9"/><line x1="12" y1="11" x2="12" y2="16.5"/><circle cx="12" cy="7.7" r="0.6" fill="currentColor" stroke="none"/></svg>
+          แหล่งข้อมูล
+        </button>
+      </div>
+      <div class="ref-panel" id="refPanel">
+        <h3>เกณฑ์สี</h3>
+        <ul class="ref-list" id="refList"></ul>
+        <h3 style="margin-top:14px">แหล่งข้อมูลรายภัย (Sources)</h3>
+        <div id="srcList"></div>
+        <div class="ref-source" id="refSource"></div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div id="mapTabContent">
+        <div class="map-card">
+          <div class="map-card-head">
+            <h2 id="mapTitle">แผนที่ระดับความเสี่ยง</h2>
+            <span class="map-card-hint">คลิกจังหวัดเพื่อดูรายอำเภอ</span>
+          </div>
+          <div class="map-svg-wrap" id="mapWrap">
+            <svg id="mapSvg" xmlns="http://www.w3.org/2000/svg"></svg>
+            <div class="map-tooltip" id="mapTooltip"></div>
+          </div>
+        </div>
+        <div class="stats" id="mapStats"></div>
+        <div class="p-card province-detail" id="provinceDetail" hidden></div>
+      </div>
+
+      <div id="listTabContent">
+        <div class="stats" id="stats"></div>
+        <div class="section-title"><span id="gridTitle">รายจังหวัด</span><span class="count" id="gridCount"></span></div>
+        <div class="grid" id="grid"></div>
+        <div class="empty" id="emptyState" hidden>ไม่พบข้อมูลที่ตรงกับคำค้นหา</div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  // ---- mobile off-canvas nav drawer ----
+  var sidebarEl = document.querySelector('.sidebar');
+  var sidebarOverlayEl = document.getElementById('sidebarOverlay');
+  function openSidebar(){
+    sidebarEl.classList.add('open');
+    sidebarOverlayEl.classList.add('open');
+  }
+  function closeSidebar(){
+    sidebarEl.classList.remove('open');
+    sidebarOverlayEl.classList.remove('open');
+  }
+  var navToggleBtn = document.getElementById('navToggle');
+  if(navToggleBtn) navToggleBtn.addEventListener('click', openSidebar);
+  var sidebarCloseBtn = document.getElementById('sidebarClose');
+  if(sidebarCloseBtn) sidebarCloseBtn.addEventListener('click', closeSidebar);
+  sidebarOverlayEl.addEventListener('click', closeSidebar);
+
+  var themeToggleBtn = document.getElementById('themeToggle');
+  if(themeToggleBtn){
+    themeToggleBtn.addEventListener('click', function(){
+      var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+      var next = cur === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      try{ localStorage.setItem('natcat_theme', next); }catch(e){}
+    });
+  }
+
+  var DATA = window.NATCAT_DATA || {records:[],regionMap:{},regionNames:{}};
+  var RECORDS = DATA.records;
+  var REGION_NAMES = DATA.regionNames;
+  var HAZARDS = [
+    {key:'all',     label:'ภาพรวมทุกภัย'},
+    {key:'eq',      label:'แผ่นดินไหว'},
+    {key:'hail',    label:'ลูกเห็บ'},
+    {key:'wind',    label:'วาตภัย'},
+    {key:'flood',   label:'น้ำท่วม'},
+    {key:'drought', label:'ภัยแล้ง'},
+    {key:'slide',   label:'ดินโคลนถล่ม'}
+  ];
+  var HAZ_KEYS = ['eq','hail','wind','flood','drought','slide'];
+  var HAZ_SHORT = {eq:'ไหว', hail:'ลูกเห็บ', wind:'ลม', flood:'น้ำ', drought:'แล้ง', slide:'ดิน'};
+  var HAZ_META = DATA.hazardMeta || [];
+  // Reference / criteria — read verbatim from column O of NAT CAT.xlsx (see DATA.legend).
+  var REF_TEXT = {}; // level key -> verbatim text from the workbook
+  (DATA.legend || []).forEach(function(l){ REF_TEXT[l.level] = l.text; });
+  // Short labels derived from the verbatim text, used for compact UI chips.
+  var LEVELS = [
+    {key:'veryhigh', match:'red',    label:'สูงมาก'},
+    {key:'high',     match:'orange', label:'สูง'},
+    {key:'medium',   match:'yellow', label:'ปานกลาง'},
+    {key:'low',      match:'green',  label:'ต่ำ'},
+    {key:'none',     match:null,     label:'ไม่พบข้อมูล'}
+  ];
+  var RANK = {red:4, orange:3, yellow:2, green:1};
+  var COLOR_TO_LEVELKEY = {red:'veryhigh', orange:'high', yellow:'medium', green:'low'};
+
+  var REGION_ORDER = ['north','northeast','central','east','west','south'];
+
+  // ---- state ----
+  var state = { tab:'map', hazard:'all', query:'', selectedProvince:null, mapRegion:'' };
+
+  // ---- group records by province ----
+  var byProvince = {};
+  RECORDS.forEach(function(r){
+    if(!byProvince[r.province]) byProvince[r.province] = { name:r.province, region:DATA.regionMap[r.province]||'central', districts:[] };
+    byProvince[r.province].districts.push(r);
+  });
+  var provincesAll = Object.keys(byProvince).map(function(k){return byProvince[k];});
+
+  function levelKeyForColor(c){ return c ? (COLOR_TO_LEVELKEY[c]||'none') : 'none'; }
+
+  function worstColor(colors){
+    var best = null, bestRank = -1;
+    colors.forEach(function(c){
+      if(c && RANK[c] > bestRank){ bestRank = RANK[c]; best = c; }
+    });
+    return best; // null => none
+  }
+
+  function districtColorFor(d, hazardKey){
+    if(hazardKey === 'all') return worstColor(HAZ_KEYS.map(function(k){ return d[k]; }));
+    return d[hazardKey];
+  }
+  function provinceColorFor(p, hazardKey){
+    return worstColor(p.districts.map(function(d){ return districtColorFor(d, hazardKey); }));
+  }
+
+  // ---- build nav ----
+  var navEl = document.getElementById('nav');
+  function regionCount(region){
+    return provincesAll.filter(function(p){return p.region===region;}).length;
+  }
+  var navItems = [
+    {key:'map', label:'แผนที่ระดับความเสี่ยง', count:null},
+    {key:'overview', label:'ภาพรวมประเทศไทย', count:provincesAll.length}
+  ].concat(REGION_ORDER.map(function(r){return {key:r, label:REGION_NAMES[r], count:regionCount(r)};}));
+
+  navItems.forEach(function(item){
+    var li = document.createElement('li');
+    var btn = document.createElement('button');
+    btn.type='button';
+    btn.dataset.tab = item.key;
+    btn.innerHTML = '<span class="nav-dot"></span><span>'+item.label+'</span>'+(item.count!=null ? '<span class="nav-count">'+item.count+'</span>' : '');
+    btn.addEventListener('click', function(){ state.tab = item.key; render(); closeSidebar(); });
+    li.appendChild(btn);
+    navEl.appendChild(li);
+  });
+
+  // ---- build hazard segmented control ----
+  var segEl = document.getElementById('hazardSeg');
+  var hazardSwatch = {eq:'var(--risk-veryhigh)', hail:'var(--risk-high)', wind:'var(--risk-medium)',
+                      flood:'var(--risk-low)', drought:'var(--risk-high)', slide:'var(--risk-none)'};
+  HAZARDS.forEach(function(h){
+    var btn = document.createElement('button');
+    btn.type='button';
+    btn.dataset.hazard = h.key;
+    btn.innerHTML = (h.key==='all' ? '' : '<span class="swatch" style="background:'+hazardSwatch[h.key]+'"></span>') + h.label;
+    btn.addEventListener('click', function(){ state.hazard = h.key; render(); });
+    segEl.appendChild(btn);
+  });
+
+  // ---- region picker for the risk-map tab ----
+  var regionSelect = document.getElementById('mapRegion');
+  (function(){
+    var opts = [['', 'ทั้งประเทศ']].concat(REGION_ORDER.map(function(r){ return [r, REGION_NAMES[r]]; }));
+    opts.forEach(function(o){
+      var el = document.createElement('option');
+      el.value = o[0]; el.textContent = o[1];
+      regionSelect.appendChild(el);
+    });
+    regionSelect.addEventListener('change', function(){
+      state.mapRegion = regionSelect.value;
+      // a province selected outside the new region would be unreachable on the map
+      if(state.selectedProvince && state.mapRegion &&
+         DATA.regionMap[state.selectedProvince] !== state.mapRegion){
+        state.selectedProvince = null;
+      }
+      render();
+    });
+  })();
+
+  // ---- clear all filters ----
+  function filtersActive(){
+    return state.hazard !== 'all' || !!state.mapRegion ||
+           !!state.query.trim() || !!state.selectedProvince;
+  }
+  document.getElementById('clearFilters').addEventListener('click', function(){
+    state.hazard = 'all';
+    state.mapRegion = '';
+    state.query = '';
+    state.selectedProvince = null;
+    document.getElementById('searchBox').value = '';
+    render();
+  });
+
+  // ---- legend (compact chips, full verbatim text on hover) ----
+  var legendEl = document.getElementById('legend');
+  LEVELS.forEach(function(l){
+    var item = document.createElement('div');
+    item.className='legend-item';
+    item.title = REF_TEXT[l.key] || l.label;
+    var chip = '<span class="legend-chip" style="'+(l.key==='none' ? 'background:transparent;border:1.5px dashed var(--risk-none);' : 'background:var(--risk-'+l.key+')')+'"></span>';
+    item.innerHTML = chip + l.label;
+    legendEl.appendChild(item);
+  });
+
+  // ---- reference panel (verbatim text from column O) ----
+  var refListEl = document.getElementById('refList');
+  LEVELS.forEach(function(l){
+    var li = document.createElement('li');
+    var chip = '<span class="ref-chip" style="'+(l.key==='none' ? 'background:transparent;border:1.5px dashed var(--risk-none);' : 'background:var(--risk-'+l.key+')')+'"></span>';
+    li.innerHTML = chip + '<span>' + (REF_TEXT[l.key] || l.label) + '</span>';
+    refListEl.appendChild(li);
+  });
+  (function(){
+    var box = document.getElementById('srcList');
+    HAZ_META.forEach(function(h){
+      var d = document.createElement('div');
+      d.className = 'src-item';
+      d.innerHTML =
+        '<div class="src-head"><span class="src-dot" style="background:'+(hazardSwatch[h.key]||'var(--risk-none)')+'"></span>' +
+        '<b>'+h.label+'</b> <span class="src-lv">ระดับ'+h.level+'</span></div>' +
+        '<div class="src-line"><span class="src-k">ที่มา</span> '+h.source+'</div>' +
+        '<div class="src-line"><span class="src-k">ข้อมูล ณ</span> '+h.asof+'</div>' +
+        '<div class="src-line"><span class="src-k">วิธีจัดชั้น</span> '+h.method+'</div>' +
+        '<div class="src-line"><a href="'+h.url+'" target="_blank" rel="noopener">'+h.url+'</a></div>';
+      box.appendChild(d);
+    });
+  })();
+  document.getElementById('refSource').innerHTML =
+    'รวบรวมและจัดชั้นโดย Claude จากชุดข้อมูลเปิดของหน่วยงานราชการไทย · ' +
+    'ไม่ใช่เอกสารทางการของหน่วยงานใด และไม่ได้ทดแทนไฟล์ NAT CAT ฉบับภายในของบริษัท ' +
+    '— ควรให้ผู้รับผิดชอบตรวจสอบก่อนนำไปใช้ตัดสินใจ';
+  document.getElementById('refToggle').addEventListener('click', function(){
+    document.getElementById('refPanel').classList.toggle('open');
+  });
+
+  // ---- Thailand map ----
+  var mapSvg = document.getElementById('mapSvg');
+  var mapTooltip = document.getElementById('mapTooltip');
+  var mapWrap = document.getElementById('mapWrap');
+  var pathByName = {};
+
+  var labelByName = {};
+
+  function initMap(){
+    var TH_MAP = window.TH_MAP;
+    if(!TH_MAP){ mapWrap.hidden = true; return; }
+    var vb = TH_MAP.viewBox;
+    mapSvg.setAttribute('viewBox', vb.minx+' '+vb.miny+' '+vb.w+' '+vb.h);
+    TH_MAP.provinces.forEach(function(tp){
+      var path = document.createElementNS('http://www.w3.org/2000/svg','path');
+      path.setAttribute('d', tp.d);
+      path.setAttribute('class','th-province');
+      path.addEventListener('mouseenter', function(ev){ showTooltip(tp.name_th, ev); });
+      path.addEventListener('mousemove', moveTooltip);
+      path.addEventListener('mouseleave', hideTooltip);
+      path.addEventListener('click', function(){ onProvinceClick(tp.name_th); });
+      mapSvg.appendChild(path);
+      pathByName[tp.name_th] = path;
+    });
+    // province name labels — drawn after all fills so they sit on top,
+    // pointer-events off so hover/click still hit the province shape underneath.
+    TH_MAP.provinces.forEach(function(tp){
+      var label = document.createElementNS('http://www.w3.org/2000/svg','text');
+      label.setAttribute('class','th-label');
+      label.setAttribute('x', tp.cx);
+      label.setAttribute('y', tp.cy);
+      label.textContent = tp.name_th;
+      mapSvg.appendChild(label);
+      labelByName[tp.name_th] = label;
+    });
+  }
+
+  function showTooltip(name, ev){
+    var p = byProvince[name];
+    if(!p) return;
+    var haz = HAZARDS.filter(function(h){ return h.key !== 'all'; }).map(function(h){ return [h.key, h.label]; });
+    var rows = haz.map(function(pair){
+      var c = provinceColorFor(p, pair[0]);
+      var lvl = levelKeyForColor(c);
+      var lvlLabel = LEVELS.filter(function(l){return l.key===lvl;})[0].label;
+      var dotStyle = c ? 'background:var(--risk-'+lvl+')' : 'background:transparent;border:1.5px solid var(--risk-none)';
+      return '<div class="tt-row"><span class="tt-dot" style="'+dotStyle+'"></span>'+pair[1]+': '+lvlLabel+'</div>';
+    }).join('');
+    var f68 = flood68Text(name);
+    mapTooltip.innerHTML = '<b>'+name+'</b>' + rows +
+      (f68 ? '<div class="tt-row" style="opacity:.75;margin-top:3px">'+f68+'</div>' : '');
+    mapTooltip.style.display = 'block';
+    moveTooltip(ev);
+  }
+  function moveTooltip(ev){
+    var rect = mapWrap.getBoundingClientRect();
+    mapTooltip.style.left = (ev.clientX - rect.left) + 'px';
+    mapTooltip.style.top = (ev.clientY - rect.top) + 'px';
+  }
+  function hideTooltip(){ mapTooltip.style.display = 'none'; }
+
+  function onProvinceClick(name){
+    var path = pathByName[name];
+    if(path && path.classList.contains('muted')) return;
+    state.selectedProvince = name;
+    render();
+    requestAnimationFrame(function(){
+      var el = document.getElementById('provinceDetail');
+      if(el) el.scrollIntoView({behavior:'smooth', block:'nearest'});
+    });
+  }
+
+  function renderProvinceDetail(hazardKey){
+    var panel = document.getElementById('provinceDetail');
+    var name = state.selectedProvince;
+    var p = name && byProvince[name];
+    if(!p){ panel.hidden = true; panel.innerHTML=''; return; }
+    panel.hidden = false;
+    var pColor = provinceColorFor(p, hazardKey);
+    var districts = p.districts.slice().sort(function(a,b){ return a.district.localeCompare(b.district,'th'); });
+    panel.innerHTML =
+      '<div class="pd-head">' +
+        badgeHtml(pColor,false) +
+        '<div><div class="p-name">'+p.name+'</div><div class="p-meta">'+p.districts.length+' อำเภอ · '+REGION_NAMES[p.region]+
+          (flood68Text(p.name) ? ' · ' + flood68Text(p.name) : '') + '</div></div>' +
+        '<button type="button" class="pd-close" id="pdClose" aria-label="ปิด">✕</button>' +
+      '</div>' +
+      '<div class="p-body open" style="display:block">' +
+        districts.map(function(d){
+          return '<div class="d-row"><div><div class="d-name">'+d.district+'</div>' +
+            '<div class="d-postal">'+(d.postal||'')+(d.postal_office?(' · '+d.postal_office):'')+'</div>' +
+            evidenceHtml(d) +
+            (d.note ? '<div class="d-note">'+d.note+'</div>' : '') +
+            '</div>' + dotRow(d) + '</div>';
+        }).join('') +
+      '</div>';
+    document.getElementById('pdClose').addEventListener('click', function(){
+      state.selectedProvince = null;
+      render();
+    });
+  }
+
+  function updateMap(activeRegion, hazardKey, query){
+    var TH_MAP = window.TH_MAP;
+    if(!TH_MAP) return;
+
+    // update visibility + fill first -- the viewBox math below reads getBBox(),
+    // which returns a zero/garbage box for a display:none element, so provinces
+    // must already be shown/hidden before we measure anything.
+    TH_MAP.provinces.forEach(function(tp){
+      var path = pathByName[tp.name_th];
+      var label = labelByName[tp.name_th];
+      var p = byProvince[tp.name_th];
+      var inRegion = !activeRegion || DATA.regionMap[tp.name_th] === activeRegion;
+      var matchesQ = !query || matchesQuery(p, query);
+      path.classList.toggle('muted', !inRegion);
+      path.classList.toggle('dim', inRegion && !matchesQ);
+      label.classList.toggle('muted', !inRegion);
+      label.classList.toggle('dim', inRegion && !matchesQ);
+      var color = p ? provinceColorFor(p, hazardKey) : null;
+      path.style.fill = color ? 'var(--risk-'+levelKeyForColor(color)+')' : 'var(--risk-none-bg)';
+    });
+
+    if(activeRegion){
+      var minx=Infinity,miny=Infinity,maxx=-Infinity,maxy=-Infinity;
+      TH_MAP.provinces.forEach(function(tp){
+        if(DATA.regionMap[tp.name_th] !== activeRegion) return;
+        var b = pathByName[tp.name_th].getBBox();
+        minx=Math.min(minx,b.x); miny=Math.min(miny,b.y);
+        maxx=Math.max(maxx,b.x+b.width); maxy=Math.max(maxy,b.y+b.height);
+      });
+      if(isFinite(minx)){
+        // even padding on all sides keeps the region centred in the panel
+        var padX=(maxx-minx)*0.1 || 0.5, padY=(maxy-miny)*0.1 || 0.5;
+        mapSvg.setAttribute('viewBox', (minx-padX)+' '+(miny-padY)+' '+(maxx-minx+2*padX)+' '+(maxy-miny+2*padY));
+      }
+    } else {
+      var vb = TH_MAP.viewBox;
+      mapSvg.setAttribute('viewBox', vb.minx+' '+vb.miny+' '+vb.w+' '+vb.h);
+    }
+  }
+
+  // ---- rendering ----
+  var openCards = {}; // province name -> bool
+
+  function matchesQuery(p, q){
+    if(!q) return true;
+    q = q.toLowerCase();
+    if(p.name.toLowerCase().indexOf(q) !== -1) return true;
+    return p.districts.some(function(d){
+      return (d.district && d.district.toLowerCase().indexOf(q)!==-1) ||
+             (String(d.postal||'').indexOf(q)!==-1);
+    });
+  }
+  function districtMatches(d, q){
+    if(!q) return true;
+    q = q.toLowerCase();
+    return (d.district && d.district.toLowerCase().indexOf(q)!==-1) ||
+           (String(d.postal||'').indexOf(q)!==-1) ||
+           (d.province && d.province.toLowerCase().indexOf(q)!==-1);
+  }
+
+  function badgeHtml(color, small){
+    if(color){
+      return '<div class="'+(small?'p-dot':'p-badge')+'" style="background:var(--risk-'+levelKeyForColor(color)+')"></div>';
+    }
+    return '<div class="'+(small?'p-dot none':'p-badge none')+'">'+(small?'':'—')+'</div>';
+  }
+
+  var FLOOD68 = DATA.flood2568 || {};
+  function flood68Text(prov){
+    var f = FLOOD68[prov];
+    if(!f || !f.times) return '';
+    return 'ปภ. 2568: อุทกภัย ' + f.times + ' ครั้ง · ' + f.amphoe + ' อำเภอ · ' + f.tambon + ' ตำบล';
+  }
+  function fmt(n){ return (n||0).toLocaleString('th-TH'); }
+  function evidenceHtml(d){
+    var e = d.ev; if(!e) return '';
+    var bits = [];
+    if(e.eqZone) bits.push('แผ่นดินไหว: '+e.eqZone);
+    if(e.floodArea) bits.push('น้ำท่วมซ้ำซาก 8–10/4–7/<3 ครั้ง: '+fmt(e.floodArea[0])+'/'+fmt(e.floodArea[1])+'/'+fmt(e.floodArea[2])+' ไร่');
+    if(e.floodDays) bits.push('อุทกภัยที่รายงาน '+e.floodDays+' วัน/6 ปี' + (e.floodAgri ? ' (เกษตรเสียหาย '+fmt(e.floodAgri)+' ไร่)' : ''));
+    if(e.droughtArea) bits.push('แล้งซ้ำซาก ≥6/4–5/<3 ครั้ง: '+fmt(e.droughtArea[0])+'/'+fmt(e.droughtArea[1])+'/'+fmt(e.droughtArea[2])+' ไร่');
+    if(e.windDays) bits.push('วาตภัย '+e.windDays+' วัน/6 ปี');
+    if(e.hailDays) bits.push('พายุฤดูร้อน '+e.hailDays+' วัน/6 ปี');
+    if(e.slideDays) bits.push('ดินโคลนถล่ม '+e.slideDays+' วัน/6 ปี');
+    if(e.windAgri) bits.push('เกษตรเสียหายจากวาตภัย '+fmt(e.windAgri)+' ไร่');
+    return bits.length ? '<div class="ev-line">'+bits.join(' · ')+'</div>' : '';
+  }
+
+  function dotRow(d){
+    var order = HAZ_KEYS.map(function(k){ return [k, HAZ_SHORT[k]]; });
+    return '<div class="d-dots">'+order.map(function(pair){
+      var c = d[pair[0]];
+      var dot = c ? '<div class="d-dot" style="background:var(--risk-'+levelKeyForColor(c)+')"></div>' : '<div class="d-dot none"></div>';
+      return '<div class="d-dot-wrap">'+dot+'<span class="d-dot-label">'+pair[1]+'</span></div>';
+    }).join('') + '</div>';
+  }
+
+  function renderStats(list, hazardKey, elId){
+    var counts = {veryhigh:0, high:0, medium:0, low:0, none:0};
+    var totalDistricts = 0;
+    list.forEach(function(p){
+      p.districts.forEach(function(d){
+        totalDistricts++;
+        var c = districtColorFor(d, hazardKey);
+        counts[levelKeyForColor(c)]++;
+      });
+    });
+    var order = [
+      {k:'veryhigh', label:'สูงมาก', color:'var(--risk-veryhigh)'},
+      {k:'high',     label:'สูง',     color:'var(--risk-high)'},
+      {k:'medium',   label:'ปานกลาง', color:'var(--risk-medium)'},
+      {k:'low',      label:'ต่ำ',     color:'var(--risk-low)'},
+      {k:'none',     label:'ไม่พบข้อมูล', color:'var(--risk-none)'}
+    ];
+    var statsEl = document.getElementById(elId || 'stats');
+    statsEl.innerHTML = '<div class="stat-card" style="--stat-color:var(--brand)"><div class="stat-num">'+totalDistricts+'</div><div class="stat-label">อำเภอทั้งหมด'+(list.length?(' · '+list.length+' จังหวัด'):'')+'</div></div>' +
+      order.map(function(o){
+        return '<div class="stat-card" style="--stat-color:'+o.color+'"><div class="stat-num">'+counts[o.k]+'</div><div class="stat-label">ระดับ'+o.label+'</div></div>';
+      }).join('');
+  }
+
+  function render(){
+    // nav active state
+    Array.prototype.forEach.call(navEl.querySelectorAll('button'), function(b){
+      b.classList.toggle('active', b.dataset.tab === state.tab);
+    });
+    // hazard active state
+    Array.prototype.forEach.call(segEl.querySelectorAll('button'), function(b){
+      b.classList.toggle('active', b.dataset.hazard === state.hazard);
+    });
+
+    document.getElementById('clearFilters').hidden = !filtersActive();
+
+    var isMapTab = state.tab === 'map';
+    var isOverview = state.tab === 'overview';
+    var q = state.query.trim();
+    var hazardLabel = HAZARDS.filter(function(h){return h.key===state.hazard;})[0].label;
+
+    document.getElementById('mapTabContent').hidden = !isMapTab;
+    document.getElementById('listTabContent').hidden = isMapTab;
+
+    if(isMapTab){
+      var mapRegion = state.mapRegion || '';
+      var mapScope = mapRegion
+        ? provincesAll.filter(function(p){ return p.region === mapRegion; })
+        : provincesAll;
+      regionSelect.value = mapRegion;
+      document.getElementById('regionFilter').hidden = false;
+
+      document.getElementById('pageTitle').textContent = 'แผนที่ระดับความเสี่ยง';
+      document.getElementById('pageLede').textContent = mapRegion
+        ? 'ระดับความเสี่ยงภัยธรรมชาติใน' + REGION_NAMES[mapRegion] + ' (' + mapScope.length + ' จังหวัด)'
+        : 'ภาพรวมระดับความเสี่ยงภัยธรรมชาติทั่วประเทศไทย บนแผนที่รายจังหวัด (' + provincesAll.length + ' จังหวัด)';
+      document.getElementById('mapTitle').textContent =
+        'แผนที่ระดับความเสี่ยง — ' + hazardLabel + (mapRegion ? ' · ' + REGION_NAMES[mapRegion] : '');
+      updateMap(mapRegion || null, state.hazard, q);
+      renderStats(mapScope, state.hazard, 'mapStats');
+      renderProvinceDetail(state.hazard);
+      return;
+    }
+    document.getElementById('regionFilter').hidden = !isOverview;
+
+    var overviewRegion = isOverview ? (state.mapRegion || '') : '';
+    var scopeList = isOverview
+      ? (overviewRegion ? provincesAll.filter(function(p){ return p.region === overviewRegion; }) : provincesAll)
+      : provincesAll.filter(function(p){return p.region===state.tab;});
+
+    if(isOverview) regionSelect.value = overviewRegion;
+
+    document.getElementById('pageTitle').textContent = isOverview
+      ? (overviewRegion ? REGION_NAMES[overviewRegion] : 'ภาพรวมประเทศไทย')
+      : REGION_NAMES[state.tab];
+    document.getElementById('pageLede').textContent = isOverview
+      ? (overviewRegion
+          ? 'ระดับความเสี่ยงภัยธรรมชาติใน' + REGION_NAMES[overviewRegion] + ' (' + scopeList.length + ' จังหวัด)'
+          : 'ระดับความเสี่ยงภัยธรรมชาติรายจังหวัด/อำเภอ ทั่วประเทศ (' + provincesAll.length + ' จังหวัด)')
+      : 'จังหวัดในภูมิภาคนี้ ' + scopeList.length + ' จังหวัด';
+
+    var filtered = scopeList.filter(function(p){ return matchesQuery(p, q); })
+      .slice()
+      .sort(function(a,b){ return a.name.localeCompare(b.name, 'th'); });
+
+    renderStats(filtered, state.hazard, 'stats');
+
+    document.getElementById('gridTitle').textContent = isOverview
+      ? (overviewRegion ? 'รายจังหวัดใน'+REGION_NAMES[overviewRegion] : 'รายจังหวัดทั้งหมด')
+      : 'จังหวัดใน'+REGION_NAMES[state.tab];
+    document.getElementById('gridCount').textContent = filtered.length + ' จังหวัด';
+
+    var gridEl = document.getElementById('grid');
+    var emptyEl = document.getElementById('emptyState');
+    gridEl.innerHTML = '';
+    emptyEl.hidden = filtered.length !== 0;
+
+    filtered.forEach(function(p){
+      var pColor = provinceColorFor(p, state.hazard);
+      var isOpen = !!openCards[p.name] || !!q;
+      var card = document.createElement('div');
+      card.className = 'p-card' + (isOpen ? ' open' : '');
+      card.id = 'card-' + p.name;
+
+      var dotsHtml = '';
+      if(state.hazard === 'all'){
+        var haz = HAZ_KEYS.map(function(k){ return [k]; });
+        dotsHtml = '<div class="p-dots">' + haz.map(function(pair){
+          var c = provinceColorFor(p, pair[0]);
+          return c ? '<div class="p-dot" style="background:var(--risk-'+levelKeyForColor(c)+')"></div>' : '<div class="p-dot none"></div>';
+        }).join('') + '</div>';
+      }
+
+      var districts = p.districts.filter(function(d){ return districtMatches(d, q); })
+        .slice().sort(function(a,b){ return a.district.localeCompare(b.district,'th'); });
+
+      card.innerHTML =
+        '<button type="button" class="p-head">' +
+          badgeHtml(pColor,false) +
+          '<div><div class="p-name">'+p.name+'</div><div class="p-meta">'+p.districts.length+' อำเภอ</div></div>' +
+          dotsHtml +
+          '<svg class="p-chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="6 9 12 15 18 9"/></svg>' +
+        '</button>' +
+        '<div class="p-body">' +
+          districts.map(function(d){
+            return '<div class="d-row"><div><div class="d-name">'+d.district+'</div>' +
+              '<div class="d-postal">'+(d.postal||'')+(d.postal_office?(' · '+d.postal_office):'')+'</div>' +
+              (d.note ? '<div class="d-note">'+d.note+'</div>' : '') +
+              '</div>' + dotRow(d) + '</div>';
+          }).join('') +
+        '</div>';
+
+      card.querySelector('.p-head').addEventListener('click', function(){
+        openCards[p.name] = !openCards[p.name];
+        card.classList.toggle('open', !!openCards[p.name]);
+      });
+
+      gridEl.appendChild(card);
+    });
+  }
+
+  document.getElementById('searchBox').addEventListener('input', function(e){
+    state.query = e.target.value;
+    render();
+  });
+
+  initMap();
+  render();
+})();
+</script>
+
+</body>
+</html>
