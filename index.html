@@ -11,6 +11,10 @@
 <script src="data_updated.js"></script>
 <script src="map_paths.js"></script>
 <style>
+  /* the claude.ai artifact skeleton adds this reset for free; the standalone
+     (GitHub Pages) build does not, so any element toggled via el.hidden needs it
+     explicitly or an author display:X rule of equal specificity can win instead. */
+  [hidden]{display:none!important;}
   :root{
     --bg:#FAF7F4;
     --surface:#FFFFFF;
