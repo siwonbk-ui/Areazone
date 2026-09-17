@@ -277,7 +277,7 @@
     cursor:pointer;transition:opacity .12s, filter .12s, fill .15s;
   }
   .th-province:hover{filter:brightness(0.92);}
-  .th-province.muted{cursor:default;opacity:.22;}
+  .th-province.muted{display:none;}
   .th-province.dim{opacity:.32;}
   .th-label{
     font-family:'Noto Sans Thai',sans-serif;font-weight:600;
@@ -287,7 +287,7 @@
     pointer-events:none;user-select:none;
     transition:opacity .12s;
   }
-  .th-label.muted{opacity:.18;}
+  .th-label.muted{display:none;}
   .th-label.dim{opacity:.25;}
   .th-label.hidden-label{display:none;}
   .map-tooltip{
@@ -807,23 +807,10 @@
   function updateMap(activeRegion, hazardKey, query){
     var TH_MAP = window.TH_MAP;
     if(!TH_MAP) return;
-    if(activeRegion){
-      var minx=Infinity,miny=Infinity,maxx=-Infinity,maxy=-Infinity;
-      TH_MAP.provinces.forEach(function(tp){
-        if(DATA.regionMap[tp.name_th] !== activeRegion) return;
-        var b = pathByName[tp.name_th].getBBox();
-        minx=Math.min(minx,b.x); miny=Math.min(miny,b.y);
-        maxx=Math.max(maxx,b.x+b.width); maxy=Math.max(maxy,b.y+b.height);
-      });
-      if(isFinite(minx)){
-        var padX=(maxx-minx)*0.1 || 0.5, padY=(maxy-miny)*0.1 || 0.5;
-        mapSvg.setAttribute('viewBox', (minx-padX)+' '+(miny-padY)+' '+(maxx-minx+2*padX)+' '+(maxy-miny+2*padY));
-      }
-    } else {
-      var vb = TH_MAP.viewBox;
-      mapSvg.setAttribute('viewBox', vb.minx+' '+vb.miny+' '+vb.w+' '+vb.h);
-    }
 
+    // update visibility + fill first -- the viewBox math below reads getBBox(),
+    // which returns a zero/garbage box for a display:none element, so provinces
+    // must already be shown/hidden before we measure anything.
     TH_MAP.provinces.forEach(function(tp){
       var path = pathByName[tp.name_th];
       var label = labelByName[tp.name_th];
@@ -837,6 +824,24 @@
       var color = p ? provinceColorFor(p, hazardKey) : null;
       path.style.fill = color ? 'var(--risk-'+levelKeyForColor(color)+')' : 'var(--risk-none-bg)';
     });
+
+    if(activeRegion){
+      var minx=Infinity,miny=Infinity,maxx=-Infinity,maxy=-Infinity;
+      TH_MAP.provinces.forEach(function(tp){
+        if(DATA.regionMap[tp.name_th] !== activeRegion) return;
+        var b = pathByName[tp.name_th].getBBox();
+        minx=Math.min(minx,b.x); miny=Math.min(miny,b.y);
+        maxx=Math.max(maxx,b.x+b.width); maxy=Math.max(maxy,b.y+b.height);
+      });
+      if(isFinite(minx)){
+        // even padding on all sides keeps the region centred in the panel
+        var padX=(maxx-minx)*0.1 || 0.5, padY=(maxy-miny)*0.1 || 0.5;
+        mapSvg.setAttribute('viewBox', (minx-padX)+' '+(miny-padY)+' '+(maxx-minx+2*padX)+' '+(maxy-miny+2*padY));
+      }
+    } else {
+      var vb = TH_MAP.viewBox;
+      mapSvg.setAttribute('viewBox', vb.minx+' '+vb.miny+' '+vb.w+' '+vb.h);
+    }
   }
 
   // ---- rendering ----
@@ -959,13 +964,22 @@
       renderProvinceDetail(state.hazard);
       return;
     }
-    document.getElementById('regionFilter').hidden = true;
+    document.getElementById('regionFilter').hidden = !isOverview;
 
-    var scopeList = isOverview ? provincesAll : provincesAll.filter(function(p){return p.region===state.tab;});
+    var overviewRegion = isOverview ? (state.mapRegion || '') : '';
+    var scopeList = isOverview
+      ? (overviewRegion ? provincesAll.filter(function(p){ return p.region === overviewRegion; }) : provincesAll)
+      : provincesAll.filter(function(p){return p.region===state.tab;});
 
-    document.getElementById('pageTitle').textContent = isOverview ? 'ภาพรวมประเทศไทย' : REGION_NAMES[state.tab];
+    if(isOverview) regionSelect.value = overviewRegion;
+
+    document.getElementById('pageTitle').textContent = isOverview
+      ? (overviewRegion ? REGION_NAMES[overviewRegion] : 'ภาพรวมประเทศไทย')
+      : REGION_NAMES[state.tab];
     document.getElementById('pageLede').textContent = isOverview
-      ? 'ระดับความเสี่ยงภัยธรรมชาติรายจังหวัด/อำเภอ ทั่วประเทศ (' + provincesAll.length + ' จังหวัด)'
+      ? (overviewRegion
+          ? 'ระดับความเสี่ยงภัยธรรมชาติใน' + REGION_NAMES[overviewRegion] + ' (' + scopeList.length + ' จังหวัด)'
+          : 'ระดับความเสี่ยงภัยธรรมชาติรายจังหวัด/อำเภอ ทั่วประเทศ (' + provincesAll.length + ' จังหวัด)')
       : 'จังหวัดในภูมิภาคนี้ ' + scopeList.length + ' จังหวัด';
 
     var filtered = scopeList.filter(function(p){ return matchesQuery(p, q); })
@@ -974,7 +988,9 @@
 
     renderStats(filtered, state.hazard, 'stats');
 
-    document.getElementById('gridTitle').textContent = isOverview ? 'รายจังหวัดทั้งหมด' : 'จังหวัดใน'+REGION_NAMES[state.tab];
+    document.getElementById('gridTitle').textContent = isOverview
+      ? (overviewRegion ? 'รายจังหวัดใน'+REGION_NAMES[overviewRegion] : 'รายจังหวัดทั้งหมด')
+      : 'จังหวัดใน'+REGION_NAMES[state.tab];
     document.getElementById('gridCount').textContent = filtered.length + ' จังหวัด';
 
     var gridEl = document.getElementById('grid');
