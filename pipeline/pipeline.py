@@ -455,22 +455,42 @@ def build(state):
         wn, hn, sn = len(storm_days.get(k, ())), len(hail_days.get(k, ())), len(slide_days.get(k, ()))
         fd = len(flood_days.get(k, ()))
         eq = eq_zone.get(p, (None, None))
+
+        hail = cls_count(hn, cuts['hail'])
+        wind = cls_count(wn, cuts['wind'])
+        flood = worst(cls_flood_area(fa), cls_count(fd, cuts['flood']))
+
+        # fall back to the original NAT CAT.xlsx value for a hazard/district the
+        # public sources don't cover at all (drought/slide have no counterpart
+        # in that file, so they're never filled this way).
+        eq_val, eq_from_xlsx = eq[0], False
+        if eq_val is None and r.get('xlsx_eq'):
+            eq_val, eq_from_xlsx = r['xlsx_eq'], True
+        flood_from_xlsx = False
+        if flood is None and r.get('xlsx_flood'):
+            flood, flood_from_xlsx = r['xlsx_flood'], True
+        wind_from_xlsx = False
+        if wind is None and r.get('xlsx_wind'):
+            wind, wind_from_xlsx = r['xlsx_wind'], True
+        hail_from_xlsx = False
+        if hail is None and r.get('xlsx_hail'):
+            hail, hail_from_xlsx = r['xlsx_hail'], True
+
         records.append({
             'province': p, 'district': r['district'], 'postal': r['postal'],
             'postal_office': r['postal_office'], 'note': r['note'],
-            'eq': eq[0],
-            'hail': cls_count(hn, cuts['hail']),
-            'wind': cls_count(wn, cuts['wind']),
-            'flood': worst(cls_flood_area(fa), cls_count(fd, cuts['flood'])),
+            'eq': eq_val, 'hail': hail, 'wind': wind, 'flood': flood,
             'drought': cls_drought_area(da, cuts['drought']),
             'slide': cls_count(sn, cuts['slide']),
             'ev': {
-                'eqZone': eq[1],
+                'eqZone': eq[1] if not eq_from_xlsx else None,
                 'floodArea': [round(x) for x in fa] if fa else None,
                 'droughtArea': [round(x) for x in da] if da else None,
                 'windDays': wn, 'hailDays': hn, 'slideDays': sn, 'floodDays': fd,
                 'floodAgri': round(flood_agri.get(k, 0)),
                 'windAgri': round(storm_agri.get(k, 0)),
+                'fromXlsx': [kk for kk, f in (('eq', eq_from_xlsx), ('flood', flood_from_xlsx),
+                                               ('wind', wind_from_xlsx), ('hail', hail_from_xlsx)) if f],
             },
         })
 
@@ -488,10 +508,13 @@ def build(state):
         'drought': 'แดง ≥%s ไร่ (p90) · ส้ม ≥%s ไร่ (p70) · เหลือง ≥%s ไร่ (p50)'
                    % tuple(format(int(x), ',') for x in cuts['drought']),
     }
+    xlsx_fallback_note = 'อำเภอที่ไม่มีข้อมูลจากแหล่งเปิดภาครัฐเลย ใช้ค่าจากไฟล์ NAT CAT.xlsx ภายในแทนถ้ามี'
     for m in meta:
         m['asof'] = m['asof'].replace('{{YEARS}}', span)
         if m['key'] in cut_txt:
             m['method'] = re.sub(r'· แดง.*$', '', m['method']).strip() + ' · ' + cut_txt[m['key']]
+        if m['key'] in ('flood', 'wind', 'hail'):  # 'eq' already mentions this in its own text
+            m['method'] = m['method'].rstrip('.') + ' · ' + xlsx_fallback_note
         m['autoCalibrated'] = m['key'] in cut_txt
 
     out = {
