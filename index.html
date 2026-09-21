@@ -893,6 +893,10 @@
     if(e.hailDays) bits.push('พายุฤดูร้อน '+e.hailDays+' วัน/6 ปี');
     if(e.slideDays) bits.push('ดินโคลนถล่ม '+e.slideDays+' วัน/6 ปี');
     if(e.windAgri) bits.push('เกษตรเสียหายจากวาตภัย '+fmt(e.windAgri)+' ไร่');
+    if(e.fromXlsx && e.fromXlsx.length){
+      var xlsxLabels = e.fromXlsx.map(function(k){ return HAZ_SHORT[k] || k; });
+      bits.push('<b>'+xlsxLabels.join('/')+'</b> ไม่มีข้อมูลจากแหล่งเปิดภาครัฐ ใช้ค่าจากไฟล์ NAT CAT.xlsx ภายในแทน');
+    }
     return bits.length ? '<div class="ev-line">'+bits.join(' · ')+'</div>' : '';
   }
 
