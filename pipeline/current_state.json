@@ -11,7 +11,7 @@
     ],
     "intervalHours": 1,
     "staleHours": 48,
-    "lastAttemptAt": "2026-09-24T14:38:49+00:00",
+    "lastAttemptAt": "2026-09-24T17:53:39+00:00",
     "lastSuccessAt": "2026-09-24T11:44:06+00:00",
     "events": [
       {
@@ -200,7 +200,9 @@
     ],
     "status": "unavailable",
     "error": "HTTPError",
-    "newestPublishedAt": "2026-09-24T02:50:40+00:00"
+    "newestPublishedAt": "2026-09-24T02:50:40+00:00",
+    "httpStatus": 403,
+    "errorDetail": "HTTP 403"
   },
   "tmd-earthquake": {
     "id": "tmd-earthquake",
@@ -212,8 +214,8 @@
     ],
     "intervalHours": 2,
     "staleHours": 48,
-    "lastAttemptAt": "2026-09-24T14:38:49+00:00",
-    "lastSuccessAt": "2026-09-24T14:38:49+00:00",
+    "lastAttemptAt": "2026-09-24T17:53:39+00:00",
+    "lastSuccessAt": "2026-09-24T17:53:39+00:00",
     "events": [
       {
         "id": "44f5375e69ad61b21d789090",

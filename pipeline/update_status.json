@@ -1,13 +1,13 @@
 {
-  "baselineCheckDay": "2026-09-24",
-  "baselineCheckedAt": "2026-09-24T14:37:57+00:00",
+  "baselineCheckDay": "2026-09-25",
+  "baselineCheckedAt": "2026-09-24T17:52:01+00:00",
   "baselineStatus": "unavailable",
-  "baselineError": "Incident date header missing: 2564_สถิติรายปีการเกิดอุทกภัย",
+  "baselineError": "The read operation timed out",
   "currentSources": {
     "dmr": "unavailable",
     "tmd-earthquake": "ok"
   },
-  "checkedAt": "2026-09-24T14:38:52+00:00",
+  "checkedAt": "2026-09-24T17:53:42+00:00",
   "status": "degraded",
   "review": {
     "status": "pending_review",
@@ -16,5 +16,13 @@
     "blockedHazards": [
       "flood"
     ]
-  }
+  },
+  "currentSourceErrors": {
+    "dmr": {
+      "error": "HTTPError",
+      "httpStatus": 403,
+      "errorDetail": "HTTP 403"
+    }
+  },
+  "baselineQuality": "blocked"
 }
