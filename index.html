@@ -9,12 +9,19 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@500;600;700&family=Noto+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script src="data_updated.js"></script>
+<script src="current_data.js"></script>
+<script src="current_view.js"></script>
 <script src="map_paths.js"></script>
 <style>
   /* the claude.ai artifact skeleton adds this reset for free; the standalone
      (GitHub Pages) build does not, so any element toggled via el.hidden needs it
      explicitly or an author display:X rule of equal specificity can win instead. */
   [hidden]{display:none!important;}
+  #currentTabContent{font-size:14px;line-height:1.65;}
+  #currentTabContent h2{font-size:18px;margin-top:24px;}
+  #currentTabContent h3{font-size:15px;margin:0 0 10px;}
+  #currentTabContent p{color:var(--text-muted);}
+  #currentTabContent a{color:var(--brand);overflow-wrap:anywhere;}
   :root{
     --bg:#FAF7F4;
     --surface:#FFFFFF;
@@ -447,6 +454,11 @@
           <div class="lede" id="pageLede">ระดับความเสี่ยงภัยธรรมชาติรายจังหวัด/อำเภอ ทั่วประเทศ</div>
         </div>
       </div>
+      <div class="seg" id="modeSeg" aria-label="โหมดข้อมูล" style="margin:16px 0">
+        <button type="button" data-mode="baseline" class="active" aria-pressed="true">ความเสี่ยงพื้นฐาน / NAT CAT</button>
+        <button type="button" data-mode="current" aria-pressed="false">สถานการณ์ล่าสุด</button>
+      </div>
+      <p id="modeNote" class="lede" role="status"></p>
       <div class="controls">
         <div class="seg" id="hazardSeg"></div>
         <div class="search">
@@ -481,6 +493,7 @@
     </div>
 
     <div class="content">
+      <section id="currentTabContent" hidden aria-label="สถานการณ์ล่าสุด"></section>
       <div id="mapTabContent">
         <div class="map-card">
           <div class="map-card-head">
@@ -568,7 +581,10 @@
   var REGION_ORDER = ['north','northeast','central','east','west','south'];
 
   // ---- state ----
-  var state = { tab:'map', hazard:'all', query:'', selectedProvince:null, mapRegion:'' };
+  var state = { mode:'baseline', tab:'map', hazard:'all', query:'', selectedProvince:null, mapRegion:'' };
+  document.querySelectorAll('#modeSeg button').forEach(function(button){
+    button.addEventListener('click', function(){ state.mode = button.dataset.mode; render(); });
+  });
 
   // ---- group records by province ----
   var byProvince = {};
@@ -694,14 +710,19 @@
         '<div class="src-line"><span class="src-k">ที่มา</span> '+h.source+'</div>' +
         '<div class="src-line"><span class="src-k">ข้อมูล ณ</span> '+h.asof+'</div>' +
         '<div class="src-line"><span class="src-k">วิธีจัดชั้น</span> '+h.method+'</div>' +
-        '<div class="src-line"><a href="'+h.url+'" target="_blank" rel="noopener">'+h.url+'</a></div>';
+        '<div class="src-line"></div>';
+      (h.urls || (h.url ? h.url.split(/\s+·\s+/) : [])).forEach(function(url){
+        if(!/^https:\/\//.test(url) || /\s/.test(url)) return;
+        var link = document.createElement('a');
+        link.href = url; link.target = '_blank'; link.rel = 'noopener'; link.textContent = url;
+        d.lastChild.appendChild(link); d.lastChild.appendChild(document.createElement('br'));
+      });
       box.appendChild(d);
     });
   })();
   document.getElementById('refSource').innerHTML =
-    'รวบรวมและจัดชั้นโดย Claude จากชุดข้อมูลเปิดของหน่วยงานราชการไทย · ' +
-    'ไม่ใช่เอกสารทางการของหน่วยงานใด และไม่ได้ทดแทนไฟล์ NAT CAT ฉบับภายในของบริษัท ' +
-    '— ควรให้ผู้รับผิดชอบตรวจสอบก่อนนำไปใช้ตัดสินใจ';
+    'ค่าพื้นฐานที่มีอยู่เดิม รวมข้อมูลเปิดและค่า NAT CAT ภายใน · การเปลี่ยนสีใหม่ต้องผ่านรายการตรวจและการยืนยันผู้รับผิดชอบ · ' +
+    'สีจังหวัดใช้ค่าสูงสุดของรายการในจังหวัด ไม่ได้หมายความว่าทั้งจังหวัดได้รับผลกระทบ';
   document.getElementById('refToggle').addEventListener('click', function(){
     document.getElementById('refPanel').classList.toggle('open');
   });
@@ -879,19 +900,29 @@
   function flood68Text(prov){
     var f = FLOOD68[prov];
     if(!f || !f.times) return '';
-    return 'ปภ. 2568: อุทกภัย ' + f.times + ' ครั้ง · ' + f.amphoe + ' อำเภอ · ' + f.tambon + ' ตำบล';
+    return 'ปภ. ' + f.year + ': อุทกภัย ' + f.times + ' ครั้ง · ' + f.amphoe + ' อำเภอ · ' + f.tambon + ' ตำบล';
   }
   function fmt(n){ return (n||0).toLocaleString('th-TH'); }
   function evidenceHtml(d){
     var e = d.ev; if(!e) return '';
     var bits = [];
+    var sourceLabels = {legacy:'ค่าที่มีอยู่เดิม — ยังไม่ได้ตรวจใหม่', xlsx:'NAT CAT เดิม', retained:'คงค่าเดิม — ข้อมูลใหม่ยังไม่พร้อม', reviewed:'ผ่านรายการตรวจและผู้รับผิดชอบยืนยัน', missing:'ไม่มีข้อมูล'};
+    var provenance = d.provenance || {};
+    HAZ_KEYS.forEach(function(h){
+      if(state.hazard !== 'all' && state.hazard !== h) return;
+      var p = provenance[h] || {status:'legacy'};
+      bits.push(HAZ_SHORT[h] + ': ' + (sourceLabels[p.status] || 'รอตรวจ'));
+    });
     if(e.eqZone) bits.push('แผ่นดินไหว: '+e.eqZone);
     if(e.floodArea) bits.push('น้ำท่วมซ้ำซาก 8–10/4–7/<3 ครั้ง: '+fmt(e.floodArea[0])+'/'+fmt(e.floodArea[1])+'/'+fmt(e.floodArea[2])+' ไร่');
-    if(e.floodDays) bits.push('อุทกภัยที่รายงาน '+e.floodDays+' วัน/6 ปี' + (e.floodAgri ? ' (เกษตรเสียหาย '+fmt(e.floodAgri)+' ไร่)' : ''));
+    if(e.floodDays) bits.push('อุทกภัยที่รายงาน '+e.floodDays+' วันในช่วงข้อมูลอ้างอิง' + (e.floodAgri ? ' (เกษตรเสียหาย '+fmt(e.floodAgri)+' ไร่)' : ''));
     if(e.droughtArea) bits.push('แล้งซ้ำซาก ≥6/4–5/<3 ครั้ง: '+fmt(e.droughtArea[0])+'/'+fmt(e.droughtArea[1])+'/'+fmt(e.droughtArea[2])+' ไร่');
-    if(e.windDays) bits.push('วาตภัย '+e.windDays+' วัน/6 ปี');
-    if(e.hailDays) bits.push('พายุฤดูร้อน '+e.hailDays+' วัน/6 ปี');
-    if(e.slideDays) bits.push('ดินโคลนถล่ม '+e.slideDays+' วัน/6 ปี');
+    if(e.windDays) bits.push('วาตภัย '+e.windDays+' วันในช่วงข้อมูลอ้างอิง');
+    if(e.hailDays) bits.push('พายุฤดูร้อน '+e.hailDays+' วันในช่วงข้อมูลอ้างอิง');
+    if(e.slideDays) bits.push('ดินโคลนถล่ม '+e.slideDays+' วันในช่วงข้อมูลอ้างอิง');
+    var bi = DATA.buildInfo || {};
+    if(bi.lddFloodYears && bi.lddFloodYears[d.province]) bits.push('LDD น้ำท่วม: ปี '+bi.lddFloodYears[d.province]);
+    if(bi.lddDroughtYears && bi.lddDroughtYears[d.province]) bits.push('LDD แล้ง: ปี '+bi.lddDroughtYears[d.province]);
     if(e.windAgri) bits.push('เกษตรเสียหายจากวาตภัย '+fmt(e.windAgri)+' ไร่');
     if(e.fromXlsx && e.fromXlsx.length){
       var xlsxLabels = e.fromXlsx.map(function(k){ return HAZ_SHORT[k] || k; });
@@ -927,13 +958,26 @@
       {k:'none',     label:'ไม่พบข้อมูล', color:'var(--risk-none)'}
     ];
     var statsEl = document.getElementById(elId || 'stats');
-    statsEl.innerHTML = '<div class="stat-card" style="--stat-color:var(--brand)"><div class="stat-num">'+totalDistricts+'</div><div class="stat-label">อำเภอทั้งหมด'+(list.length?(' · '+list.length+' จังหวัด'):'')+'</div></div>' +
+    statsEl.innerHTML = '<div class="stat-card" style="--stat-color:var(--brand)"><div class="stat-num">'+totalDistricts+'</div><div class="stat-label">รายการพื้นที่/รหัสไปรษณีย์'+(list.length?(' · '+list.length+' จังหวัด'):'')+'</div></div>' +
       order.map(function(o){
         return '<div class="stat-card" style="--stat-color:'+o.color+'"><div class="stat-num">'+counts[o.k]+'</div><div class="stat-label">ระดับ'+o.label+'</div></div>';
       }).join('');
   }
 
   function render(){
+    var currentMode = state.mode === 'current';
+    document.querySelectorAll('#modeSeg button').forEach(function(b){
+      b.classList.toggle('active', b.dataset.mode === state.mode);
+      b.setAttribute('aria-pressed', String(b.dataset.mode === state.mode));
+    });
+    document.getElementById('currentTabContent').hidden = !currentMode;
+    legendEl.hidden = currentMode;
+    document.getElementById('refToggle').hidden = currentMode;
+    if(currentMode) document.getElementById('refPanel').classList.remove('open');
+    document.getElementById('searchBox').placeholder = currentMode ? 'ค้นหาชื่อรายงานหรือจังหวัดที่กล่าวถึง' : 'ค้นหาจังหวัด, อำเภอ หรือรหัสไปรษณีย์';
+    document.getElementById('modeNote').textContent = currentMode
+      ? 'รายงานจากหน่วยงานทางการ แยกจากสีพื้นฐาน; ไม่มีรายงานไม่เท่ากับปลอดภัย ค่า NAT CAT เดิมยังดูได้ในโหมดพื้นฐาน'
+      : 'ใช้ค่าพื้นฐานเดิมเมื่อข้อมูลใหม่ขาดหรือยังไม่ผ่านการตรวจ · สีจังหวัดเป็นค่าสูงสุดของรายการในจังหวัด · สร้างข้อมูล '+ ((DATA.buildInfo || {}).builtAt || 'ไม่ระบุ');
     // nav active state
     Array.prototype.forEach.call(navEl.querySelectorAll('button'), function(b){
       b.classList.toggle('active', b.dataset.tab === state.tab);
@@ -949,6 +993,20 @@
     var isOverview = state.tab === 'overview';
     var q = state.query.trim();
     var hazardLabel = HAZARDS.filter(function(h){return h.key===state.hazard;})[0].label;
+
+    if(currentMode){
+      document.getElementById('mapTabContent').hidden = true;
+      document.getElementById('listTabContent').hidden = true;
+      document.getElementById('pageTitle').textContent = 'สถานการณ์ล่าสุด';
+      document.getElementById('pageLede').textContent = 'รายงานย้อนหลัง 7 วัน · ตรวจแหล่งเผยแพร่และเวลาแล้ว ยังไม่ยืนยันความเสียหายรายพื้นที่';
+      document.getElementById('regionFilter').hidden = false;
+      regionSelect.value = state.mapRegion;
+      window.renderCurrent(document.getElementById('currentTabContent'), window.NATCAT_CURRENT, {
+        hazard:state.hazard, query:q, region:REGION_ORDER.indexOf(state.tab)>=0 ? state.tab : state.mapRegion,
+        regionMap:DATA.regionMap
+      });
+      return;
+    }
 
     document.getElementById('mapTabContent').hidden = !isMapTab;
     document.getElementById('listTabContent').hidden = isMapTab;
@@ -1036,6 +1094,7 @@
           districts.map(function(d){
             return '<div class="d-row"><div><div class="d-name">'+d.district+'</div>' +
               '<div class="d-postal">'+(d.postal||'')+(d.postal_office?(' · '+d.postal_office):'')+'</div>' +
+              evidenceHtml(d) +
               (d.note ? '<div class="d-note">'+d.note+'</div>' : '') +
               '</div>' + dotRow(d) + '</div>';
           }).join('') +
@@ -1057,6 +1116,8 @@
 
   initMap();
   render();
+  // A page left open must not keep showing an old feed as fresh.
+  setInterval(function(){ if(state.mode === 'current') render(); }, 60000);
 })();
 </script>
 
