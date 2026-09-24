@@ -242,6 +242,8 @@
   .ref-list li{display:flex;align-items:flex-start;gap:8px;font-size:12px;line-height:1.5;}
   .ref-chip{width:13px;height:13px;border-radius:4px;flex:none;margin-top:2px;}
   .ref-source{margin-top:10px;font-size:11px;color:var(--text-muted);border-top:1px dashed var(--border);padding-top:8px;}
+  .hazard-icon{width:20px;height:20px;display:inline-flex;align-items:center;justify-content:center;font-size:16px;line-height:1;filter:saturate(.9);}
+  .seg button[data-hazard]{gap:6px;}
   .src-item{border-top:1px dashed var(--border);padding:8px 0;}
   .src-item:first-child{border-top:none;}
   .src-head{display:flex;align-items:center;gap:7px;font-size:12.5px;margin-bottom:3px;}
@@ -558,13 +560,13 @@
   var RECORDS = DATA.records;
   var REGION_NAMES = DATA.regionNames;
   var HAZARDS = [
-    {key:'all',     label:'ภาพรวมทุกภัย'},
-    {key:'eq',      label:'แผ่นดินไหว'},
-    {key:'hail',    label:'ลูกเห็บ'},
-    {key:'wind',    label:'วาตภัย'},
-    {key:'flood',   label:'น้ำท่วม'},
-    {key:'drought', label:'ภัยแล้ง'},
-    {key:'slide',   label:'ดินโคลนถล่ม'}
+    {key:'all',     label:'ภาพรวมทุกภัย', icon:'◉'},
+    {key:'eq',      label:'แผ่นดินไหว', icon:'〽'},
+    {key:'hail',    label:'ลูกเห็บ', icon:'❄'},
+    {key:'wind',    label:'วาตภัย', icon:'🌀'},
+    {key:'flood',   label:'น้ำท่วม', icon:'🌊'},
+    {key:'drought', label:'ภัยแล้ง', icon:'☀'},
+    {key:'slide',   label:'ดินโคลนถล่ม', icon:'⛰'}
   ];
   var HAZ_KEYS = ['eq','hail','wind','flood','drought','slide'];
   var HAZ_SHORT = {eq:'ไหว', hail:'ลูกเห็บ', wind:'ลม', flood:'น้ำ', drought:'แล้ง', slide:'ดิน'};
@@ -640,13 +642,12 @@
 
   // ---- build hazard segmented control ----
   var segEl = document.getElementById('hazardSeg');
-  var hazardSwatch = {eq:'var(--risk-veryhigh)', hail:'var(--risk-high)', wind:'var(--risk-medium)',
-                      flood:'var(--risk-low)', drought:'var(--risk-high)', slide:'var(--risk-none)'};
   HAZARDS.forEach(function(h){
     var btn = document.createElement('button');
     btn.type='button';
     btn.dataset.hazard = h.key;
-    btn.innerHTML = (h.key==='all' ? '' : '<span class="swatch" style="background:'+hazardSwatch[h.key]+'"></span>') + h.label;
+    btn.setAttribute('aria-label','กรองตามประเภทภัย: '+h.label);
+    btn.innerHTML = '<span class="hazard-icon" aria-hidden="true">'+h.icon+'</span><span>'+h.label+'</span>';
     btn.addEventListener('click', function(){ state.hazard = h.key; render(); });
     segEl.appendChild(btn);
   });
@@ -709,8 +710,9 @@
     HAZ_META.forEach(function(h){
       var d = document.createElement('div');
       d.className = 'src-item';
+      var hazard = HAZARDS.filter(function(item){return item.key === h.key;})[0] || {icon:'•'};
       d.innerHTML =
-        '<div class="src-head"><span class="src-dot" style="background:'+(hazardSwatch[h.key]||'var(--risk-none)')+'"></span>' +
+        '<div class="src-head"><span class="hazard-icon" aria-hidden="true">'+hazard.icon+'</span>' +
         '<b>'+h.label+'</b> <span class="src-lv">ระดับ'+h.level+'</span></div>' +
         '<div class="src-line"><span class="src-k">ที่มา</span> '+h.source+'</div>' +
         '<div class="src-line"><span class="src-k">ข้อมูล ณ</span> '+h.asof+'</div>' +
