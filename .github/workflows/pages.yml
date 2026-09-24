@@ -1,0 +1,38 @@
+name: Publish NAT CAT website
+on:
+  push:
+    branches: [main]
+    paths: ['*.html', '*.js', '.github/workflows/pages.yml']
+  workflow_run:
+    workflows: ['Update NAT CAT data']
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: false
+jobs:
+  deploy:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.head_branch == 'main'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/configure-pages@v5
+      - name: เตรียมเฉพาะไฟล์หน้าเว็บ
+        run: |
+          mkdir _site
+          cp index.html data_updated.js current_data.js current_view.js map_paths.js _site/
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - uses: actions/deploy-pages@v4
+        id: deployment
