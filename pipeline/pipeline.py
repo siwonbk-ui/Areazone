@@ -9,7 +9,8 @@ and writes data_updated.js. Designed to run unattended in CI.
   python pipeline.py --check      # only report whether sources changed (exit 0)
   python pipeline.py              # full rebuild of data_updated.js
 """
-import argparse, csv, io, json, os, re, sys, urllib.request
+import argparse, csv, io, json, os, re, sys, urllib.request, time
+from datetime import date as calendar_date
 from collections import defaultdict
 
 sys.stdout.reconfigure(encoding='utf-8')
@@ -30,12 +31,20 @@ DATASETS = {
     'lddflood': (LDD, 'ldd_21_04'),                             # น้ำท่วมซ้ำซาก
     'lddrought': (LDD, 'lpd05'),                                # แล้งซ้ำซาก
 }
+SOURCE_NOTES = []
 
 
 def fetch(url, binary=False):
     req = urllib.request.Request(url, headers={'User-Agent': 'natcat-pipeline/1.0'})
-    with urllib.request.urlopen(req, timeout=180) as r:
-        data = r.read()
+    for attempt in range(3):
+        try:
+            with urllib.request.urlopen(req, timeout=30) as r:
+                data = r.read()
+            break
+        except (OSError, TimeoutError):
+            if attempt == 2:
+                raise
+            time.sleep(2 ** attempt)
     return data if binary else data.decode('utf-8-sig', 'replace')
 
 
@@ -70,8 +79,11 @@ def survey():
 
 
 def load_state():
-    if os.path.exists(STATE_FILE):
-        with open(STATE_FILE, encoding='utf-8') as f:
+    # A staged snapshot already fetched successfully must not rebuild daily.
+    candidate = os.path.join(BASE_DIR, 'sources_candidate.json')
+    state_path = candidate if os.path.exists(candidate) else STATE_FILE
+    if os.path.exists(state_path):
+        with open(state_path, encoding='utf-8') as f:
             return json.load(f)
     return {}
 
@@ -82,7 +94,8 @@ def fingerprint(s):
     for k, v in s.items():
         fp[k] = {
             'metadata_modified': v['metadata_modified'],
-            'resources': {rid: r['modified'] for rid, r in sorted(v['resources'].items())},
+            'resources': {rid: {kk: r.get(kk) for kk in ('modified','url','format','name')}
+                          for rid, r in sorted(v['resources'].items())},
         }
     return fp
 
@@ -91,9 +104,11 @@ def fingerprint(s):
 def cached(url, name):
     os.makedirs(CACHE, exist_ok=True)
     path = os.path.join(CACHE, name)
-    if not os.path.exists(path):
-        with open(path, 'wb') as f:
-            f.write(fetch(url, binary=True))
+    # Always fetch on a rebuild: resource IDs/URLs can stay the same after edits.
+    data = fetch(url, binary=True)
+    with open(path + '.tmp', 'wb') as f:
+        f.write(data)
+    os.replace(path + '.tmp', path)
     return path
 
 
@@ -144,8 +159,17 @@ def read_rows(path, fmt):
     if fmt == 'CSV':
         with open(path, encoding='utf-8-sig', errors='replace') as f:
             return [r for r in csv.reader(f)]
+    with open(path, 'rb') as handle:
+        workbook_bytes = handle.read()
+    # Some CKAN resources are labelled XLS but contain an XLSX ZIP workbook.
+    if fmt == 'XLS' and not workbook_bytes.startswith(b'PK'):
+        import xlrd
+        wb = xlrd.open_workbook(path)
+        ws = next((s for s in wb.sheets() if s.name != 'Column_Name'), wb.sheet_by_index(0))
+        return [[xlrd.xldate_as_datetime(c.value, wb.datemode).isoformat() if c.ctype == xlrd.XL_CELL_DATE
+                 else str(c.value) if c.value is not None else '' for c in ws.row(i)] for i in range(ws.nrows)]
     import openpyxl
-    wb = openpyxl.load_workbook(path, read_only=True, data_only=True)
+    wb = openpyxl.load_workbook(io.BytesIO(workbook_bytes), read_only=True, data_only=True)
     sheets = [s for s in wb.sheetnames if s != 'Column_Name'] or wb.sheetnames
     ws = wb[sheets[0]]
     return [['' if c is None else str(c) for c in row]
@@ -225,12 +249,18 @@ def header_map(rows, summary=False):
         low = [c.lower() for c in cells]
         m = {}
         for field, names in ALIASES.items():
+            candidates = []
             for i, (c, lc) in enumerate(zip(cells, low)):
                 if not c:
                     continue
-                hit = any(c == n or lc == n or c.startswith(n) or lc.startswith(n) for n in names)
-                if hit and field not in m:
-                    m[field] = i
+                if field in ('prov', 'dist') and ('code' in lc or 'รหัส' in c):
+                    continue
+                exact = any(lc == n.lower() for n in names)
+                prefix = any(lc.startswith(n.lower()) for n in names)
+                if exact or prefix:
+                    candidates.append((2 if exact else 1, -i, i))
+            if candidates:
+                m[field] = max(candidates)[2]
         score = len(m)
         if summary:
             if 'times' in m:
@@ -259,8 +289,14 @@ def parse_incidents(files, summary_out=None):
         summary = is_summary(rows)
         m, start = header_map(rows, summary)
         if 'prov' not in m:
-            continue
-        if summary or 'dist' not in m:
+            raise ValueError('Province header missing: ' + r['name'])
+        # Some annual province totals call their district-count column "District".
+        district_cells = [str(row[m['dist']]).strip() for row in rows[start:]
+                          if 'dist' in m and len(row) > m['dist'] and str(row[m['dist']]).strip()]
+        count_only = bool(district_cells) and all(re.fullmatch(r'\d+(?:\.0+)?', v) for v in district_cells)
+        if summary or 'dist' not in m or count_only:
+            SOURCE_NOTES.append({'year': year, 'resource': r['id'], 'url': r['url'],
+                                 'reason': 'province_summary_not_used_for_district_event_days'})
             # province-level summary (e.g. the newest year) -> keep separately
             if summary_out is not None and 'times' in m:
                 for row in rows[start:]:
@@ -276,7 +312,9 @@ def parse_incidents(files, summary_out=None):
                         'tambon': int(to_num(row[m['n_tambon']])) if 'n_tambon' in m else 0,
                     }
             continue
-        years_used.append(year)
+        if 'date' not in m:
+            raise ValueError('Incident date header missing: ' + r['name'])
+        invalid_dates, year_has_data = 0, False
         for row in rows[start:]:
             if len(row) <= max(m['prov'], m['dist']):
                 continue
@@ -291,13 +329,24 @@ def parse_incidents(files, summary_out=None):
                 continue                      # province/region subtotal rows
             raw = row[m['date']] if 'date' in m and len(row) > m['date'] else ''
             date = parse_date(raw, year)
+            try:
+                calendar_date.fromisoformat(date)
+            except ValueError:
+                invalid_dates += 1
+                continue
             days[key].add(date)
+            year_has_data = True
             if 'agri' in m and len(row) > m['agri']:
                 agri[key] += to_num(row[m['agri']])
             cause = str(row[m['cause']] if 'cause' in m and len(row) > m['cause'] else '')
             mo = re.match(r'\d{4}-(\d{2})', date)
             if 'ฤดูร้อน' in cause and mo and int(mo.group(1)) in (2, 3, 4, 5):
                 summer[key].add(date)
+        if year_has_data:
+            years_used.append(year)
+        if invalid_dates:
+            SOURCE_NOTES.append({'year':year, 'resource':r['id'], 'url':r['url'],
+                                 'reason':'invalid_incident_dates', 'rows':invalid_dates})
     return days, agri, summer, sorted(years_used)
 
 
@@ -306,7 +355,11 @@ def parse_ldd(res):
     path = cached(res['url'], 'ldd_%s.csv' % res['id'][:8])
     with open(path, encoding='utf-8-sig', errors='replace') as f:
         rows = list(csv.DictReader(f))
+    if not rows:
+        raise ValueError('Empty LDD CSV')
     cols = list(rows[0].keys())
+    if len(cols) < 8 or 'จังหวัด' not in cols[0] or 'อำเภอ' not in cols[1]:
+        raise ValueError('Unexpected LDD schema; review column mapping')
     c_prov, c_dist = cols[0], cols[1]
     c_hi, c_md, c_lo = cols[3], cols[4], cols[5]
     out = defaultdict(lambda: [0.0, 0.0, 0.0])
@@ -406,14 +459,22 @@ def area_cuts(areas, ps=(90, 70, 50)):
 
 
 def build(state):
+    SOURCE_NOTES.clear()
     storm_files = pick_yearly(state['storm'])
     flood_files = pick_yearly(state['flood'])
     slide_files = pick_yearly(state['slide'])
 
     flood2568 = {}
     storm_days, storm_agri, hail_days, storm_years = parse_incidents(storm_files)
+    blocked = ['wind','hail'] if any(n['reason']=='invalid_incident_dates' for n in SOURCE_NOTES) else []
+    note_count = len(SOURCE_NOTES)
     flood_days, flood_agri, _, flood_years = parse_incidents(flood_files, summary_out=flood2568)
+    if any(n['reason']=='invalid_incident_dates' for n in SOURCE_NOTES[note_count:]):
+        blocked.append('flood')
+    note_count = len(SOURCE_NOTES)
     slide_days, _, _, slide_years = parse_incidents(slide_files)
+    if any(n['reason']=='invalid_incident_dates' for n in SOURCE_NOTES[note_count:]):
+        blocked.append('slide')
 
     ldd_flood_res = [r for r in state['lddflood']['resources'].values() if r['format'] == 'CSV'][0]
     ldd_drought_res = [r for r in state['lddrought']['resources'].values()
@@ -493,11 +554,13 @@ def build(state):
                                                ('wind', wind_from_xlsx), ('hail', hail_from_xlsx)) if f],
             },
         })
+        for h in blocked:
+            records[-1][h] = None
 
     with open(os.path.join(BASE_DIR, 'hazard_meta.json'), encoding='utf-8') as f:
         meta = json.load(f)
     # keep the "data as of" lines honest — they follow whatever was actually downloaded
-    span = '%s–%s' % (storm_years[0], storm_years[-1]) if storm_years else 'n/a'
+    year_sets = {'wind': storm_years, 'hail': storm_years, 'slide': slide_years, 'flood': flood_years}
     def days_txt(c):
         return 'แดง ≥%d วัน (เปอร์เซ็นไทล์ 95) · ส้ม ≥%d (p85) · เหลือง ≥%d (p65) · เขียว ≥1' % c
     cut_txt = {
@@ -510,6 +573,8 @@ def build(state):
     }
     xlsx_fallback_note = 'อำเภอที่ไม่มีข้อมูลจากแหล่งเปิดภาครัฐเลย ใช้ค่าจากไฟล์ NAT CAT.xlsx ภายในแทนถ้ามี'
     for m in meta:
+        years = year_sets.get(m['key'], [])
+        span = '%s–%s' % (years[0], years[-1]) if years else 'n/a'
         m['asof'] = m['asof'].replace('{{YEARS}}', span)
         if m['key'] in cut_txt:
             m['method'] = re.sub(r'· แดง.*$', '', m['method']).strip() + ' · ' + cut_txt[m['key']]
@@ -528,27 +593,20 @@ def build(state):
             'incidentYears': {'storm': storm_years, 'flood': flood_years, 'slide': slide_years},
             'lddFloodYears': flood_area_years, 'lddDroughtYears': drought_years,
             'cutoffs': {k: list(v) for k, v in cuts.items()},
+            'sourceNotes': list(SOURCE_NOTES),
+            'blockedHazards': blocked,
         },
         'records': records,
     }
-    dest = OUT_FILE
-    with open(dest, 'w', encoding='utf-8') as f:
-        f.write('window.NATCAT_DATA = ')
-        json.dump(out, f, ensure_ascii=False)
-        f.write(';')
-    print('wrote', dest, '|', len(records), 'records')
+    print('built candidate |', len(records), 'records')
     return out
 
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--check', action='store_true', help='only report whether sources changed')
-    ap.add_argument('--out', help='where to write data_updated.js')
     ap.add_argument('--force', action='store_true', help='rebuild even if sources are unchanged')
     args = ap.parse_args()
-    global OUT_FILE
-    if args.out:
-        OUT_FILE = os.path.abspath(args.out)
 
     current = survey()
     old = load_state()
@@ -564,10 +622,8 @@ def main():
         print('sources unchanged — nothing to rebuild')
         return 0
 
-    build(current)
-    with open(STATE_FILE, 'w', encoding='utf-8') as f:
-        json.dump(current, f, ensure_ascii=False, indent=1)
-    print('state updated')
+    from review import stage
+    stage(build(current), current)
     return 0
 
 
