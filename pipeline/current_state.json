@@ -11,7 +11,7 @@
     ],
     "intervalHours": 1,
     "staleHours": 48,
-    "lastAttemptAt": "2026-09-24T11:44:06+00:00",
+    "lastAttemptAt": "2026-09-24T13:13:49+00:00",
     "lastSuccessAt": "2026-09-24T11:44:06+00:00",
     "events": [
       {
@@ -198,7 +198,8 @@
         "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
       }
     ],
-    "status": "ok",
+    "status": "unavailable",
+    "error": "HTTPError",
     "newestPublishedAt": "2026-09-24T02:50:40+00:00"
   },
   "tmd-earthquake": {
@@ -211,8 +212,8 @@
     ],
     "intervalHours": 2,
     "staleHours": 48,
-    "lastAttemptAt": "2026-09-24T11:44:06+00:00",
-    "lastSuccessAt": "2026-09-24T11:44:06+00:00",
+    "lastAttemptAt": "2026-09-24T13:13:49+00:00",
+    "lastSuccessAt": "2026-09-24T13:13:49+00:00",
     "events": [
       {
         "id": "44f5375e69ad61b21d789090",

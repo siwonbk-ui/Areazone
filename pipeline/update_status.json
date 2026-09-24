@@ -1,17 +1,17 @@
 {
   "baselineCheckDay": "2026-09-24",
-  "baselineCheckedAt": "2026-09-24T11:44:10+00:00",
+  "baselineCheckedAt": "2026-09-24T13:12:26+00:00",
   "baselineStatus": "ok",
   "baselineError": null,
   "currentSources": {
-    "dmr": "ok",
+    "dmr": "unavailable",
     "tmd-earthquake": "ok"
   },
-  "checkedAt": "2026-09-24T11:44:13+00:00",
-  "status": "ok",
+  "checkedAt": "2026-09-24T13:13:53+00:00",
+  "status": "degraded",
   "review": {
     "status": "pending_review",
-    "reviewHash": "79f9e58b22de154289a4436e273adcf757a28d34ffa05e7cec1af1daf29867fb",
+    "reviewHash": "83acb6483f13e4daf0af14d0e6ece134df6d0d2e5f53f55fad34cf7a0926c482",
     "changeCount": 728,
     "blockedHazards": [
       "flood"
