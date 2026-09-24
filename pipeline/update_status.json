@@ -1,21 +1,19 @@
 {
   "baselineCheckDay": "2026-09-25",
-  "baselineCheckedAt": "2026-09-24T17:52:01+00:00",
-  "baselineStatus": "unavailable",
-  "baselineError": "The read operation timed out",
+  "baselineCheckedAt": "2026-09-24T21:31:30+00:00",
+  "baselineStatus": "ok",
+  "baselineError": null,
   "currentSources": {
     "dmr": "unavailable",
     "tmd-earthquake": "ok"
   },
-  "checkedAt": "2026-09-24T17:53:42+00:00",
+  "checkedAt": "2026-09-24T21:33:34+00:00",
   "status": "degraded",
   "review": {
     "status": "pending_review",
-    "reviewHash": "83acb6483f13e4daf0af14d0e6ece134df6d0d2e5f53f55fad34cf7a0926c482",
-    "changeCount": 728,
-    "blockedHazards": [
-      "flood"
-    ]
+    "reviewHash": "49b2b37fe53e1d0f327051f6bd8011c1945de065ea82ed5c604402702efe3664",
+    "changeCount": 842,
+    "blockedHazards": []
   },
   "currentSourceErrors": {
     "dmr": {
@@ -24,5 +22,6 @@
       "errorDetail": "HTTP 403"
     }
   },
-  "baselineQuality": "blocked"
+  "baselineQuality": "passed",
+  "baselineCodeHash": "1ba56d21d5ec0af33f378a523433454b0b1e952a108641297d611cb7dc83e441"
 }

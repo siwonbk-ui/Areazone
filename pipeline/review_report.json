@@ -1,8 +1,8 @@
 {
   "status": "pending_review",
-  "reviewHash": "83acb6483f13e4daf0af14d0e6ece134df6d0d2e5f53f55fad34cf7a0926c482",
-  "createdAt": "2026-09-24T13:13:49+00:00",
-  "changeCount": 728,
+  "reviewHash": "49b2b37fe53e1d0f327051f6bd8011c1945de065ea82ed5c604402702efe3664",
+  "createdAt": "2026-09-24T21:33:30+00:00",
+  "changeCount": 842,
   "changes": [
     {
       "area": {
@@ -15,6 +15,30 @@
       "hazard": "wind",
       "before": "green",
       "after": "yellow"
+    },
+    {
+      "area": {
+        "province": "กำแพงเพชร",
+        "district": "ขาณุวรลักษบุรี",
+        "postal": "62130",
+        "postal_office": "ปณ.ขาณุวรลักษบุรี",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "orange",
+      "after": "red"
+    },
+    {
+      "area": {
+        "province": "กำแพงเพชร",
+        "district": "ขาณุวรลักษบุรี",
+        "postal": "62140",
+        "postal_office": "ปณ.สลกบาตร",
+        "note": "เฉพาะ ต.สลกบาตร, ต.บ่อถ้ำ, ต.ดอนแตง, ต.วังชะพลู, ต.โค้งไผ่, ต.วังหามแห, ต.ปางมะค่า"
+      },
+      "hazard": "flood",
+      "before": "orange",
+      "after": "red"
     },
     {
       "area": {
@@ -87,6 +111,18 @@
       "hazard": "hail",
       "before": null,
       "after": "yellow"
+    },
+    {
+      "area": {
+        "province": "เชียงราย",
+        "district": "เชียงของ",
+        "postal": "57140",
+        "postal_office": "ปณ.เชียงของ",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "red",
+      "after": "orange"
     },
     {
       "area": {
@@ -212,9 +248,45 @@
       "area": {
         "province": "เชียงราย",
         "district": "พาน",
+        "postal": "57120",
+        "postal_office": "ปณ.พาน",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "orange",
+      "after": "red"
+    },
+    {
+      "area": {
+        "province": "เชียงราย",
+        "district": "พาน",
         "postal": "57250",
         "postal_office": "ปณ.แม่ลาว",
         "note": "เฉพาะ ต.ธารทอง"
+      },
+      "hazard": "hail",
+      "before": "red",
+      "after": "yellow"
+    },
+    {
+      "area": {
+        "province": "เชียงราย",
+        "district": "พาน",
+        "postal": "57250",
+        "postal_office": "ปณ.แม่ลาว",
+        "note": "เฉพาะ ต.ธารทอง"
+      },
+      "hazard": "flood",
+      "before": "orange",
+      "after": "red"
+    },
+    {
+      "area": {
+        "province": "เชียงราย",
+        "district": "พาน",
+        "postal": "57280",
+        "postal_office": "ปณ.แม่เย็น",
+        "note": "เฉพาะ ต.แม่เย็น, ต.ทานตะวัน"
       },
       "hazard": "hail",
       "before": "red",
@@ -228,9 +300,9 @@
         "postal_office": "ปณ.แม่เย็น",
         "note": "เฉพาะ ต.แม่เย็น, ต.ทานตะวัน"
       },
-      "hazard": "hail",
-      "before": "red",
-      "after": "yellow"
+      "hazard": "flood",
+      "before": "orange",
+      "after": "red"
     },
     {
       "area": {
@@ -408,6 +480,18 @@
         "postal_office": "ปณ.แม่สรวย",
         "note": ""
       },
+      "hazard": "flood",
+      "before": "red",
+      "after": "orange"
+    },
+    {
+      "area": {
+        "province": "เชียงราย",
+        "district": "แม่สรวย",
+        "postal": "57180",
+        "postal_office": "ปณ.แม่สรวย",
+        "note": ""
+      },
       "hazard": "slide",
       "before": "orange",
       "after": "red"
@@ -432,6 +516,18 @@
         "postal_office": "ปณ.แม่สาย",
         "note": ""
       },
+      "hazard": "flood",
+      "before": "yellow",
+      "after": "orange"
+    },
+    {
+      "area": {
+        "province": "เชียงราย",
+        "district": "แม่สาย",
+        "postal": "57130",
+        "postal_office": "ปณ.แม่สาย",
+        "note": ""
+      },
       "hazard": "slide",
       "before": "yellow",
       "after": "orange"
@@ -447,6 +543,18 @@
       "hazard": "hail",
       "before": "red",
       "after": "green"
+    },
+    {
+      "area": {
+        "province": "เชียงราย",
+        "district": "แม่สาย",
+        "postal": "57220",
+        "postal_office": "ปณ.ห้วยไคร้",
+        "note": "เฉพาะ ต.ห้วยไคร้, ต.บ้านด้าย"
+      },
+      "hazard": "flood",
+      "before": "yellow",
+      "after": "orange"
     },
     {
       "area": {
@@ -548,6 +656,18 @@
       "area": {
         "province": "เชียงราย",
         "district": "เวียงป่าเป้า",
+        "postal": "57170",
+        "postal_office": "ปณ.เวียงป่าเป้า",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "yellow",
+      "after": "orange"
+    },
+    {
+      "area": {
+        "province": "เชียงราย",
+        "district": "เวียงป่าเป้า",
         "postal": "57260",
         "postal_office": "ปณ.แม่เจดีย์",
         "note": "เฉพาะ ต.แม่เจดีย์, ต.แม่เจดีย์ใหม่, ต.เวียงกาหลง"
@@ -565,6 +685,18 @@
         "note": "เฉพาะ ต.แม่เจดีย์, ต.แม่เจดีย์ใหม่, ต.เวียงกาหลง"
       },
       "hazard": "wind",
+      "before": "yellow",
+      "after": "orange"
+    },
+    {
+      "area": {
+        "province": "เชียงราย",
+        "district": "เวียงป่าเป้า",
+        "postal": "57260",
+        "postal_office": "ปณ.แม่เจดีย์",
+        "note": "เฉพาะ ต.แม่เจดีย์, ต.แม่เจดีย์ใหม่, ต.เวียงกาหลง"
+      },
+      "hazard": "flood",
       "before": "yellow",
       "after": "orange"
     },
@@ -704,6 +836,18 @@
       "area": {
         "province": "เชียงใหม่",
         "district": "แม่แตง",
+        "postal": "50150",
+        "postal_office": "ปณ.แม่แตง",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "orange",
+      "after": "red"
+    },
+    {
+      "area": {
+        "province": "เชียงใหม่",
+        "district": "แม่แตง",
         "postal": "50330",
         "postal_office": "ปณ.สันป่ายาง",
         "note": "เฉพาะ ต.สันป่ายาง, ต.สบเปิง ม.2-9, ม.12-13"
@@ -711,6 +855,18 @@
       "hazard": "wind",
       "before": "yellow",
       "after": "green"
+    },
+    {
+      "area": {
+        "province": "เชียงใหม่",
+        "district": "แม่แตง",
+        "postal": "50330",
+        "postal_office": "ปณ.สันป่ายาง",
+        "note": "เฉพาะ ต.สันป่ายาง, ต.สบเปิง ม.2-9, ม.12-13"
+      },
+      "hazard": "flood",
+      "before": "orange",
+      "after": "red"
     },
     {
       "area": {
@@ -751,6 +907,30 @@
     {
       "area": {
         "province": "เชียงใหม่",
+        "district": "แม่วาง",
+        "postal": "50360",
+        "postal_office": "ปณ.แม่วาง",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "yellow",
+      "after": "orange"
+    },
+    {
+      "area": {
+        "province": "เชียงใหม่",
+        "district": "แม่ออน",
+        "postal": "50130",
+        "postal_office": "ปณ.สันกำแพง",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "green",
+      "after": "yellow"
+    },
+    {
+      "area": {
+        "province": "เชียงใหม่",
         "district": "แม่อาย",
         "postal": "50280",
         "postal_office": "ปณ.แม่อาย",
@@ -771,6 +951,30 @@
       "hazard": "hail",
       "before": null,
       "after": "green"
+    },
+    {
+      "area": {
+        "province": "เชียงใหม่",
+        "district": "เวียงแหง",
+        "postal": "50350",
+        "postal_office": "ปณ.เวียงแหง",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "green",
+      "after": "yellow"
+    },
+    {
+      "area": {
+        "province": "เชียงใหม่",
+        "district": "สะเมิง",
+        "postal": "50250",
+        "postal_office": "ปณ.สะเมิง",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "orange",
+      "after": "red"
     },
     {
       "area": {
@@ -799,6 +1003,18 @@
     {
       "area": {
         "province": "เชียงใหม่",
+        "district": "สันป่าตอง",
+        "postal": "50120",
+        "postal_office": "ปณ.สันป่าตอง",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "yellow",
+      "after": "orange"
+    },
+    {
+      "area": {
+        "province": "เชียงใหม่",
         "district": "สารภี",
         "postal": "50140",
         "postal_office": "ปณ.สารภี",
@@ -807,6 +1023,42 @@
       "hazard": "hail",
       "before": "red",
       "after": "green"
+    },
+    {
+      "area": {
+        "province": "เชียงใหม่",
+        "district": "สารภี",
+        "postal": "50140",
+        "postal_office": "ปณ.สารภี",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "green",
+      "after": "yellow"
+    },
+    {
+      "area": {
+        "province": "เชียงใหม่",
+        "district": "หางดง",
+        "postal": "50230",
+        "postal_office": "ปณ.หางดง",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "yellow",
+      "after": "orange"
+    },
+    {
+      "area": {
+        "province": "เชียงใหม่",
+        "district": "หางดง",
+        "postal": "50340",
+        "postal_office": "ปณ.หนองตอง",
+        "note": "เฉพาะ ต.หนองตอง"
+      },
+      "hazard": "flood",
+      "before": "yellow",
+      "after": "orange"
     },
     {
       "area": {
@@ -907,6 +1159,18 @@
     {
       "area": {
         "province": "ตาก",
+        "district": "เมือง",
+        "postal": "63000",
+        "postal_office": "ปณ.ตาก",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "red",
+      "after": "orange"
+    },
+    {
+      "area": {
+        "province": "ตาก",
         "district": "แม่ระมาด",
         "postal": "63140",
         "postal_office": "ปณ.แม่ระมาด",
@@ -951,6 +1215,18 @@
       "hazard": "hail",
       "before": "green",
       "after": "yellow"
+    },
+    {
+      "area": {
+        "province": "ตาก",
+        "district": "สามเงา",
+        "postal": "63130",
+        "postal_office": "ปณ.สามเงา",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "red",
+      "after": "orange"
     },
     {
       "area": {
@@ -1059,6 +1335,18 @@
       "hazard": "wind",
       "before": "orange",
       "after": "red"
+    },
+    {
+      "area": {
+        "province": "นครสวรรค์",
+        "district": "ท่าตะโก",
+        "postal": "60160",
+        "postal_office": "ปณ.ท่าตะโก",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "red",
+      "after": "orange"
     },
     {
       "area": {
@@ -1176,6 +1464,18 @@
         "postal_office": "ปณ.ท่าวังผา",
         "note": ""
       },
+      "hazard": "flood",
+      "before": "orange",
+      "after": "yellow"
+    },
+    {
+      "area": {
+        "province": "น่าน",
+        "district": "ท่าวังผา",
+        "postal": "55140",
+        "postal_office": "ปณ.ท่าวังผา",
+        "note": ""
+      },
       "hazard": "slide",
       "before": null,
       "after": "yellow"
@@ -1203,6 +1503,18 @@
       "hazard": "hail",
       "before": "yellow",
       "after": "red"
+    },
+    {
+      "area": {
+        "province": "น่าน",
+        "district": "นาน้อย",
+        "postal": "55150",
+        "postal_office": "ปณ.นาน้อย",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "red",
+      "after": "orange"
     },
     {
       "area": {
@@ -1291,6 +1603,18 @@
     {
       "area": {
         "province": "น่าน",
+        "district": "สองแคว",
+        "postal": "55160",
+        "postal_office": "ปณ.สองแคว",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "orange",
+      "after": "yellow"
+    },
+    {
+      "area": {
+        "province": "น่าน",
         "district": "สันติสุข",
         "postal": "55210",
         "postal_office": "ปณ.ดู่พงษ์",
@@ -1323,6 +1647,18 @@
       "hazard": "hail",
       "before": null,
       "after": "green"
+    },
+    {
+      "area": {
+        "province": "พะเยา",
+        "district": "เชียงม่วน",
+        "postal": "56160",
+        "postal_office": "ปณ.เชียงม่วน",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "yellow",
+      "after": "orange"
     },
     {
       "area": {
@@ -1395,6 +1731,18 @@
       "hazard": "slide",
       "before": null,
       "after": "green"
+    },
+    {
+      "area": {
+        "province": "พะเยา",
+        "district": "แม่ใจ",
+        "postal": "56130",
+        "postal_office": "ปณ.แม่ใจ",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "yellow",
+      "after": "orange"
     },
     {
       "area": {
@@ -2143,6 +2491,18 @@
     {
       "area": {
         "province": "เพชรบูรณ์",
+        "district": "หล่มเก่า",
+        "postal": "67120",
+        "postal_office": "ปณ.หล่มเก่า",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "yellow",
+      "after": "orange"
+    },
+    {
+      "area": {
+        "province": "เพชรบูรณ์",
         "district": "หล่มสัก",
         "postal": "67110",
         "postal_office": "ปณ.หล่มสัก",
@@ -2191,6 +2551,18 @@
     {
       "area": {
         "province": "แพร่",
+        "district": "ลอง",
+        "postal": "54150",
+        "postal_office": "ปณ.ลอง",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "orange",
+      "after": "red"
+    },
+    {
+      "area": {
+        "province": "แพร่",
         "district": "วังชิ้น",
         "postal": "54160",
         "postal_office": "ปณ.วังชิ้น",
@@ -2209,6 +2581,30 @@
         "note": ""
       },
       "hazard": "wind",
+      "before": "orange",
+      "after": "yellow"
+    },
+    {
+      "area": {
+        "province": "แพร่",
+        "district": "สูงเม่น",
+        "postal": "54000",
+        "postal_office": "ปณ.แพร่",
+        "note": "เฉพาะ ต.เวียงทอง"
+      },
+      "hazard": "flood",
+      "before": "orange",
+      "after": "yellow"
+    },
+    {
+      "area": {
+        "province": "แพร่",
+        "district": "สูงเม่น",
+        "postal": "54130",
+        "postal_office": "ปณ.สูงเม่น",
+        "note": ""
+      },
+      "hazard": "flood",
       "before": "orange",
       "after": "yellow"
     },
@@ -2247,6 +2643,18 @@
       "hazard": "hail",
       "before": null,
       "after": "green"
+    },
+    {
+      "area": {
+        "province": "แม่ฮ่องสอน",
+        "district": "แม่ลาน้อย",
+        "postal": "58120",
+        "postal_office": "ปณ.แม่ลาน้อย",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "red",
+      "after": "orange"
     },
     {
       "area": {
@@ -2431,6 +2839,18 @@
     {
       "area": {
         "province": "ลำปาง",
+        "district": "เมืองปาน",
+        "postal": "52240",
+        "postal_office": "ปณ.เมืองปาน",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "orange",
+      "after": "red"
+    },
+    {
+      "area": {
+        "province": "ลำปาง",
         "district": "แม่ทะ",
         "postal": "52150",
         "postal_office": "ปณ.แม่ทะ",
@@ -2604,6 +3024,18 @@
         "postal_office": "ปณ.ห้างฉัตร",
         "note": ""
       },
+      "hazard": "flood",
+      "before": "red",
+      "after": "orange"
+    },
+    {
+      "area": {
+        "province": "ลำปาง",
+        "district": "ห้างฉัตร",
+        "postal": "52190",
+        "postal_office": "ปณ.ห้างฉัตร",
+        "note": ""
+      },
       "hazard": "slide",
       "before": null,
       "after": "green"
@@ -2631,6 +3063,18 @@
       "hazard": "hail",
       "before": null,
       "after": "green"
+    },
+    {
+      "area": {
+        "province": "ลำพูน",
+        "district": "ป่าซาง",
+        "postal": "51120",
+        "postal_office": "ปณ.ป่าซาง",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "green",
+      "after": "yellow"
     },
     {
       "area": {
@@ -2684,6 +3128,18 @@
       "area": {
         "province": "ลำพูน",
         "district": "แม่ทา",
+        "postal": "51140",
+        "postal_office": "ปณ.แม่ทา",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "yellow",
+      "after": "orange"
+    },
+    {
+      "area": {
+        "province": "ลำพูน",
+        "district": "แม่ทา",
         "postal": "51170",
         "postal_office": "ปณ.ทากาด",
         "note": "เฉพาะ ต.ทากาศ, ต.ทาขุมเงิน, ต.ทาทุ่งหลวง, ต.ทาแม่ลอบ"
@@ -2703,6 +3159,18 @@
       "hazard": "wind",
       "before": "orange",
       "after": "yellow"
+    },
+    {
+      "area": {
+        "province": "ลำพูน",
+        "district": "แม่ทา",
+        "postal": "51170",
+        "postal_office": "ปณ.ทากาด",
+        "note": "เฉพาะ ต.ทากาศ, ต.ทาขุมเงิน, ต.ทาทุ่งหลวง, ต.ทาแม่ลอบ"
+      },
+      "hazard": "flood",
+      "before": "yellow",
+      "after": "orange"
     },
     {
       "area": {
@@ -3055,6 +3523,18 @@
     {
       "area": {
         "province": "อุตรดิตถ์",
+        "district": "ฟากท่า",
+        "postal": "53160",
+        "postal_office": "ปณ.ฟากท่า",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "green",
+      "after": "yellow"
+    },
+    {
+      "area": {
+        "province": "อุตรดิตถ์",
         "district": "เมือง",
         "postal": "53000",
         "postal_office": "ปณ.อุตรดิตถ์",
@@ -3123,6 +3603,18 @@
       "hazard": "hail",
       "before": null,
       "after": "green"
+    },
+    {
+      "area": {
+        "province": "อุทัยธานี",
+        "district": "ลานสัก",
+        "postal": "61160",
+        "postal_office": "ปณ.ลานสัก",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "yellow",
+      "after": "orange"
     },
     {
       "area": {
@@ -3356,6 +3848,18 @@
       "area": {
         "province": "กาญจนบุรี",
         "district": "บ่อพลอย",
+        "postal": "71160",
+        "postal_office": "ปณ.กาญจนบุรี",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "orange",
+      "after": "yellow"
+    },
+    {
+      "area": {
+        "province": "กาญจนบุรี",
+        "district": "บ่อพลอย",
         "postal": "71220",
         "postal_office": "ปณ.หนองปรือ",
         "note": "เฉพาะ ต.หนองรี, ต.หนองกร่าง"
@@ -3363,6 +3867,18 @@
       "hazard": "hail",
       "before": "yellow",
       "after": "orange"
+    },
+    {
+      "area": {
+        "province": "กาญจนบุรี",
+        "district": "บ่อพลอย",
+        "postal": "71220",
+        "postal_office": "ปณ.หนองปรือ",
+        "note": "เฉพาะ ต.หนองรี, ต.หนองกร่าง"
+      },
+      "hazard": "flood",
+      "before": "orange",
+      "after": "yellow"
     },
     {
       "area": {
@@ -3859,6 +4375,42 @@
     {
       "area": {
         "province": "ประจวบคีรีขันธ์",
+        "district": "บางสะพาน",
+        "postal": "77140",
+        "postal_office": "ปณ.บางสะพาน",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "yellow",
+      "after": "green"
+    },
+    {
+      "area": {
+        "province": "ประจวบคีรีขันธ์",
+        "district": "บางสะพาน",
+        "postal": "77190",
+        "postal_office": "ปณ.บ้านกรูด",
+        "note": "เฉพาะ ต.ธงชัย, ต.ชัยเกษม"
+      },
+      "hazard": "flood",
+      "before": "yellow",
+      "after": "green"
+    },
+    {
+      "area": {
+        "province": "ประจวบคีรีขันธ์",
+        "district": "บางสะพาน",
+        "postal": "77230",
+        "postal_office": "ปณ.ร่อนทอง",
+        "note": "เฉพาะ ต.ร่อนทอง, ต.ทองมงคล"
+      },
+      "hazard": "flood",
+      "before": "yellow",
+      "after": "green"
+    },
+    {
+      "area": {
+        "province": "ประจวบคีรีขันธ์",
         "district": "หัวหิน",
         "postal": "77110",
         "postal_office": "ปณ.หัวหิน",
@@ -3879,6 +4431,18 @@
       "hazard": "hail",
       "before": "yellow",
       "after": "orange"
+    },
+    {
+      "area": {
+        "province": "เพชรบุรี",
+        "district": "แก่งกระจาน",
+        "postal": "76170",
+        "postal_office": "ปณ.แก่งกระจาน",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "yellow",
+      "after": "green"
     },
     {
       "area": {
@@ -3915,6 +4479,18 @@
       "hazard": "hail",
       "before": "yellow",
       "after": "orange"
+    },
+    {
+      "area": {
+        "province": "เพชรบุรี",
+        "district": "ท่ายาง",
+        "postal": "76130",
+        "postal_office": "ปณ.ท่ายาง",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "orange",
+      "after": "yellow"
     },
     {
       "area": {
@@ -4142,6 +4718,18 @@
       },
       "hazard": "hail",
       "before": null,
+      "after": "green"
+    },
+    {
+      "area": {
+        "province": "สมุทรปราการ",
+        "district": "พระประแดง",
+        "postal": "10130",
+        "postal_office": "ปณ.พระประแดง",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "yellow",
       "after": "green"
     },
     {
@@ -4399,12 +4987,36 @@
     {
       "area": {
         "province": "สระบุรี",
+        "district": "วังม่วง",
+        "postal": "18220",
+        "postal_office": "ปณ.วังม่วง",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "yellow",
+      "after": "green"
+    },
+    {
+      "area": {
+        "province": "สระบุรี",
         "district": "วิหารแดง",
         "postal": "18150",
         "postal_office": "ปณ.วิหารแดง",
         "note": ""
       },
       "hazard": "hail",
+      "before": "green",
+      "after": "yellow"
+    },
+    {
+      "area": {
+        "province": "สระบุรี",
+        "district": "วิหารแดง",
+        "postal": "18150",
+        "postal_office": "ปณ.วิหารแดง",
+        "note": ""
+      },
+      "hazard": "flood",
       "before": "green",
       "after": "yellow"
     },
@@ -4723,6 +5335,18 @@
     {
       "area": {
         "province": "อ่างทอง",
+        "district": "ป่าโมก",
+        "postal": "14130",
+        "postal_office": "ปณ.ป่าโมก",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "red",
+      "after": "orange"
+    },
+    {
+      "area": {
+        "province": "อ่างทอง",
         "district": "โพธิ์ทอง",
         "postal": "14120",
         "postal_office": "ปณ.โพธิ์ทอง",
@@ -4783,6 +5407,18 @@
     {
       "area": {
         "province": "จันทบุรี",
+        "district": "แก่งหางแมว",
+        "postal": "22160",
+        "postal_office": "ปณ.นายายอาม",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "yellow",
+      "after": "green"
+    },
+    {
+      "area": {
+        "province": "จันทบุรี",
         "district": "ขลุง",
         "postal": "22110",
         "postal_office": "ปณ.ขลุง",
@@ -4819,6 +5455,18 @@
     {
       "area": {
         "province": "จันทบุรี",
+        "district": "เขาคิชฌกูฏ",
+        "postal": "22210",
+        "postal_office": "ปณ.เขาคิชฌกูฏ",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "orange",
+      "after": "yellow"
+    },
+    {
+      "area": {
+        "province": "จันทบุรี",
         "district": "นายายอาม",
         "postal": "22160",
         "postal_office": "ปณ.นายายอาม",
@@ -4832,6 +5480,18 @@
       "area": {
         "province": "จันทบุรี",
         "district": "นายายอาม",
+        "postal": "22160",
+        "postal_office": "ปณ.นายายอาม",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "orange",
+      "after": "yellow"
+    },
+    {
+      "area": {
+        "province": "จันทบุรี",
+        "district": "นายายอาม",
         "postal": "22170",
         "postal_office": "ปณ.ทุ่งเบญจา",
         "note": "เฉพาะ ต.วังโตนด, ต.กระแจะ, ต.สนามไชย, ต.วังใหม่"
@@ -4839,6 +5499,18 @@
       "hazard": "hail",
       "before": null,
       "after": "green"
+    },
+    {
+      "area": {
+        "province": "จันทบุรี",
+        "district": "นายายอาม",
+        "postal": "22170",
+        "postal_office": "ปณ.ทุ่งเบญจา",
+        "note": "เฉพาะ ต.วังโตนด, ต.กระแจะ, ต.สนามไชย, ต.วังใหม่"
+      },
+      "hazard": "flood",
+      "before": "orange",
+      "after": "yellow"
     },
     {
       "area": {
@@ -4863,6 +5535,18 @@
       "hazard": "hail",
       "before": null,
       "after": "green"
+    },
+    {
+      "area": {
+        "province": "จันทบุรี",
+        "district": "เมือง",
+        "postal": "22000",
+        "postal_office": "ปณ.จันทบุรี",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "yellow",
+      "after": "orange"
     },
     {
       "area": {
@@ -4938,6 +5622,54 @@
     },
     {
       "area": {
+        "province": "ชลบุรี",
+        "district": "เมือง",
+        "postal": "20000",
+        "postal_office": "ปณ.ชลบุรี",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "yellow",
+      "after": "green"
+    },
+    {
+      "area": {
+        "province": "ชลบุรี",
+        "district": "เมือง",
+        "postal": "20130",
+        "postal_office": "ปณ.บางแสน",
+        "note": "เฉพาะ ต.บ้านปึก, ต.แสนสุข, ต.เหมือง, ต.เสม็ด ม.7-8, ต.ห้วยกะปิ ม.4-5"
+      },
+      "hazard": "flood",
+      "before": "yellow",
+      "after": "green"
+    },
+    {
+      "area": {
+        "province": "ชลบุรี",
+        "district": "เมือง",
+        "postal": "20131",
+        "postal_office": "ปณฝ.มหาวิทยาลัยบูรพา",
+        "note": "เฉพาะหน่วยงานราชการและหอพักภายในมหาวิทยาลัยบูรพา"
+      },
+      "hazard": "flood",
+      "before": "yellow",
+      "after": "green"
+    },
+    {
+      "area": {
+        "province": "ชลบุรี",
+        "district": "หนองใหญ่",
+        "postal": "20190",
+        "postal_office": "ปณ.หนองใหญ่",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "orange",
+      "after": "green"
+    },
+    {
+      "area": {
         "province": "ตราด",
         "district": "เขาสมิง",
         "postal": "23130",
@@ -4947,6 +5679,18 @@
       "hazard": "wind",
       "before": "yellow",
       "after": "orange"
+    },
+    {
+      "area": {
+        "province": "ตราด",
+        "district": "เขาสมิง",
+        "postal": "23130",
+        "postal_office": "ปณ.เขาสมิง",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "green",
+      "after": "yellow"
     },
     {
       "area": {
@@ -4971,6 +5715,18 @@
       "hazard": "wind",
       "before": "yellow",
       "after": "orange"
+    },
+    {
+      "area": {
+        "province": "ตราด",
+        "district": "เขาสมิง",
+        "postal": "23150",
+        "postal_office": "ปณ.แสนตุ้ง",
+        "note": "เฉพาะ ต.ท่าโสม, ต.แสนตุ้ง, ต.สะตอ, ต.ประณีต, ต.เทพนิมิต"
+      },
+      "hazard": "flood",
+      "before": "green",
+      "after": "yellow"
     },
     {
       "area": {
@@ -5036,11 +5792,47 @@
       "area": {
         "province": "นครนายก",
         "district": "เมือง",
+        "postal": "26000",
+        "postal_office": "ปณ.นครนายก",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "green",
+      "after": "orange"
+    },
+    {
+      "area": {
+        "province": "นครนายก",
+        "district": "เมือง",
         "postal": "26001",
         "postal_office": "ปณฝ. รร.จปร.",
         "note": "เฉพาะ ต.พรหมณี ม.1, ม.13, ภายในบริเวณ รร.จปร. และ รร.ปิยชาติ"
       },
       "hazard": "wind",
+      "before": "green",
+      "after": "yellow"
+    },
+    {
+      "area": {
+        "province": "นครนายก",
+        "district": "เมือง",
+        "postal": "26001",
+        "postal_office": "ปณฝ. รร.จปร.",
+        "note": "เฉพาะ ต.พรหมณี ม.1, ม.13, ภายในบริเวณ รร.จปร. และ รร.ปิยชาติ"
+      },
+      "hazard": "flood",
+      "before": "green",
+      "after": "orange"
+    },
+    {
+      "area": {
+        "province": "นครนายก",
+        "district": "องครักษ์",
+        "postal": "26120",
+        "postal_office": "ปณ.องครักษ์",
+        "note": ""
+      },
+      "hazard": "flood",
       "before": "green",
       "after": "yellow"
     },
@@ -5060,6 +5852,18 @@
       "area": {
         "province": "ปราจีนบุรี",
         "district": "กบินทร์บุรี",
+        "postal": "25110",
+        "postal_office": "ปณ.กบินทร์บุรี",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "orange",
+      "after": "red"
+    },
+    {
+      "area": {
+        "province": "ปราจีนบุรี",
+        "district": "กบินทร์บุรี",
         "postal": "25240",
         "postal_office": "ปณ.กบินทร์เก่า",
         "note": "เฉพาะ ต.เมืองเก่า"
@@ -5067,6 +5871,18 @@
       "hazard": "hail",
       "before": null,
       "after": "green"
+    },
+    {
+      "area": {
+        "province": "ปราจีนบุรี",
+        "district": "กบินทร์บุรี",
+        "postal": "25240",
+        "postal_office": "ปณ.กบินทร์เก่า",
+        "note": "เฉพาะ ต.เมืองเก่า"
+      },
+      "hazard": "flood",
+      "before": "orange",
+      "after": "red"
     },
     {
       "area": {
@@ -5143,6 +5959,18 @@
     {
       "area": {
         "province": "สระแก้ว",
+        "district": "ตาพระยา",
+        "postal": "27180",
+        "postal_office": "ปณ.ตาพระยา",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "yellow",
+      "after": "green"
+    },
+    {
+      "area": {
+        "province": "สระแก้ว",
         "district": "เมือง",
         "postal": "27000",
         "postal_office": "ปณ.สระแก้ว",
@@ -5151,6 +5979,18 @@
       "hazard": "wind",
       "before": "red",
       "after": "orange"
+    },
+    {
+      "area": {
+        "province": "สระแก้ว",
+        "district": "เมือง",
+        "postal": "27000",
+        "postal_office": "ปณ.สระแก้ว",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "orange",
+      "after": "yellow"
     },
     {
       "area": {
@@ -5227,6 +6067,18 @@
     {
       "area": {
         "province": "กาฬสินธุ์",
+        "district": "ท่าคันโท",
+        "postal": "46190",
+        "postal_office": "ปณ.ท่าคันโท",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "green",
+      "after": "yellow"
+    },
+    {
+      "area": {
+        "province": "กาฬสินธุ์",
         "district": "เมือง",
         "postal": "46000",
         "postal_office": "ปณ.กาฬสินธุ์",
@@ -5235,6 +6087,18 @@
       "hazard": "hail",
       "before": "orange",
       "after": "red"
+    },
+    {
+      "area": {
+        "province": "กาฬสินธุ์",
+        "district": "เมือง",
+        "postal": "46000",
+        "postal_office": "ปณ.กาฬสินธุ์",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "green",
+      "after": "orange"
     },
     {
       "area": {
@@ -5271,6 +6135,18 @@
       "hazard": "hail",
       "before": "yellow",
       "after": "orange"
+    },
+    {
+      "area": {
+        "province": "กาฬสินธุ์",
+        "district": "สมเด็จ",
+        "postal": "46150",
+        "postal_office": "ปณ.สมเด็จ",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "green",
+      "after": "yellow"
     },
     {
       "area": {
@@ -5671,6 +6547,18 @@
     {
       "area": {
         "province": "ชัยภูมิ",
+        "district": "หนองบัวแดง",
+        "postal": "36210",
+        "postal_office": "ปณ.หนองบัวแดง",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "yellow",
+      "after": "green"
+    },
+    {
+      "area": {
+        "province": "ชัยภูมิ",
         "district": "หนองบัวระเหว",
         "postal": "36250",
         "postal_office": "ปณ.หนองบัวระเหว",
@@ -5875,6 +6763,30 @@
     {
       "area": {
         "province": "นครราชสีมา",
+        "district": "เฉลิมพระเกียรติ",
+        "postal": "30000",
+        "postal_office": "ปณ.นครราชสีมา",
+        "note": "เฉพาะ ต.หนองงูเหลือม"
+      },
+      "hazard": "flood",
+      "before": "red",
+      "after": "orange"
+    },
+    {
+      "area": {
+        "province": "นครราชสีมา",
+        "district": "เฉลิมพระเกียรติ",
+        "postal": "30230",
+        "postal_office": "ปณ.เฉลิมพระเกียรติ",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "red",
+      "after": "orange"
+    },
+    {
+      "area": {
+        "province": "นครราชสีมา",
         "district": "ชุมพวง",
         "postal": "30270",
         "postal_office": "ปณ.ชุมพวง",
@@ -5899,6 +6811,18 @@
     {
       "area": {
         "province": "นครราชสีมา",
+        "district": "บัวใหญ่",
+        "postal": "30120",
+        "postal_office": "ปณ.บัวใหญ่",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "orange",
+      "after": "yellow"
+    },
+    {
+      "area": {
+        "province": "นครราชสีมา",
         "district": "ปักธงชัย",
         "postal": "30150",
         "postal_office": "ปณ.ปักธงชัย",
@@ -5907,6 +6831,30 @@
       "hazard": "wind",
       "before": "orange",
       "after": "red"
+    },
+    {
+      "area": {
+        "province": "นครราชสีมา",
+        "district": "ปากช่อง",
+        "postal": "30130",
+        "postal_office": "ปณ.ปากช่อง",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "orange",
+      "after": "yellow"
+    },
+    {
+      "area": {
+        "province": "นครราชสีมา",
+        "district": "ปากช่อง",
+        "postal": "30320",
+        "postal_office": "ปณ.กลางดง",
+        "note": "เฉพาะ ต.กลางดง, ต.พญาเย็น"
+      },
+      "hazard": "flood",
+      "before": "orange",
+      "after": "yellow"
     },
     {
       "area": {
@@ -5955,6 +6903,54 @@
       "hazard": "wind",
       "before": "yellow",
       "after": "green"
+    },
+    {
+      "area": {
+        "province": "นครราชสีมา",
+        "district": "วังน้ำเขียว",
+        "postal": "30150",
+        "postal_office": "ปณ.ปักธงชัย",
+        "note": "เฉพาะ ต.ระเริง"
+      },
+      "hazard": "flood",
+      "before": "orange",
+      "after": "yellow"
+    },
+    {
+      "area": {
+        "province": "นครราชสีมา",
+        "district": "วังน้ำเขียว",
+        "postal": "30370",
+        "postal_office": "ปณ.วังน้ำเขียว",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "orange",
+      "after": "yellow"
+    },
+    {
+      "area": {
+        "province": "นครราชสีมา",
+        "district": "สูงเนิน",
+        "postal": "30170",
+        "postal_office": "ปณ.สูงเนิน",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "orange",
+      "after": "yellow"
+    },
+    {
+      "area": {
+        "province": "นครราชสีมา",
+        "district": "สูงเนิน",
+        "postal": "30380",
+        "postal_office": "ปณ.กุดจิก",
+        "note": "เฉพาะ ต.กุดจิก, ต.นากลาง, ต.หนองตะไก้"
+      },
+      "hazard": "flood",
+      "before": "orange",
+      "after": "yellow"
     },
     {
       "area": {
@@ -6294,6 +7290,18 @@
     },
     {
       "area": {
+        "province": "มุกดาหาร",
+        "district": "หนองสูง",
+        "postal": "49160",
+        "postal_office": "ปณ.หนองสูง",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "orange",
+      "after": "green"
+    },
+    {
+      "area": {
         "province": "ยโสธร",
         "district": "กุดชุม",
         "postal": "35140",
@@ -6547,6 +7555,18 @@
     {
       "area": {
         "province": "เลย",
+        "district": "ท่าลี่",
+        "postal": "42140",
+        "postal_office": "ปณ.ท่าลี่",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "green",
+      "after": "yellow"
+    },
+    {
+      "area": {
+        "province": "เลย",
         "district": "นาด้วง",
         "postal": "42210",
         "postal_office": "ปณ.นาด้วง",
@@ -6595,6 +7615,18 @@
     {
       "area": {
         "province": "เลย",
+        "district": "ภูเรือ",
+        "postal": "42160",
+        "postal_office": "ปณ.ภูเรือ",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "green",
+      "after": "yellow"
+    },
+    {
+      "area": {
+        "province": "เลย",
         "district": "ภูหลวง",
         "postal": "42230",
         "postal_office": "ปณ.ภูหลวง",
@@ -6620,6 +7652,18 @@
       "area": {
         "province": "เลย",
         "district": "เมือง",
+        "postal": "42000",
+        "postal_office": "ปณ.เลย",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "orange",
+      "after": "red"
+    },
+    {
+      "area": {
+        "province": "เลย",
+        "district": "เมือง",
         "postal": "42100",
         "postal_office": "ปณ.นาอ้อ",
         "note": "เฉพาะ ต.นาอ้อ, ต.ศรีสองรัก"
@@ -6627,6 +7671,18 @@
       "hazard": "hail",
       "before": "green",
       "after": "yellow"
+    },
+    {
+      "area": {
+        "province": "เลย",
+        "district": "เมือง",
+        "postal": "42100",
+        "postal_office": "ปณ.นาอ้อ",
+        "note": "เฉพาะ ต.นาอ้อ, ต.ศรีสองรัก"
+      },
+      "hazard": "flood",
+      "before": "orange",
+      "after": "red"
     },
     {
       "area": {
@@ -6841,6 +7897,18 @@
         "note": ""
       },
       "hazard": "wind",
+      "before": "red",
+      "after": "orange"
+    },
+    {
+      "area": {
+        "province": "ศรีสะเกษ",
+        "district": "เมือง",
+        "postal": "33000",
+        "postal_office": "ปณ.ศรีสะเกษ",
+        "note": ""
+      },
+      "hazard": "flood",
       "before": "red",
       "after": "orange"
     },
@@ -7230,6 +8298,18 @@
     },
     {
       "area": {
+        "province": "สุรินทร์",
+        "district": "สังขะ",
+        "postal": "32150",
+        "postal_office": "ปณ.สังขะ",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "orange",
+      "after": "yellow"
+    },
+    {
+      "area": {
         "province": "บึงกาฬ",
         "district": "เซกา",
         "postal": "38150",
@@ -7399,6 +8479,18 @@
     {
       "area": {
         "province": "หนองบัวลำภู",
+        "district": "ศรีบุญเรือง",
+        "postal": "39180",
+        "postal_office": "ปณ.ศรีบุญเรือง",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "orange",
+      "after": "red"
+    },
+    {
+      "area": {
+        "province": "หนองบัวลำภู",
         "district": "สุวรรณคูหา",
         "postal": "39270",
         "postal_office": "ปณ.สุวรรณคูหา",
@@ -7519,6 +8611,18 @@
     {
       "area": {
         "province": "อุดรธานี",
+        "district": "ไชยวาน",
+        "postal": "41290",
+        "postal_office": "ปณ.ไชยวาน",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "orange",
+      "after": "green"
+    },
+    {
+      "area": {
+        "province": "อุดรธานี",
         "district": "ทุ่งฝน",
         "postal": "41310",
         "postal_office": "ปณ.ทุ่งฝน",
@@ -7550,6 +8654,18 @@
       },
       "hazard": "hail",
       "before": null,
+      "after": "green"
+    },
+    {
+      "area": {
+        "province": "อุดรธานี",
+        "district": "โนนสะอาด",
+        "postal": "41240",
+        "postal_office": "ปณ.โนนสะอาด",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "orange",
       "after": "green"
     },
     {
@@ -7663,6 +8779,18 @@
     {
       "area": {
         "province": "อุดรธานี",
+        "district": "วังสามหมอ",
+        "postal": "41280",
+        "postal_office": "ปณ.วังสามหมอ",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "orange",
+      "after": "green"
+    },
+    {
+      "area": {
+        "province": "อุดรธานี",
         "district": "ศรีธาตุ",
         "postal": "41230",
         "postal_office": "ปณ.ศรีธาตุ",
@@ -7724,12 +8852,36 @@
       "area": {
         "province": "อุดรธานี",
         "district": "หนองวัวซอ",
+        "postal": "41220",
+        "postal_office": "ปณ.หนองวัวซอ",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "yellow",
+      "after": "green"
+    },
+    {
+      "area": {
+        "province": "อุดรธานี",
+        "district": "หนองวัวซอ",
         "postal": "41360",
         "postal_office": "ปณ.หมากหญ้า",
         "note": "เฉพาะ ต.หนองวัวซอ, ต.หมากหญ้า, ต.น้ำพ่น, ต.หนองบัวบาน"
       },
       "hazard": "hail",
       "before": null,
+      "after": "green"
+    },
+    {
+      "area": {
+        "province": "อุดรธานี",
+        "district": "หนองวัวซอ",
+        "postal": "41360",
+        "postal_office": "ปณ.หมากหญ้า",
+        "note": "เฉพาะ ต.หนองวัวซอ, ต.หมากหญ้า, ต.น้ำพ่น, ต.หนองบัวบาน"
+      },
+      "hazard": "flood",
+      "before": "yellow",
       "after": "green"
     },
     {
@@ -7843,6 +8995,18 @@
     {
       "area": {
         "province": "อุบลราชธานี",
+        "district": "นาตาล",
+        "postal": "34170",
+        "postal_office": "ปณ.เขมราฐ",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "yellow",
+      "after": "green"
+    },
+    {
+      "area": {
+        "province": "อุบลราชธานี",
         "district": "นาเยีย",
         "postal": "34160",
         "postal_office": "ปณ.เดชอุดม",
@@ -7862,6 +9026,18 @@
       },
       "hazard": "hail",
       "before": null,
+      "after": "green"
+    },
+    {
+      "area": {
+        "province": "อุบลราชธานี",
+        "district": "โพธิ์ไทร",
+        "postal": "34340",
+        "postal_office": "ปณ.โพธิ์ไทร",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "yellow",
       "after": "green"
     },
     {
@@ -7975,6 +9151,30 @@
     {
       "area": {
         "province": "ชุมพร",
+        "district": "ท่าแซะ",
+        "postal": "86140",
+        "postal_office": "ปณ.ท่าแซะ",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "yellow",
+      "after": "green"
+    },
+    {
+      "area": {
+        "province": "ชุมพร",
+        "district": "ท่าแซะ",
+        "postal": "86190",
+        "postal_office": "ปณ.ปฐมพร",
+        "note": "เฉพาะ ต.หินแก้ว, ต.รับร่อ ม.1-9, ม.11-13, 15-18"
+      },
+      "hazard": "flood",
+      "before": "yellow",
+      "after": "green"
+    },
+    {
+      "area": {
+        "province": "ชุมพร",
         "district": "หลังสวน",
         "postal": "86110",
         "postal_office": "ปณ.หลังสวน",
@@ -7995,6 +9195,42 @@
       "hazard": "slide",
       "before": "green",
       "after": "yellow"
+    },
+    {
+      "area": {
+        "province": "ตรัง",
+        "district": "ปะเหลียน",
+        "postal": "92120",
+        "postal_office": "ปณ.ปะเหลียน",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "yellow",
+      "after": "orange"
+    },
+    {
+      "area": {
+        "province": "ตรัง",
+        "district": "ปะเหลียน",
+        "postal": "92140",
+        "postal_office": "ปณ.ย่านตาขาว",
+        "note": "เฉพาะ ต.บางด้วน, ต.บ้านนา, ต.ท่าพญา"
+      },
+      "hazard": "flood",
+      "before": "yellow",
+      "after": "orange"
+    },
+    {
+      "area": {
+        "province": "ตรัง",
+        "district": "ปะเหลียน",
+        "postal": "92180",
+        "postal_office": "ปณ.ทุ่งยาว",
+        "note": "เฉพาะ ต.ทุ่งยาว, ต.ลิพัง, ต.ปะเหลียน, ต.แหลมสอม, ต.สุโสะ ม.5"
+      },
+      "hazard": "flood",
+      "before": "yellow",
+      "after": "orange"
     },
     {
       "area": {
@@ -8139,6 +9375,18 @@
       "hazard": "hail",
       "before": null,
       "after": "green"
+    },
+    {
+      "area": {
+        "province": "นครศรีธรรมราช",
+        "district": "นบพิตำ",
+        "postal": "80160",
+        "postal_office": "ปณ.ท่าศาลา",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "orange",
+      "after": "yellow"
     },
     {
       "area": {
@@ -8335,6 +9583,18 @@
     {
       "area": {
         "province": "พังงา",
+        "district": "คุระบุรี",
+        "postal": "82150",
+        "postal_office": "ปณ.คุระบุรี",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "yellow",
+      "after": "green"
+    },
+    {
+      "area": {
+        "province": "พังงา",
         "district": "ทับปุด",
         "postal": "82180",
         "postal_office": "ปณ.ทับปุด",
@@ -8370,6 +9630,18 @@
     },
     {
       "area": {
+        "province": "พัทลุง",
+        "district": "ศรีบรรพต",
+        "postal": "93190",
+        "postal_office": "ปณ.ศรีบรรพต",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "green",
+      "after": "yellow"
+    },
+    {
+      "area": {
         "province": "ภูเก็ต",
         "district": "กะทู้",
         "postal": "83120",
@@ -8389,6 +9661,18 @@
         "note": "เฉพาะ ต.ป่าตอง"
       },
       "hazard": "slide",
+      "before": "yellow",
+      "after": "orange"
+    },
+    {
+      "area": {
+        "province": "ภูเก็ต",
+        "district": "ถลาง",
+        "postal": "83110",
+        "postal_office": "ปณ.ถลาง",
+        "note": ""
+      },
+      "hazard": "flood",
       "before": "yellow",
       "after": "orange"
     },
@@ -8484,9 +9768,33 @@
         "postal_office": "ปณ.เบตง",
         "note": ""
       },
+      "hazard": "flood",
+      "before": "orange",
+      "after": "red"
+    },
+    {
+      "area": {
+        "province": "ยะลา",
+        "district": "เบตง",
+        "postal": "95110",
+        "postal_office": "ปณ.เบตง",
+        "note": ""
+      },
       "hazard": "slide",
       "before": "yellow",
       "after": "red"
+    },
+    {
+      "area": {
+        "province": "ยะลา",
+        "district": "ยะหา",
+        "postal": "95120",
+        "postal_office": "ปณ.ยะหา",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "green",
+      "after": "yellow"
     },
     {
       "area": {
@@ -8552,6 +9860,18 @@
       "area": {
         "province": "สตูล",
         "district": "เมือง",
+        "postal": "91000",
+        "postal_office": "ปณ.สตูล",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "yellow",
+      "after": "orange"
+    },
+    {
+      "area": {
+        "province": "สตูล",
+        "district": "เมือง",
         "postal": "91110",
         "postal_office": "ปณ.ละงู",
         "note": "เฉพาะ อุทยานแห่งชาติตะรุเตา"
@@ -8576,6 +9896,18 @@
       "area": {
         "province": "สตูล",
         "district": "เมือง",
+        "postal": "91110",
+        "postal_office": "ปณ.ละงู",
+        "note": "เฉพาะ อุทยานแห่งชาติตะรุเตา"
+      },
+      "hazard": "flood",
+      "before": "yellow",
+      "after": "orange"
+    },
+    {
+      "area": {
+        "province": "สตูล",
+        "district": "เมือง",
         "postal": "91140",
         "postal_office": "ปณ.ฉลุง",
         "note": "เฉพาะ ต.ฉลุง, ต.บ้านควน, ต.ควนโพธิ์, ต.เกตรี"
@@ -8593,6 +9925,18 @@
         "note": "เฉพาะ ต.ฉลุง, ต.บ้านควน, ต.ควนโพธิ์, ต.เกตรี"
       },
       "hazard": "wind",
+      "before": "yellow",
+      "after": "orange"
+    },
+    {
+      "area": {
+        "province": "สตูล",
+        "district": "เมือง",
+        "postal": "91140",
+        "postal_office": "ปณ.ฉลุง",
+        "note": "เฉพาะ ต.ฉลุง, ต.บ้านควน, ต.ควนโพธิ์, ต.เกตรี"
+      },
+      "hazard": "flood",
       "before": "yellow",
       "after": "orange"
     },
@@ -8707,6 +10051,18 @@
     {
       "area": {
         "province": "สุราษฎร์ธานี",
+        "district": "พนม",
+        "postal": "84250",
+        "postal_office": "ปณ.พนม",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "yellow",
+      "after": "orange"
+    },
+    {
+      "area": {
+        "province": "สุราษฎร์ธานี",
         "district": "เมือง",
         "postal": "84000",
         "postal_office": "ปณ.สุราษฎร์ธานี",
@@ -8731,6 +10087,18 @@
     {
       "area": {
         "province": "สุราษฎร์ธานี",
+        "district": "วิภาวดี",
+        "postal": "84180",
+        "postal_office": "ปณ.คีรีรัฐนิคม",
+        "note": ""
+      },
+      "hazard": "flood",
+      "before": "yellow",
+      "after": "green"
+    },
+    {
+      "area": {
+        "province": "สุราษฎร์ธานี",
         "district": "เวียงสระ",
         "postal": "84190",
         "postal_office": "ปณ.บ้านส้อง",
@@ -8741,9 +10109,7 @@
       "after": "red"
     }
   ],
-  "blockedHazards": [
-    "flood"
-  ],
+  "blockedHazards": [],
   "sourceNotes": [
     {
       "year": "2568",
@@ -8756,13 +10122,6 @@
       "resource": "8c477d58-3ae9-436f-9e3d-f7d302fe8197",
       "url": "https://catalog.disaster.go.th/dataset/b3f55bb3-0f35-4fda-b41c-f337aaf4f605/resource/8c477d58-3ae9-436f-9e3d-f7d302fe8197/download/gd027_flood_stat2562_final.csv",
       "reason": "province_summary_not_used_for_district_event_days"
-    },
-    {
-      "year": "2563",
-      "resource": "27e81e82-7cdc-4fe9-94b9-f3ca193c2328",
-      "url": "https://catalog.disaster.go.th/dataset/b3f55bb3-0f35-4fda-b41c-f337aaf4f605/resource/27e81e82-7cdc-4fe9-94b9-f3ca193c2328/download/gd027_flood_2563_final.csv",
-      "reason": "invalid_incident_dates",
-      "rows": 5932
     },
     {
       "year": "2568",
