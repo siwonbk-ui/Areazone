@@ -43,6 +43,14 @@ class BaselineTests(unittest.TestCase):
         self.assertFalse(days)
         self.assertEqual(years,[])
 
+    def test_flood_can_prefer_official_xlsx_over_malformed_csv(self):
+        resources = {'resources': {
+            'csv': {'name':'2563 flood', 'format':'CSV', 'url':'https://example.com/bad.csv'},
+            'xlsx': {'name':'2563 flood', 'format':'XLSX', 'url':'https://example.com/good.xlsx'},
+        }}
+        chosen = baseline.pick_yearly(resources, prefer_xlsx=True)
+        self.assertEqual(chosen['2563']['id'], 'xlsx')
+
     def test_missing_keeps_previous_before_xlsx(self):
         previous={'records':[row(flood='red')]}
         base={'records':[row(xlsx_flood='yellow')]}
