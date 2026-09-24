@@ -48,7 +48,12 @@ def run():
         status['review']['blockedHazards'] = r.get('blockedHazards', [])
     write_json(status_path, status)
     print(json.dumps(status, ensure_ascii=False))
-    return 1 if status['status'] == 'degraded' else 0
+    # A temporary upstream outage is an expected operating condition: preserve
+    # the last verified data, publish `degraded` for n8n to notify the owner,
+    # and let the scheduled GitHub job complete successfully. A red Action
+    # must be reserved for a workflow/runtime failure, not for a source that
+    # is temporarily unavailable.
+    return 0
 
 
 if __name__ == '__main__':
