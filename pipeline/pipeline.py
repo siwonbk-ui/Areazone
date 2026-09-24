@@ -117,8 +117,14 @@ def year_of(name):
     return m.group(1) if m else None
 
 
-def pick_yearly(ds, want_years=None):
-    """One resource per year, preferring CSV over XLSX."""
+def pick_yearly(ds, want_years=None, prefer_xlsx=False):
+    """Return one resource per year, with an explicit, auditable format preference."""
+    # The flood CSV for 2563 has blank/invalid incident dates, while the
+    # official XLSX contains the district-level incident table and valid dates.
+    # Keep CSV as the normal default for the other hazards, but prefer XLSX for
+    # flood rather than silently accepting the malformed CSV.
+    ranks = ({'XLSX': 3, 'XLS': 2, 'CSV': 1} if prefer_xlsx
+             else {'CSV': 3, 'XLSX': 2, 'XLS': 1})
     best = {}
     for rid, r in ds['resources'].items():
         y = year_of(r['name'])
@@ -127,7 +133,7 @@ def pick_yearly(ds, want_years=None):
         if want_years and y not in want_years:
             continue
         cur = best.get(y)
-        if cur is None or (cur['format'] != 'CSV' and r['format'] == 'CSV'):
+        if cur is None or ranks.get(r['format'], 0) > ranks.get(cur['format'], 0):
             best[y] = dict(r, id=rid)
     return dict(sorted(best.items()))
 
@@ -171,7 +177,18 @@ def read_rows(path, fmt):
     import openpyxl
     wb = openpyxl.load_workbook(io.BytesIO(workbook_bytes), read_only=True, data_only=True)
     sheets = [s for s in wb.sheetnames if s != 'Column_Name'] or wb.sheetnames
-    ws = wb[sheets[0]]
+
+    # Some official workbooks put a province summary first and the actual
+    # village/district incident table on a later sheet (e.g. flood 2563's
+    # "Book1"). Select the sheet whose early rows expose district event fields.
+    def sheet_score(name):
+        preview = list(wb[name].iter_rows(min_row=1, max_row=4, values_only=True))
+        header = ' '.join(str(c or '').lower() for row in preview for c in row)
+        return (int('province' in header or 'จังหวัด' in header)
+                + int('district' in header or 'อำเภอ' in header)
+                + int('disaster area date' in header or 'วันที่เกิด' in header))
+
+    ws = wb[max(sheets, key=sheet_score)]
     return [['' if c is None else str(c) for c in row]
             for row in ws.iter_rows(values_only=True)]
 
@@ -461,7 +478,7 @@ def area_cuts(areas, ps=(90, 70, 50)):
 def build(state):
     SOURCE_NOTES.clear()
     storm_files = pick_yearly(state['storm'])
-    flood_files = pick_yearly(state['flood'])
+    flood_files = pick_yearly(state['flood'], prefer_xlsx=True)
     slide_files = pick_yearly(state['slide'])
 
     flood2568 = {}
