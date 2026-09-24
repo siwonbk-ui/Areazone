@@ -1,7 +1,16 @@
 {
-  "name": "NAT CAT — ตรวจและปรับปรุงข้อมูลรายวัน",
+  "name": "NAT CAT v2 — ตรวจผลรายวัน (GitHub เก็บข้อมูล)",
+  "active": false,
   "nodes": [
     {
+      "id": "daily",
+      "name": "ทุกวัน 07:00 ไทย",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        0
+      ],
       "parameters": {
         "rule": {
           "interval": [
@@ -12,262 +21,96 @@
             }
           ]
         }
-      },
-      "id": "a1000000-0000-4000-8000-000000000001",
-      "name": "ทุกวัน 07:00",
-      "type": "n8n-nodes-base.scheduleTrigger",
-      "typeVersion": 1.2,
-      "position": [-640, 300]
+      }
     },
     {
-      "parameters": {
-        "jsCode": "// ชุดข้อมูลเปิดที่ต้องเฝ้าดู (CKAN API ของ ปภ. และกรมพัฒนาที่ดิน)\nconst datasets = [\n  { key: 'storm',     label: 'ปภ. — วาตภัย',        base: 'https://catalog.disaster.go.th', id: '32ab6f0a-142a-4b60-ab5e-7f2b057957b7' },\n  { key: 'flood',     label: 'ปภ. — อุทกภัย',       base: 'https://catalog.disaster.go.th', id: 'b3f55bb3-0f35-4fda-b41c-f337aaf4f605' },\n  { key: 'slide',     label: 'ปภ. — ดินโคลนถล่ม',   base: 'https://catalog.disaster.go.th', id: '016d235e-6d62-4d72-aeae-769b1ab0db31' },\n  { key: 'lddflood',  label: 'LDD — น้ำท่วมซ้ำซาก', base: 'https://lddcatalog.ldd.go.th',   id: 'ldd_21_04' },\n  { key: 'lddrought', label: 'LDD — แล้งซ้ำซาก',    base: 'https://lddcatalog.ldd.go.th',   id: 'lpd05' }\n];\n\nreturn datasets.map(d => ({\n  json: { ...d, url: `${d.base}/api/3/action/package_show?id=${d.id}` }\n}));"
-      },
-      "id": "a1000000-0000-4000-8000-000000000002",
-      "name": "รายการชุดข้อมูล",
-      "type": "n8n-nodes-base.code",
-      "typeVersion": 2,
-      "position": [-420, 300]
-    },
-    {
-      "parameters": {
-        "url": "={{ $json.url }}",
-        "options": {
-          "timeout": 30000
-        }
-      },
-      "id": "a1000000-0000-4000-8000-000000000003",
-      "name": "อ่าน metadata จาก CKAN",
+      "id": "status",
+      "name": "อ่านผลตรวจ GitHub",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
-      "position": [-200, 300]
-    },
-    {
+      "position": [
+        240,
+        0
+      ],
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 5000,
+      "onError": "continueRegularOutput",
       "parameters": {
-        "jsCode": "// สร้าง fingerprint ของทุกชุดข้อมูล = เวลาที่แก้ไขล่าสุดของแต่ละไฟล์\nconst items = $input.all();\nconst meta  = $('รายการชุดข้อมูล').all().map(i => i.json);\nconst fp = {};\n\nitems.forEach((item, i) => {\n  const res = item.json.result || {};\n  const key = meta[i] ? meta[i].key : res.name;\n  const resources = {};\n  (res.resources || [])\n    .filter(r => ['CSV', 'XLS', 'XLSX'].includes(String(r.format || '').toUpperCase()))\n    .forEach(r => { resources[r.id] = r.last_modified || r.created; });\n  fp[key] = {\n    label: meta[i] ? meta[i].label : key,\n    metadata_modified: res.metadata_modified,\n    resources\n  };\n});\n\nreturn [{ json: { fingerprint: fp } }];"
-      },
-      "id": "a1000000-0000-4000-8000-000000000004",
-      "name": "สร้าง fingerprint",
-      "type": "n8n-nodes-base.code",
-      "typeVersion": 2,
-      "position": [20, 300]
-    },
-    {
-      "parameters": {
-        "url": "=https://raw.githubusercontent.com/siwonbk-ui/Areazone/main/pipeline/sources_state.json",
+        "url": "https://raw.githubusercontent.com/siwonbk-ui/Areazone/main/pipeline/update_status.json",
         "options": {
+          "timeout": 30000,
           "response": {
             "response": {
-              "neverError": true
+              "responseFormat": "json"
             }
-          },
-          "timeout": 30000
+          }
         }
-      },
-      "id": "a1000000-0000-4000-8000-000000000005",
-      "name": "อ่าน state เดิมจาก GitHub",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
-      "position": [240, 300]
+      }
     },
     {
-      "parameters": {
-        "jsCode": "// เทียบ fingerprint ใหม่กับ state ที่เก็บไว้ใน repo\nconst current = $('สร้าง fingerprint').first().json.fingerprint;\nconst previous = $json && $json.storm ? $json : null;\n\nconst changes = [];\nfor (const [key, cur] of Object.entries(current)) {\n  const old = previous ? previous[key] : null;\n  if (!old) { changes.push(`${cur.label}: ยังไม่เคยบันทึก state`); continue; }\n  if (old.metadata_modified !== cur.metadata_modified) {\n    changes.push(`${cur.label}: ชุดข้อมูลถูกแก้ไข (${old.metadata_modified} → ${cur.metadata_modified})`);\n  }\n  const oldRes = old.resources || {};\n  const added = Object.keys(cur.resources).filter(id => !(id in oldRes));\n  const touched = Object.keys(cur.resources).filter(id => id in oldRes && oldRes[id] !== cur.resources[id]);\n  if (added.length)   changes.push(`${cur.label}: มีไฟล์ใหม่ ${added.length} รายการ`);\n  if (touched.length) changes.push(`${cur.label}: ไฟล์เดิมถูกอัปเดต ${touched.length} รายการ`);\n}\n\nreturn [{ json: {\n  changed: changes.length > 0,\n  changeCount: changes.length,\n  changes,\n  checkedAt: new Date().toISOString()\n} }];"
-      },
-      "id": "a1000000-0000-4000-8000-000000000006",
-      "name": "เทียบว่ามีอะไรเปลี่ยน",
+      "id": "summary",
+      "name": "สรุปผลและตรวจความสด",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [460, 300]
-    },
-    {
+      "position": [
+        480,
+        0
+      ],
       "parameters": {
-        "conditions": {
-          "options": {
-            "caseSensitive": true,
-            "leftValue": "",
-            "typeValidation": "strict",
-            "version": 2
-          },
-          "conditions": [
-            {
-              "id": "cond-changed",
-              "leftValue": "={{ $json.changed }}",
-              "rightValue": true,
-              "operator": {
-                "type": "boolean",
-                "operation": "true",
-                "singleValue": true
-              }
-            }
-          ],
-          "combinator": "and"
-        },
-        "options": {}
-      },
-      "id": "a1000000-0000-4000-8000-000000000007",
-      "name": "มีข้อมูลใหม่หรือไม่",
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 2.2,
-      "position": [680, 300]
+        "jsCode": "const s = $input.first().json;\nconst checked = Date.parse(s.checkedAt || '');\nconst stale = !Number.isFinite(checked) || Date.now() - checked > 4 * 3600000;\nconst failed = Boolean(s.error) || stale || s.status !== 'ok';\nconst review = s.review || {};\nconst messages = [\n  failed ? 'NAT CAT: ต้องตรวจระบบ (ดึงผลไม่ได้ / ข้อมูลล่าช้า / แหล่งข้อมูลขัดข้อง)' : 'NAT CAT: ระบบตรวจข้อมูลทำงาน',\n  'ตรวจ GitHub ล่าสุด: ' + (s.checkedAt || 'ไม่ทราบ'),\n  'ผล baseline: ' + (s.baselineStatus || 'ไม่ทราบ'),\n  'แหล่งปัจจุบัน: ' + JSON.stringify(s.currentSources || {}),\n  review.status === 'pending_review' ? 'มีรายการสีพื้นฐานรอตรวจ ' + review.changeCount + ' รายการ; ยังใช้ค่าเดิม' : 'สถานะตรวจสี: ' + (review.status || 'ไม่มีรายการใหม่'),\n  'ชั้นภัยที่คงค่าเดิมเพราะคุณภาพข้อมูล: ' + (review.blockedHazards || []).join(', '),\n  'ผลรัน: https://github.com/siwonbk-ui/Areazone/actions/workflows/update-data.yml'\n];\nreturn [{json:{needsAttention:failed || review.status === 'pending_review', text:messages.join('\\n'), checkedAt:s.checkedAt || null}}];"
+      }
     },
     {
-      "parameters": {
-        "method": "POST",
-        "url": "=https://api.github.com/repos/siwonbk-ui/Areazone/actions/workflows/update-data.yml/dispatches",
-        "authentication": "genericCredentialType",
-        "genericAuthType": "httpHeaderAuth",
-        "sendHeaders": true,
-        "headerParameters": {
-          "parameters": [
-            {
-              "name": "Accept",
-              "value": "application/vnd.github+json"
-            },
-            {
-              "name": "X-GitHub-Api-Version",
-              "value": "2022-11-28"
-            }
-          ]
-        },
-        "sendBody": true,
-        "specifyBody": "json",
-        "jsonBody": "={\n  \"ref\": \"main\",\n  \"inputs\": { \"force\": \"false\" }\n}",
-        "options": {
-          "timeout": 30000
-        }
-      },
-      "id": "a1000000-0000-4000-8000-000000000008",
-      "name": "สั่ง GitHub Actions ให้สร้างข้อมูลใหม่",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
-      "position": [900, 200]
-    },
-    {
-      "parameters": {
-        "amount": 4,
-        "unit": "minutes"
-      },
-      "id": "a1000000-0000-4000-8000-000000000009",
-      "name": "รอให้ Actions ทำงานเสร็จ",
-      "type": "n8n-nodes-base.wait",
-      "typeVersion": 1.1,
-      "position": [1120, 200],
-      "webhookId": "b1000000-0000-4000-8000-000000000009"
-    },
-    {
-      "parameters": {
-        "url": "=https://api.github.com/repos/siwonbk-ui/Areazone/actions/workflows/update-data.yml/runs?per_page=1",
-        "authentication": "genericCredentialType",
-        "genericAuthType": "httpHeaderAuth",
-        "sendHeaders": true,
-        "headerParameters": {
-          "parameters": [
-            {
-              "name": "Accept",
-              "value": "application/vnd.github+json"
-            }
-          ]
-        },
-        "options": {
-          "timeout": 30000
-        }
-      },
-      "id": "a1000000-0000-4000-8000-000000000010",
-      "name": "เช็คผลการรัน",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
-      "position": [1340, 200]
-    },
-    {
-      "parameters": {
-        "promptType": "define",
-        "text": "=คุณเป็นผู้ช่วยสรุปผลงานอัตโนมัติของทีมบริหารความเสี่ยง เขียนสรุปภาษาไทยสั้น ๆ ไม่เกิน 4 บรรทัด สำหรับแจ้งทีมผ่านแชท\n\nสิ่งที่ตรวจพบวันนี้:\n{{ JSON.stringify($('เทียบว่ามีอะไรเปลี่ยน').first().json.changes, null, 2) }}\n\nผลการรัน GitHub Actions:\n- สถานะ: {{ $json.workflow_runs[0].status }}\n- ผลลัพธ์: {{ $json.workflow_runs[0].conclusion }}\n- ลิงก์: {{ $json.workflow_runs[0].html_url }}\n\nข้อกำหนด: ห้ามแต่งตัวเลขหรือข้อสรุปที่ไม่ได้อยู่ในข้อมูลข้างต้น ถ้าผลลัพธ์ไม่ใช่ success ให้ระบุชัดว่าต้องมีคนเข้าไปตรวจสอบ",
-        "messages": {
-          "messageValues": [
-            {
-              "message": "สรุปสั้น กระชับ เป็นภาษาไทย ใช้ถ้อยคำระดับมืออาชีพ ไม่ใส่อิโมจิ"
-            }
-          ]
-        },
-        "batching": {}
-      },
-      "id": "a1000000-0000-4000-8000-000000000011",
-      "name": "AI สรุปผลให้ทีมอ่าน",
-      "type": "@n8n/n8n-nodes-langchain.chainLlm",
-      "typeVersion": 1.7,
-      "position": [1560, 200]
-    },
-    {
-      "parameters": {
-        "options": {}
-      },
-      "id": "a1000000-0000-4000-8000-000000000012",
-      "name": "โมเดลภาษา (ตั้งค่า credential ที่นี่)",
-      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
-      "typeVersion": 1.2,
-      "position": [1560, 400]
-    },
-    {
-      "parameters": {},
-      "id": "a1000000-0000-4000-8000-000000000013",
-      "name": "แจ้งทีม (ต่อ Slack / LINE / Email ที่นี่)",
+      "id": "delivery",
+      "name": "ผลสรุป — ต่อช่องทางแจ้งทีมที่นี่",
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
-      "position": [1800, 200]
-    },
-    {
-      "parameters": {},
-      "id": "a1000000-0000-4000-8000-000000000014",
-      "name": "ไม่มีอะไรเปลี่ยน — จบการทำงาน",
-      "type": "n8n-nodes-base.noOp",
-      "typeVersion": 1,
-      "position": [900, 420]
+      "position": [
+        720,
+        0
+      ],
+      "parameters": {}
     }
   ],
   "connections": {
-    "ทุกวัน 07:00": {
-      "main": [[{ "node": "รายการชุดข้อมูล", "type": "main", "index": 0 }]]
-    },
-    "รายการชุดข้อมูล": {
-      "main": [[{ "node": "อ่าน metadata จาก CKAN", "type": "main", "index": 0 }]]
-    },
-    "อ่าน metadata จาก CKAN": {
-      "main": [[{ "node": "สร้าง fingerprint", "type": "main", "index": 0 }]]
-    },
-    "สร้าง fingerprint": {
-      "main": [[{ "node": "อ่าน state เดิมจาก GitHub", "type": "main", "index": 0 }]]
-    },
-    "อ่าน state เดิมจาก GitHub": {
-      "main": [[{ "node": "เทียบว่ามีอะไรเปลี่ยน", "type": "main", "index": 0 }]]
-    },
-    "เทียบว่ามีอะไรเปลี่ยน": {
-      "main": [[{ "node": "มีข้อมูลใหม่หรือไม่", "type": "main", "index": 0 }]]
-    },
-    "มีข้อมูลใหม่หรือไม่": {
+    "ทุกวัน 07:00 ไทย": {
       "main": [
-        [{ "node": "สั่ง GitHub Actions ให้สร้างข้อมูลใหม่", "type": "main", "index": 0 }],
-        [{ "node": "ไม่มีอะไรเปลี่ยน — จบการทำงาน", "type": "main", "index": 0 }]
+        [
+          {
+            "node": "อ่านผลตรวจ GitHub",
+            "type": "main",
+            "index": 0
+          }
+        ]
       ]
     },
-    "สั่ง GitHub Actions ให้สร้างข้อมูลใหม่": {
-      "main": [[{ "node": "รอให้ Actions ทำงานเสร็จ", "type": "main", "index": 0 }]]
+    "อ่านผลตรวจ GitHub": {
+      "main": [
+        [
+          {
+            "node": "สรุปผลและตรวจความสด",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     },
-    "รอให้ Actions ทำงานเสร็จ": {
-      "main": [[{ "node": "เช็คผลการรัน", "type": "main", "index": 0 }]]
-    },
-    "เช็คผลการรัน": {
-      "main": [[{ "node": "AI สรุปผลให้ทีมอ่าน", "type": "main", "index": 0 }]]
-    },
-    "AI สรุปผลให้ทีมอ่าน": {
-      "main": [[{ "node": "แจ้งทีม (ต่อ Slack / LINE / Email ที่นี่)", "type": "main", "index": 0 }]]
-    },
-    "โมเดลภาษา (ตั้งค่า credential ที่นี่)": {
-      "ai_languageModel": [[{ "node": "AI สรุปผลให้ทีมอ่าน", "type": "ai_languageModel", "index": 0 }]]
+    "สรุปผลและตรวจความสด": {
+      "main": [
+        [
+          {
+            "node": "ผลสรุป — ต่อช่องทางแจ้งทีมที่นี่",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
+  "pinData": {},
   "settings": {
-    "executionOrder": "v1"
-  },
-  "pinData": {}
+    "executionOrder": "v1",
+    "timezone": "Asia/Bangkok"
+  }
 }
