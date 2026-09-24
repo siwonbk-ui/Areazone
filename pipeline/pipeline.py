@@ -478,7 +478,10 @@ def area_cuts(areas, ps=(90, 70, 50)):
 def build(state):
     SOURCE_NOTES.clear()
     storm_files = pick_yearly(state['storm'])
-    flood_files = pick_yearly(state['flood'], prefer_xlsx=True)
+    flood_files = pick_yearly(state['flood'])
+    # Only 2563 has been audited as a replacement. Other years' XLSX sheets
+    # have different schemas; do not replace valid CSVs indiscriminately.
+    flood_files.update(pick_yearly(state['flood'], want_years={'2563'}, prefer_xlsx=True))
     slide_files = pick_yearly(state['slide'])
 
     flood2568 = {}

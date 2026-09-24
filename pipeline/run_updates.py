@@ -2,6 +2,8 @@
 import json
 import os
 import sys
+import hashlib
+from pathlib import Path
 from datetime import datetime, timedelta, timezone
 from review import ROOT, approve, now, write_json
 import current
@@ -14,20 +16,25 @@ def run():
     errors = []
     review_hash = os.environ.get('APPROVE_HASH', '').strip()
     force = os.environ.get('FORCE_CHECK', '').lower() == 'true'
+    code_hash = hashlib.sha256(b''.join(
+        (Path(__file__).parent / name).read_bytes()
+        for name in ('pipeline.py', 'review.py')
+    )).hexdigest()
+    code_changed = status.get('baselineCodeHash') != code_hash
     if review_hash:
         approve(review_hash, os.environ.get('REVIEWER', ''))
         status['lastApprovedAt'] = now()
     today = datetime.now(timezone(timedelta(hours=7))).date().isoformat()
-    if not review_hash and (force or status.get('baselineCheckDay') != today):
+    if not review_hash and (force or code_changed or status.get('baselineCheckDay') != today):
         status.update(baselineCheckDay=today, baselineCheckedAt=now())
         try:
             args = sys.argv
             try:
-                sys.argv = ['pipeline.py'] + (['--force'] if force else [])
+                sys.argv = ['pipeline.py'] + (['--force'] if force or code_changed else [])
                 pipeline.main()
             finally:
                 sys.argv = args
-            status.update(baselineStatus='ok', baselineError=None)
+            status.update(baselineStatus='ok', baselineError=None, baselineCodeHash=code_hash)
         except Exception as exc:
             status.update(baselineStatus='unavailable', baselineError=str(exc)[:500])
             errors.append('baseline')
@@ -35,6 +42,10 @@ def run():
         current.main(force=force)
         states = json.loads((ROOT / 'pipeline/current_state.json').read_text(encoding='utf-8'))
         status['currentSources'] = {k: v['status'] for k, v in states.items()}
+        status['currentSourceErrors'] = {
+            k: {field: v[field] for field in ('error', 'httpStatus', 'errorDetail') if field in v}
+            for k, v in states.items() if v['status'] == 'unavailable'
+        }
         errors += [k for k, v in states.items() if v['status'] in ('unavailable', 'stale')]
         status.pop('currentError', None)
     except Exception as exc:
@@ -46,6 +57,9 @@ def run():
         r = json.loads(report.read_text(encoding='utf-8'))
         status['review'] = {k: r[k] for k in ('status','reviewHash','changeCount')}
         status['review']['blockedHazards'] = r.get('blockedHazards', [])
+        status['baselineQuality'] = 'blocked' if r.get('blockedHazards') else 'passed'
+        if r.get('blockedHazards'):
+            status['status'] = 'degraded'
     write_json(status_path, status)
     print(json.dumps(status, ensure_ascii=False))
     # A temporary upstream outage is an expected operating condition: preserve

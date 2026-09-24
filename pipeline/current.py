@@ -5,6 +5,7 @@ import json
 import re
 import time
 import urllib.request
+import urllib.error
 import xml.etree.ElementTree as ET
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timedelta, timezone
@@ -101,6 +102,11 @@ def collect(source, previous, now, provinces, force=False):
             status['status'] = 'stale'
     except Exception as exc:
         status.update(status='unavailable', error=type(exc).__name__, newestPublishedAt=old.get('newestPublishedAt'))
+        if isinstance(exc, urllib.error.HTTPError):
+            status['httpStatus'] = exc.code
+            status['errorDetail'] = 'HTTP ' + str(exc.code)
+        else:
+            status['errorDetail'] = str(exc)[:300]
     return status
 
 
