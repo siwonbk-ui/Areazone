@@ -3,6 +3,10 @@ run-name: NAT CAT · ${{ github.event_name }} · ${{ inputs.approve_hash && 'rev
 on:
   schedule:
     - cron: '17 * * * *'
+  # n8n (inside Thailand) commits the DMR feed here; process it right away
+  push:
+    branches: [main]
+    paths: ['pipeline/feeds/**']
   workflow_dispatch:
     inputs:
       force:
@@ -15,6 +19,7 @@ on:
         default: ''
 permissions:
   contents: write
+  actions: write   # dispatch the Publish workflow only when data was committed
 concurrency:
   group: natcat-data
   cancel-in-progress: false
@@ -28,6 +33,13 @@ jobs:
         with:
           python-version: '3.12'
       - run: pip install -r pipeline/requirements.txt
+      - name: เรียกคืนสถานะรอบก่อน (เก็บใน cache ไม่ commit)
+        uses: actions/cache/restore@v4
+        with:
+          path: .state-cache
+          key: natcat-state-${{ github.run_id }}
+          restore-keys: natcat-state-
+      - run: python pipeline/state_cache.py restore
       - name: ทดสอบการคงค่าเดิมและตรวจข้อมูล
         run: python -m unittest discover -s tests -v
       - name: ตรวจข้อมูลและสร้างรายการรอตรวจ
@@ -36,21 +48,42 @@ jobs:
           APPROVE_HASH: ${{ inputs.approve_hash }}
           REVIEWER: ${{ github.actor }}
         run: python pipeline/run_updates.py
-      - name: บันทึกข้อมูลและผลตรวจ
+      - name: เก็บสถานะรอบนี้
+        if: always()
+        run: python pipeline/state_cache.py save
+      - uses: actions/cache/save@v4
+        if: always()
+        with:
+          path: .state-cache
+          key: natcat-state-${{ github.run_id }}-${{ github.run_attempt }}
+      - name: บันทึกข้อมูลเฉพาะเมื่อมีการเปลี่ยนแปลงจริง
+        id: commit
         if: always()
         run: |
           git config user.name "natcat-data-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data_updated.js current_data.js pipeline/*.json
-          if ! git diff --staged --quiet; then
-            git commit -m "chore(data): update official reports and review status"
-            git push
+          FILES="data_updated.js current_data.js $(ls pipeline/*.json)"
+          if python pipeline/commit_gate.py $FILES; then
+            git add $FILES
+            if ! git diff --staged --quiet; then
+              git commit -m "chore(data): update official reports and review status"
+              # n8n may have pushed the DMR relay while this run was working
+              git pull --rebase --autostash origin main
+              git push
+              echo "committed=true" >> "$GITHUB_OUTPUT"
+            fi
           fi
+      - name: เผยแพร่หน้าเว็บเมื่อข้อมูลเปลี่ยน
+        if: steps.commit.outputs.committed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run pages.yml --ref main
       - name: สรุปสำหรับผู้ตรวจ
         if: always()
         run: |
           echo '### NAT CAT update' >> "$GITHUB_STEP_SUMMARY"
           echo 'Baseline colors change only after approval of the exact review hash.' >> "$GITHUB_STEP_SUMMARY"
+          echo "Data committed this run: ${{ steps.commit.outputs.committed || 'false' }}" >> "$GITHUB_STEP_SUMMARY"
           if test -f pipeline/update_status.json; then
             echo '```json' >> "$GITHUB_STEP_SUMMARY"
             cat pipeline/update_status.json >> "$GITHUB_STEP_SUMMARY"
