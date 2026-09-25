@@ -10,9 +10,9 @@
       "eq"
     ],
     "staleHours": 48,
-    "intervalHours": 18,
+    "intervalHours": 30,
     "fetchIntervalHours": 1,
-    "lastAttemptAt": "2026-09-25T10:07:37+00:00",
+    "lastAttemptAt": "2026-09-25T11:51:46+00:00",
     "lastSuccessAt": "2026-09-25T10:07:24+00:00",
     "events": [
       {
