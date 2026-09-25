@@ -3,3 +3,4 @@ pipeline/.cache/
 *.tmp
 _site/
 tests/screenshots/
+.state-cache/

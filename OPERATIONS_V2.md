@@ -14,11 +14,38 @@
 |---|---|---|
 | n8n | ทุกวัน 07:00 Asia/Bangkok | อ่านผลการตรวจจาก GitHub, สรุปความล่าช้า/แหล่งล่ม/รายการรอตรวจ |
 | GitHub | นาทีที่ 17 ทุกชั่วโมง | เรียกตัวรวบรวมรายงาน, บันทึกผล, เผยแพร่หน้าเว็บ |
-| DMR | ทุก 1 ชั่วโมง | RSS รายงานธรณีพิบัติภัย/ประกาศ (ไม่ได้อ่าน PDF เพื่อยืนยันขอบเขตภัย) |
+| DMR | n8n ดึงทุกชั่วโมง นาทีที่ 5 | RSS รายงานธรณีพิบัติภัย ส่งต่อผ่าน n8n ในประเทศ (ดูหัวข้อ "DMR ผ่าน n8n") ไม่ได้อ่าน PDF เพื่อยืนยันขอบเขตภัย |
 | TMD แผ่นดินไหว | ทุก 2 ชั่วโมง | RSS ประเทศไทยและประเทศใกล้เคียง; เคารพ ttl=120 ของ feed |
 | ชุดข้อมูลประวัติ CKAN | ครั้งแรกของแต่ละวันตามเวลาไทย | สร้าง candidate หากแหล่งเปลี่ยน; หากผิดพลาด คงค่าที่เผยแพร่ไว้ |
 
 GitHub schedules อาจล่าช้า ไม่ใช่การรับประกันรอบเรียลไทม์; หากต้องตรวจซ้ำหลัง CKAN ล่ม ใช้ Run workflow → force=true
+
+## DMR ผ่าน n8n (relay)
+
+dmr.go.th ตอบ HTTP 403 กับ GitHub Actions ทุกรอบ แต่ตอบ 200 กับเครื่องในประเทศไทยด้วย User-Agent เดียวกัน
+(ทดสอบ 25 ก.ย. 2569) จึงเป็นการปฏิเสธ IP ต่างประเทศ/ดาต้าเซ็นเตอร์ ไม่ใช่ปัญหาโค้ด
+
+1. n8n flow `n8n/natcat-dmr-relay.json` ดึงฟีดจากในประเทศทุกชั่วโมง และ commit `pipeline/feeds/dmr.json`
+   **เฉพาะเมื่อเนื้อหาฟีดเปลี่ยน** (DMR เผยแพร่วันละครั้ง จึงเกิด commit ราววันละ 1 ครั้ง)
+2. การ push ไฟล์นี้ทริกเกอร์ **Update NAT CAT data** ทันที `current.py` อ่านไฟล์แทนการยิงเว็บ และยังตรวจโดเมน
+   รูปแบบ RSS วันเวลา และแหล่งที่มาเหมือนเดิมทุกข้อ
+3. หน้าเว็บแสดง "ช่องทาง: ส่งต่อผ่าน n8n" และเวลา "ดึงสำเร็จ" คือเวลาที่ได้รับรายงานฉบับใหม่ล่าสุด
+4. ถ้าไม่มีฉบับใหม่เกิน 36 ชม. สถานะเป็น `stale` → `update_status.json` เป็น `degraded` → n8n สรุปรายวันแจ้งเตือน
+5. ก่อนมีไฟล์ relay ระบบยังดึงตรงรายชั่วโมงเหมือนเดิม (ซึ่งยังได้ 403)
+
+ต้องใช้ fine-grained PAT เฉพาะ repo นี้ สิทธิ์ **Contents: Read and write** ใส่ใน n8n credential ชนิด Header Auth
+(`Authorization: Bearer <token>`) ห้ามใส่ token ใน JSON
+
+## การลด commit และการ deploy
+
+- `pipeline/commit_gate.py` commit เฉพาะเมื่อเนื้อหาเปลี่ยน (รายงาน สถานะแหล่ง ผลตรวจ ข้อมูล) ไม่ commit ถ้าเปลี่ยนแค่เวลา
+  (`checkedAt`, `lastAttemptAt`, `lastSuccessAt`, `baselineCheckedAt`, `baselineCheckDay`, `createdAt`, `builtAt`)
+- commit heartbeat เมื่อเวลาตรวจที่ commit ไว้เก่ากว่า 2.5 ชม. เพื่อให้เกณฑ์ "การตรวจข้อมูลล่าช้า" 4 ชม. ของหน้าเว็บและ n8n ยังถูกต้อง
+  (จากเดิม 24 commit/วัน เหลือราว 8 heartbeat/วัน บวกการเปลี่ยนแปลงจริง)
+- `pipeline/state_cache.py` เก็บ `lastAttemptAt` และ `baselineCheckDay` ใน Actions cache ระหว่างรอบ เพื่อให้ยังเคารพรอบดึง
+  TMD 2 ชม. และตรวจ baseline วันละครั้ง แม้ไม่ได้ commit; เวลาคืนค่าจะเลือกฉบับที่ใหม่กว่าระหว่าง cache กับ repo
+- **Publish NAT CAT website** ถูกสั่งเฉพาะรอบที่ commit ข้อมูลจริง (เดิม deploy ทุกรอบผ่าน workflow_run)
+- ไม่ได้แก้ `pipeline.py` / `review.py` จึงไม่ทำให้ code hash เปลี่ยนและไม่รีเซ็ต reviewHash ที่รออนุมัติ
 
 ## ขั้นตอนขึ้น GitHub
 
@@ -69,7 +96,7 @@ Pages artifact มีเฉพาะไฟล์หน้าเว็บ ไม�
 ## ทดสอบ
 
 ```sh
-python -m unittest discover -s tests -v
+python -m unittest discover -s tests -v   # รวม tests/test_relay_and_gate.py
 python pipeline/current.py --force
 python pipeline/run_updates.py
 ```

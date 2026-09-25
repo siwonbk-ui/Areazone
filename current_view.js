@@ -26,6 +26,7 @@
       textNode('p',status,card);
       textNode('p','ดึงสำเร็จ: '+date(s.lastSuccessAt),card);
       textNode('p','รายงานใหม่สุด: '+date(s.newestPublishedAt),card);
+      if(s.transport==='n8n-relay') textNode('p','ช่องทาง: ส่งต่อผ่าน n8n ภายในประเทศ — เวลา "ดึงสำเร็จ" คือเวลาที่ได้รับรายงานฉบับใหม่ล่าสุด',card);
       link(card,'เปิดแหล่งข้อมูล',s.home);
     });
     textNode('h2','รายงานและประกาศที่เผยแพร่',container);
