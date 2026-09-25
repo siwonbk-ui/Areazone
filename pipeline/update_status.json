@@ -4,24 +4,18 @@
   "baselineStatus": "ok",
   "baselineError": null,
   "currentSources": {
-    "dmr": "unavailable",
+    "dmr": "ok",
     "tmd-earthquake": "ok"
   },
-  "checkedAt": "2026-09-25T06:10:12+00:00",
-  "status": "degraded",
+  "checkedAt": "2026-09-25T10:07:38+00:00",
+  "status": "ok",
   "review": {
     "status": "pending_review",
     "reviewHash": "49b2b37fe53e1d0f327051f6bd8011c1945de065ea82ed5c604402702efe3664",
     "changeCount": 842,
     "blockedHazards": []
   },
-  "currentSourceErrors": {
-    "dmr": {
-      "error": "HTTPError",
-      "httpStatus": 403,
-      "errorDetail": "HTTP 403"
-    }
-  },
+  "currentSourceErrors": {},
   "baselineQuality": "passed",
   "baselineCodeHash": "1ba56d21d5ec0af33f378a523433454b0b1e952a108641297d611cb7dc83e441"
 }

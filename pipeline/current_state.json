@@ -9,11 +9,29 @@
       "flood",
       "eq"
     ],
-    "intervalHours": 1,
     "staleHours": 48,
-    "lastAttemptAt": "2026-09-25T06:10:08+00:00",
-    "lastSuccessAt": "2026-09-24T11:44:06+00:00",
+    "intervalHours": 18,
+    "fetchIntervalHours": 1,
+    "lastAttemptAt": "2026-09-25T10:07:37+00:00",
+    "lastSuccessAt": "2026-09-25T10:07:24+00:00",
     "events": [
+      {
+        "id": "c7096ba8e92b0db48a54201a",
+        "sourceId": "dmr",
+        "title": "รายสถานการณ์ธรณีพิบัติภัยประจำวัน วันศุกร์ที่ 25 กันยายน พ.ศ.2569",
+        "url": "https://www.dmr.go.th/%e0%b8%a3%e0%b8%b2%e0%b8%a2%e0%b8%aa%e0%b8%96%e0%b8%b2%e0%b8%99%e0%b8%81%e0%b8%b2%e0%b8%a3%e0%b8%93%e0%b9%8c%e0%b8%98%e0%b8%a3%e0%b8%93%e0%b8%b5%e0%b8%9e%e0%b8%b4%e0%b8%9a%e0%b8%b1%e0%b8%95%e0%b8%b4%e0%b8%a0%e0%b8%b1%e0%b8%a2%e0%b8%9b%e0%b8%a3%e0%b8%b0%e0%b8%88%e0%b8%b3%e0%b8%a7%e0%b8%b1%e0%b8%99-%e0%b8%a7%e0%b8%b1%e0%b8%99%e0%b8%a8%e0%b8%b8%e0%b8%81%e0%b8%a3%e0%b9%8c%e0%b8%97%e0%b8%b5%e0%b9%88-25-%e0%b8%81%e0%b8%b1%e0%b8%99%e0%b8%a2%e0%b8%b2%e0%b8%a2%e0%b8%99-%e0%b8%9e-%e0%b8%a8-2569/",
+        "publishedAt": "2026-09-25T02:56:27+00:00",
+        "hazards": [
+          "slide",
+          "flood",
+          "eq"
+        ],
+        "mentionedProvinces": [],
+        "areaStatus": "not_verified",
+        "verification": "official_feed",
+        "impactConfirmed": false,
+        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
+      },
       {
         "id": "85542195c74832f50fd80148",
         "sourceId": "dmr",
@@ -147,62 +165,11 @@
         "verification": "official_feed",
         "impactConfirmed": false,
         "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
-      },
-      {
-        "id": "1bda27404e95a7595a950f8f",
-        "sourceId": "dmr",
-        "title": "รายสถานการณ์ธรณีพิบัติภัยประจำวัน วันศุกร์ที่ 18 กันยายน พ.ศ.2569",
-        "url": "https://www.dmr.go.th/%e0%b8%a3%e0%b8%b2%e0%b8%a2%e0%b8%aa%e0%b8%96%e0%b8%b2%e0%b8%99%e0%b8%81%e0%b8%b2%e0%b8%a3%e0%b8%93%e0%b9%8c%e0%b8%98%e0%b8%a3%e0%b8%93%e0%b8%b5%e0%b8%9e%e0%b8%b4%e0%b8%9a%e0%b8%b1%e0%b8%95%e0%b8%b4%e0%b8%a0%e0%b8%b1%e0%b8%a2%e0%b8%9b%e0%b8%a3%e0%b8%b0%e0%b8%88%e0%b8%b3%e0%b8%a7%e0%b8%b1%e0%b8%99-%e0%b8%a7%e0%b8%b1%e0%b8%99%e0%b8%a8%e0%b8%b8%e0%b8%81%e0%b8%a3%e0%b9%8c%e0%b8%97%e0%b8%b5%e0%b9%88-18-%e0%b8%81%e0%b8%b1%e0%b8%99%e0%b8%a2%e0%b8%b2%e0%b8%a2%e0%b8%99-%e0%b8%9e-%e0%b8%a8-2569/",
-        "publishedAt": "2026-09-18T02:48:55+00:00",
-        "hazards": [
-          "slide",
-          "flood",
-          "eq"
-        ],
-        "mentionedProvinces": [],
-        "areaStatus": "not_verified",
-        "verification": "official_feed",
-        "impactConfirmed": false,
-        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
-      },
-      {
-        "id": "bbc37c530e1bcc510e7cd344",
-        "sourceId": "dmr",
-        "title": "รายงานการติดตามและเฝ้าระวังสถานการณ์แผ่นดินถล่มและน้ำป่าไหลหลาก วันที่ 17 กันยายน 2569",
-        "url": "https://www.dmr.go.th/%e0%b8%a3%e0%b8%b2%e0%b8%a2%e0%b8%87%e0%b8%b2%e0%b8%99%e0%b8%81%e0%b8%b2%e0%b8%a3%e0%b8%95%e0%b8%b4%e0%b8%94%e0%b8%95%e0%b8%b2%e0%b8%a1%e0%b9%81%e0%b8%a5%e0%b8%b0%e0%b9%80%e0%b8%9d%e0%b9%89%e0%b8%b2%e0%b8%a3%e0%b8%b0%e0%b8%a7%e0%b8%b1%e0%b8%87%e0%b8%aa%e0%b8%96%e0%b8%b2%e0%b8%99%e0%b8%81%e0%b8%b2%e0%b8%a3%e0%b8%93%e0%b9%8c%e0%b9%81%e0%b8%9c%e0%b9%88%e0%b8%99%e0%b8%94%e0%b8%b4%e0%b8%99%e0%b8%96%e0%b8%a5%e0%b9%88%e0%b8%a1%e0%b9%81%e0%b8%a5%e0%b8%b0%e0%b8%99%e0%b9%89%e0%b8%b3%e0%b8%9b%e0%b9%88%e0%b8%b2%e0%b9%84%e0%b8%ab%e0%b8%a5%e0%b8%ab%e0%b8%a5%e0%b8%b2%e0%b8%81-%e0%b8%a7%e0%b8%b1%e0%b8%99%e0%b8%97%e0%b8%b5%e0%b9%88-17-%e0%b8%81%e0%b8%b1%e0%b8%99%e0%b8%a2%e0%b8%b2%e0%b8%a2%e0%b8%99-2569/",
-        "publishedAt": "2026-09-17T12:00:01+00:00",
-        "hazards": [
-          "slide",
-          "flood"
-        ],
-        "mentionedProvinces": [],
-        "areaStatus": "not_verified",
-        "verification": "official_feed",
-        "impactConfirmed": false,
-        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
-      },
-      {
-        "id": "05d289e714b33874f0df6814",
-        "sourceId": "dmr",
-        "title": "ประกาศฉบับที่ 13/2569 ให้อาสาสมัครเครือข่ายกรมทรัพยากรธรณี เฝ้าระวังภัยดินถล่มและน้ำป่าไหลหลาก ในระหว่างวันที่ 17-19 กันยายน 2569",
-        "url": "https://www.dmr.go.th/%e0%b8%9b%e0%b8%a3%e0%b8%b0%e0%b8%81%e0%b8%b2%e0%b8%a8%e0%b8%89%e0%b8%9a%e0%b8%b1%e0%b8%9a%e0%b8%97%e0%b8%b5%e0%b9%88-13-2569-%e0%b9%83%e0%b8%ab%e0%b9%89%e0%b8%ad%e0%b8%b2%e0%b8%aa%e0%b8%b2%e0%b8%aa%e0%b8%a1%e0%b8%b1%e0%b8%84%e0%b8%a3%e0%b9%80%e0%b8%84%e0%b8%a3%e0%b8%b7%e0%b8%ad%e0%b8%82%e0%b9%88%e0%b8%b2%e0%b8%a2%e0%b8%81%e0%b8%a3%e0%b8%a1%e0%b8%97%e0%b8%a3%e0%b8%b1%e0%b8%9e%e0%b8%a2%e0%b8%b2%e0%b8%81%e0%b8%a3%e0%b8%98%e0%b8%a3%e0%b8%93%e0%b8%b5-%e0%b9%80%e0%b8%9d%e0%b9%89%e0%b8%b2%e0%b8%a3%e0%b8%b0%e0%b8%a7%e0%b8%b1%e0%b8%87%e0%b8%a0%e0%b8%b1%e0%b8%a2%e0%b8%94%e0%b8%b4%e0%b8%99%e0%b8%96%e0%b8%a5%e0%b9%88%e0%b8%a1%e0%b9%81%e0%b8%a5%e0%b8%b0%e0%b8%99%e0%b9%89%e0%b8%b3%e0%b8%9b%e0%b9%88%e0%b8%b2%e0%b9%84%e0%b8%ab%e0%b8%a5%e0%b8%ab%e0%b8%a5%e0%b8%b2%e0%b8%81-%e0%b9%83%e0%b8%99%e0%b8%a3%e0%b8%b0%e0%b8%ab%e0%b8%a7%e0%b9%88%e0%b8%b2%e0%b8%87%e0%b8%a7%e0%b8%b1%e0%b8%99%e0%b8%97%e0%b8%b5%e0%b9%88-17-19-%e0%b8%81%e0%b8%b1%e0%b8%99%e0%b8%a2%e0%b8%b2%e0%b8%a2%e0%b8%99-2569/",
-        "publishedAt": "2026-09-17T11:53:50+00:00",
-        "hazards": [
-          "slide",
-          "flood"
-        ],
-        "mentionedProvinces": [],
-        "areaStatus": "not_verified",
-        "verification": "official_feed",
-        "impactConfirmed": false,
-        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
       }
     ],
-    "status": "unavailable",
-    "error": "HTTPError",
-    "newestPublishedAt": "2026-09-24T02:50:40+00:00",
-    "httpStatus": 403,
-    "errorDetail": "HTTP 403"
+    "status": "ok",
+    "newestPublishedAt": "2026-09-25T02:56:27+00:00",
+    "transport": "n8n-relay"
   },
   "tmd-earthquake": {
     "id": "tmd-earthquake",
@@ -214,9 +181,24 @@
     ],
     "intervalHours": 2,
     "staleHours": 48,
-    "lastAttemptAt": "2026-09-25T06:10:08+00:00",
-    "lastSuccessAt": "2026-09-25T06:10:08+00:00",
+    "lastAttemptAt": "2026-09-25T10:07:37+00:00",
+    "lastSuccessAt": "2026-09-25T10:07:37+00:00",
     "events": [
+      {
+        "id": "c640037db90133e4777de548",
+        "sourceId": "tmd-earthquake",
+        "title": "แผ่นดินไหว ประเทศเมียนมา (20.001,98.011) ขนาด 3.6 วันที่ 25 กันยายน 2569 เวลา 16:47 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
+        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17127",
+        "publishedAt": "2026-09-25T09:47:04+00:00",
+        "hazards": [
+          "eq"
+        ],
+        "mentionedProvinces": [],
+        "areaStatus": "not_verified",
+        "verification": "official_feed",
+        "impactConfirmed": false,
+        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
+      },
       {
         "id": "56f6cc8799b44f13548c80de",
         "sourceId": "tmd-earthquake",
@@ -353,24 +335,9 @@
         "verification": "official_feed",
         "impactConfirmed": false,
         "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
-      },
-      {
-        "id": "7d9a80f3fca1643fcef8e3ea",
-        "sourceId": "tmd-earthquake",
-        "title": "แผ่นดินไหว ประเทศเมียนมา (20.522,98.412) ขนาด 2.0 วันที่ 23 กันยายน 2569 เวลา 04:41 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
-        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17117",
-        "publishedAt": "2026-09-22T21:41:13+00:00",
-        "hazards": [
-          "eq"
-        ],
-        "mentionedProvinces": [],
-        "areaStatus": "not_verified",
-        "verification": "official_feed",
-        "impactConfirmed": false,
-        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
       }
     ],
     "status": "ok",
-    "newestPublishedAt": "2026-09-25T02:13:57+00:00"
+    "newestPublishedAt": "2026-09-25T09:47:04+00:00"
   }
 }
