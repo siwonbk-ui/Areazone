@@ -19,7 +19,13 @@ SOURCES = [
     {'id': 'dmr', 'name': 'กรมทรัพยากรธรณี — รายงานประจำวัน',
      'url': 'https://www.dmr.go.th/category/geohazard_daily_report/feed/',
      'home': 'https://www.dmr.go.th/geohazard/', 'hosts': ['www.dmr.go.th','dmr.go.th'],
-     'hazards': ['slide', 'flood', 'eq'], 'intervalHours': 1, 'staleHours': 48},
+     'hazards': ['slide', 'flood', 'eq'], 'staleHours': 48,
+     # dmr.go.th refuses connections from GitHub's overseas runners (HTTP 403), so
+     # n8n inside Thailand fetches the feed and commits it here. The relay only
+     # changes when DMR publishes (~daily, gaps up to ~25h), hence 2x18h tolerance.
+     'relayFile': 'pipeline/feeds/dmr.json', 'intervalHours': 18,
+     # direct fetch (used only while no relay file exists yet) keeps its hourly pace
+     'fetchIntervalHours': 1},
     {'id': 'tmd-earthquake', 'name': 'กรมอุตุนิยมวิทยา — รายงานแผ่นดินไหว',
      'url': 'https://earthquake.tmd.go.th/feed/rss_inside.xml',
      'home': 'https://earthquake.tmd.go.th/', 'hosts': ['earthquake.tmd.go.th'],
@@ -87,17 +93,46 @@ def parse_feed(content, source, now, provinces):
     return list(events.values()), newest.isoformat()
 
 
+def read_relay(source, now):
+    """Feed body committed by the in-country n8n relay, or None if there is none."""
+    path = ROOT / source['relayFile']
+    if not path.exists():
+        return None
+    relay = json.loads(path.read_text(encoding='utf-8'))
+    if relay.get('source') != source['url']:
+        raise ValueError('Relay file is for a different source')
+    fetched = datetime.fromisoformat(str(relay.get('fetchedAt', '')).replace('Z', '+00:00'))
+    if not fetched.tzinfo or fetched > now + timedelta(minutes=10):
+        raise ValueError('Relay fetchedAt missing timezone or in the future')
+    xml = relay.get('xml')
+    if not isinstance(xml, str) or not xml.strip():
+        raise ValueError('Relay file has no feed body')
+    return xml.encode('utf-8'), fetched.astimezone(timezone.utc)
+
+
 def collect(source, previous, now, provinces, force=False):
     stamp = now.isoformat(timespec='seconds')
     old = previous or {}
+    relay_path = ROOT / source['relayFile'] if source.get('relayFile') else None
+    use_relay = relay_path is not None and relay_path.exists()
     last = old.get('lastAttemptAt')
-    if last and not force and now - datetime.fromisoformat(last) < timedelta(hours=source['intervalHours']):
+    # reading the local relay file costs nothing, so it is never throttled
+    pace = source.get('fetchIntervalHours', source['intervalHours'])
+    if not use_relay and last and not force and now - datetime.fromisoformat(last) < timedelta(hours=pace):
         return old
-    status = {k: v for k, v in source.items() if k != 'hosts'}
+    status = {k: v for k, v in source.items() if k not in ('hosts', 'relayFile')}
     status.update(lastAttemptAt=stamp, lastSuccessAt=old.get('lastSuccessAt'), events=old.get('events', []))
     try:
-        events, newest = parse_feed(fetch(source['url']), source, now, provinces)
-        status.update(status='ok', events=events, lastSuccessAt=stamp, newestPublishedAt=newest)
+        if use_relay:
+            content, fetched = read_relay(source, now)
+            events, newest = parse_feed(content, source, now, provinces)
+            status.update(status='ok', events=events, newestPublishedAt=newest, transport='n8n-relay',
+                          lastSuccessAt=fetched.isoformat(timespec='seconds'))
+            if now - fetched > timedelta(hours=source['intervalHours'] * 2):
+                status.update(status='stale', errorDetail='n8n relay has not delivered a new feed in time')
+        else:
+            events, newest = parse_feed(fetch(source['url']), source, now, provinces)
+            status.update(status='ok', events=events, lastSuccessAt=stamp, newestPublishedAt=newest)
         if now - datetime.fromisoformat(newest) > timedelta(hours=source['staleHours']):
             status['status'] = 'stale'
     except Exception as exc:
