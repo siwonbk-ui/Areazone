@@ -21,9 +21,10 @@ SOURCES = [
      'home': 'https://www.dmr.go.th/geohazard/', 'hosts': ['www.dmr.go.th','dmr.go.th'],
      'hazards': ['slide', 'flood', 'eq'], 'staleHours': 48,
      # dmr.go.th refuses connections from GitHub's overseas runners (HTTP 403), so
-     # n8n inside Thailand fetches the feed and commits it here. The relay only
-     # changes when DMR publishes (~daily, gaps up to ~25h), hence 2x18h tolerance.
-     'relayFile': 'pipeline/feeds/dmr.json', 'intervalHours': 18,
+     # n8n inside Thailand fetches the feed once a day (11:00 Bangkok, after DMR's
+     # usual 09:00-10:00 report) and commits it here. A report published after the
+     # run is picked up the next day, so gaps reach ~48h; 2x30h tolerance.
+     'relayFile': 'pipeline/feeds/dmr.json', 'intervalHours': 30,
      # direct fetch (used only while no relay file exists yet) keeps its hourly pace
      'fetchIntervalHours': 1},
     {'id': 'tmd-earthquake', 'name': 'กรมอุตุนิยมวิทยา — รายงานแผ่นดินไหว',
