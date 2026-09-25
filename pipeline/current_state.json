@@ -11,7 +11,7 @@
     ],
     "intervalHours": 1,
     "staleHours": 48,
-    "lastAttemptAt": "2026-09-25T00:00:16+00:00",
+    "lastAttemptAt": "2026-09-25T06:10:08+00:00",
     "lastSuccessAt": "2026-09-24T11:44:06+00:00",
     "events": [
       {
@@ -214,9 +214,24 @@
     ],
     "intervalHours": 2,
     "staleHours": 48,
-    "lastAttemptAt": "2026-09-25T00:00:16+00:00",
-    "lastSuccessAt": "2026-09-25T00:00:16+00:00",
+    "lastAttemptAt": "2026-09-25T06:10:08+00:00",
+    "lastSuccessAt": "2026-09-25T06:10:08+00:00",
     "events": [
+      {
+        "id": "56f6cc8799b44f13548c80de",
+        "sourceId": "tmd-earthquake",
+        "title": "แผ่นดินไหว ประเทศเมียนมา (21.876,94.893) ขนาด 3.7 วันที่ 25 กันยายน 2569 เวลา 09:13 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
+        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17126",
+        "publishedAt": "2026-09-25T02:13:57+00:00",
+        "hazards": [
+          "eq"
+        ],
+        "mentionedProvinces": [],
+        "areaStatus": "not_verified",
+        "verification": "official_feed",
+        "impactConfirmed": false,
+        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
+      },
       {
         "id": "0b35ef7caf72d4796ca0ec8e",
         "sourceId": "tmd-earthquake",
@@ -268,6 +283,21 @@
         "title": "แผ่นดินไหว ตอนเหนือของหมู่เกาะสุมาตรา ประเทศอินโดนีเซีย (5.147,95.723) ขนาด 4.0 วันที่ 25 กันยายน 2569 เวลา 04:01 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
         "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17121",
         "publishedAt": "2026-09-24T21:01:33+00:00",
+        "hazards": [
+          "eq"
+        ],
+        "mentionedProvinces": [],
+        "areaStatus": "not_verified",
+        "verification": "official_feed",
+        "impactConfirmed": false,
+        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
+      },
+      {
+        "id": "283544c87a42695ad774a292",
+        "sourceId": "tmd-earthquake",
+        "title": "แผ่นดินไหว ประเทศลาว (21.036,101.150) ขนาด 2.4 วันที่ 24 กันยายน 2569 เวลา 22:22 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
+        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17125",
+        "publishedAt": "2026-09-24T15:22:31+00:00",
         "hazards": [
           "eq"
         ],
@@ -338,39 +368,9 @@
         "verification": "official_feed",
         "impactConfirmed": false,
         "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
-      },
-      {
-        "id": "ebab1913010baf26ea92e569",
-        "sourceId": "tmd-earthquake",
-        "title": "แผ่นดินไหว ประเทศเวียดนาม (14.916,107.558) ขนาด 3.5 วันที่ 23 กันยายน 2569 เวลา 03:53 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
-        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17116",
-        "publishedAt": "2026-09-22T20:53:09+00:00",
-        "hazards": [
-          "eq"
-        ],
-        "mentionedProvinces": [],
-        "areaStatus": "not_verified",
-        "verification": "official_feed",
-        "impactConfirmed": false,
-        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
-      },
-      {
-        "id": "968265304b644d01c2017256",
-        "sourceId": "tmd-earthquake",
-        "title": "แผ่นดินไหว ประเทศเวียดนาม (15.094,107.737) ขนาด 3.8 วันที่ 23 กันยายน 2569 เวลา 02:45 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
-        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17115",
-        "publishedAt": "2026-09-22T19:45:45+00:00",
-        "hazards": [
-          "eq"
-        ],
-        "mentionedProvinces": [],
-        "areaStatus": "not_verified",
-        "verification": "official_feed",
-        "impactConfirmed": false,
-        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
       }
     ],
     "status": "ok",
-    "newestPublishedAt": "2026-09-24T23:38:20+00:00"
+    "newestPublishedAt": "2026-09-25T02:13:57+00:00"
   }
 }
