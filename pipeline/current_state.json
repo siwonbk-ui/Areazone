@@ -12,7 +12,7 @@
     "staleHours": 48,
     "intervalHours": 30,
     "fetchIntervalHours": 1,
-    "lastAttemptAt": "2026-09-26T04:00:22+00:00",
+    "lastAttemptAt": "2026-09-26T09:52:43+00:00",
     "lastSuccessAt": "2026-09-26T04:00:10+00:00",
     "events": [
       {
@@ -149,22 +149,6 @@
         "verification": "official_feed",
         "impactConfirmed": false,
         "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
-      },
-      {
-        "id": "ae262a9d552b9fc3e080c43c",
-        "sourceId": "dmr",
-        "title": "ประกาศฉบับที่ 14/2569 ให้อาสาสมัครเครือข่ายกรมทรัพยากรธรณี เฝ้าระวังภัยดินถล่มและน้ำป่าไหลหลาก ในระหว่างวันที่ 19-21 กันยายน 2569",
-        "url": "https://www.dmr.go.th/%e0%b8%9b%e0%b8%a3%e0%b8%b0%e0%b8%81%e0%b8%b2%e0%b8%a8%e0%b8%89%e0%b8%9a%e0%b8%b1%e0%b8%9a%e0%b8%97%e0%b8%b5%e0%b9%88-14-2569-%e0%b9%83%e0%b8%ab%e0%b9%89%e0%b8%ad%e0%b8%b2%e0%b8%aa%e0%b8%b2%e0%b8%aa%e0%b8%a1%e0%b8%b1%e0%b8%84%e0%b8%a3%e0%b9%80%e0%b8%84%e0%b8%a3%e0%b8%b7%e0%b8%ad%e0%b8%82%e0%b9%88%e0%b8%b2%e0%b8%a2%e0%b8%81%e0%b8%a3%e0%b8%a1%e0%b8%97%e0%b8%a3%e0%b8%b1%e0%b8%9e%e0%b8%a2%e0%b8%b2%e0%b8%81%e0%b8%a3%e0%b8%98%e0%b8%a3%e0%b8%93%e0%b8%b5-%e0%b9%80%e0%b8%9d%e0%b9%89%e0%b8%b2%e0%b8%a3%e0%b8%b0%e0%b8%a7%e0%b8%b1%e0%b8%87%e0%b8%a0%e0%b8%b1%e0%b8%a2%e0%b8%94%e0%b8%b4%e0%b8%99%e0%b8%96%e0%b8%a5%e0%b9%88%e0%b8%a1%e0%b9%81%e0%b8%a5%e0%b8%b0%e0%b8%99%e0%b9%89%e0%b8%b3%e0%b8%9b%e0%b9%88%e0%b8%b2%e0%b9%84%e0%b8%ab%e0%b8%a5%e0%b8%ab%e0%b8%a5%e0%b8%b2%e0%b8%81-%e0%b9%83%e0%b8%99%e0%b8%a3%e0%b8%b0%e0%b8%ab%e0%b8%a7%e0%b9%88%e0%b8%b2%e0%b8%87%e0%b8%a7%e0%b8%b1%e0%b8%99%e0%b8%97%e0%b8%b5%e0%b9%88-19-21-%e0%b8%81%e0%b8%b1%e0%b8%99%e0%b8%a2%e0%b8%b2%e0%b8%a2%e0%b8%99-2569/",
-        "publishedAt": "2026-09-19T09:22:33+00:00",
-        "hazards": [
-          "slide",
-          "flood"
-        ],
-        "mentionedProvinces": [],
-        "areaStatus": "not_verified",
-        "verification": "official_feed",
-        "impactConfirmed": false,
-        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
       }
     ],
     "status": "ok",
@@ -181,9 +165,39 @@
     ],
     "intervalHours": 2,
     "staleHours": 48,
-    "lastAttemptAt": "2026-09-26T04:00:22+00:00",
-    "lastSuccessAt": "2026-09-26T04:00:22+00:00",
+    "lastAttemptAt": "2026-09-26T09:52:43+00:00",
+    "lastSuccessAt": "2026-09-26T09:52:43+00:00",
     "events": [
+      {
+        "id": "19adb722eccc46c748635193",
+        "sourceId": "tmd-earthquake",
+        "title": "แผ่นดินไหว ประเทศเวียดนาม (15.120,107.905) ขนาด 3.6 วันที่ 26 กันยายน 2569 เวลา 14:55 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
+        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17133",
+        "publishedAt": "2026-09-26T07:55:19+00:00",
+        "hazards": [
+          "eq"
+        ],
+        "mentionedProvinces": [],
+        "areaStatus": "not_verified",
+        "verification": "official_feed",
+        "impactConfirmed": false,
+        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
+      },
+      {
+        "id": "b774e5887db81e92a1c50b0b",
+        "sourceId": "tmd-earthquake",
+        "title": "แผ่นดินไหว ประเทศเมียนมา (21.143,99.943) ขนาด 2.4 วันที่ 26 กันยายน 2569 เวลา 14:25 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
+        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17134",
+        "publishedAt": "2026-09-26T07:25:44+00:00",
+        "hazards": [
+          "eq"
+        ],
+        "mentionedProvinces": [],
+        "areaStatus": "not_verified",
+        "verification": "official_feed",
+        "impactConfirmed": false,
+        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
+      },
       {
         "id": "f90027289c9eadc8569aaff9",
         "sourceId": "tmd-earthquake",
@@ -303,39 +317,9 @@
         "verification": "official_feed",
         "impactConfirmed": false,
         "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
-      },
-      {
-        "id": "8dec40245bf3ae062f1a8f5e",
-        "sourceId": "tmd-earthquake",
-        "title": "แผ่นดินไหว ประเทศเวียดนาม (14.808,107.992) ขนาด 3.1 วันที่ 25 กันยายน 2569 เวลา 05:54 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
-        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17123",
-        "publishedAt": "2026-09-24T22:54:19+00:00",
-        "hazards": [
-          "eq"
-        ],
-        "mentionedProvinces": [],
-        "areaStatus": "not_verified",
-        "verification": "official_feed",
-        "impactConfirmed": false,
-        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
-      },
-      {
-        "id": "72d8d693514cfffe2c317527",
-        "sourceId": "tmd-earthquake",
-        "title": "แผ่นดินไหว ประเทศเวียดนาม (14.997,107.789) ขนาด 3.9 วันที่ 25 กันยายน 2569 เวลา 05:35 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
-        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17122",
-        "publishedAt": "2026-09-24T22:35:13+00:00",
-        "hazards": [
-          "eq"
-        ],
-        "mentionedProvinces": [],
-        "areaStatus": "not_verified",
-        "verification": "official_feed",
-        "impactConfirmed": false,
-        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
       }
     ],
     "status": "ok",
-    "newestPublishedAt": "2026-09-25T19:20:42+00:00"
+    "newestPublishedAt": "2026-09-26T07:55:19+00:00"
   }
 }
