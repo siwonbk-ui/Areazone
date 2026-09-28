@@ -12,7 +12,7 @@
     "staleHours": 48,
     "intervalHours": 30,
     "fetchIntervalHours": 1,
-    "lastAttemptAt": "2026-09-28T06:54:48+00:00",
+    "lastAttemptAt": "2026-09-28T15:28:25+00:00",
     "lastSuccessAt": "2026-09-28T04:00:10+00:00",
     "events": [
       {
@@ -181,9 +181,39 @@
     ],
     "intervalHours": 2,
     "staleHours": 48,
-    "lastAttemptAt": "2026-09-28T06:54:48+00:00",
-    "lastSuccessAt": "2026-09-28T06:54:48+00:00",
+    "lastAttemptAt": "2026-09-28T15:28:25+00:00",
+    "lastSuccessAt": "2026-09-28T15:28:25+00:00",
     "events": [
+      {
+        "id": "06b0fbb96c223e2d3050f5ac",
+        "sourceId": "tmd-earthquake",
+        "title": "แผ่นดินไหว ตอนเหนือของหมู่เกาะสุมาตรา ประเทศอินโดนีเซีย (5.418,94.768) ขนาด 4.4 วันที่ 28 กันยายน 2569 เวลา 21:43 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
+        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17142",
+        "publishedAt": "2026-09-28T14:43:14+00:00",
+        "hazards": [
+          "eq"
+        ],
+        "mentionedProvinces": [],
+        "areaStatus": "not_verified",
+        "verification": "official_feed",
+        "impactConfirmed": false,
+        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
+      },
+      {
+        "id": "c6db74fd8b97274ce878788b",
+        "sourceId": "tmd-earthquake",
+        "title": "แผ่นดินไหว ประเทศเวียดนาม (15.291,107.849) ขนาด 2.7 วันที่ 28 กันยายน 2569 เวลา 13:48 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
+        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17141",
+        "publishedAt": "2026-09-28T06:48:18+00:00",
+        "hazards": [
+          "eq"
+        ],
+        "mentionedProvinces": [],
+        "areaStatus": "not_verified",
+        "verification": "official_feed",
+        "impactConfirmed": false,
+        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
+      },
       {
         "id": "1d85d69a59cd2bad0dc5448f",
         "sourceId": "tmd-earthquake",
@@ -303,39 +333,9 @@
         "verification": "official_feed",
         "impactConfirmed": false,
         "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
-      },
-      {
-        "id": "f90027289c9eadc8569aaff9",
-        "sourceId": "tmd-earthquake",
-        "title": "แผ่นดินไหว ประเทศเมียนมา (19.738,98.429) ขนาด 2.4 วันที่ 26 กันยายน 2569 เวลา 02:20 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
-        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17131",
-        "publishedAt": "2026-09-25T19:20:42+00:00",
-        "hazards": [
-          "eq"
-        ],
-        "mentionedProvinces": [],
-        "areaStatus": "not_verified",
-        "verification": "official_feed",
-        "impactConfirmed": false,
-        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
-      },
-      {
-        "id": "dbb7eaafd3ff0bb9c8306af7",
-        "sourceId": "tmd-earthquake",
-        "title": "แผ่นดินไหว ประเทศเวียดนาม (15.265,107.899) ขนาด 3.1 วันที่ 26 กันยายน 2569 เวลา 02:03 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
-        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17132",
-        "publishedAt": "2026-09-25T19:03:43+00:00",
-        "hazards": [
-          "eq"
-        ],
-        "mentionedProvinces": [],
-        "areaStatus": "not_verified",
-        "verification": "official_feed",
-        "impactConfirmed": false,
-        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
       }
     ],
     "status": "ok",
-    "newestPublishedAt": "2026-09-27T21:17:00+00:00"
+    "newestPublishedAt": "2026-09-28T14:43:14+00:00"
   }
 }
