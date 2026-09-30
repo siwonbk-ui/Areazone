@@ -12,7 +12,7 @@
     "staleHours": 48,
     "intervalHours": 30,
     "fetchIntervalHours": 1,
-    "lastAttemptAt": "2026-09-30T06:43:44+00:00",
+    "lastAttemptAt": "2026-09-30T13:44:11+00:00",
     "lastSuccessAt": "2026-09-30T04:00:11+00:00",
     "events": [
       {
@@ -165,22 +165,6 @@
         "verification": "official_feed",
         "impactConfirmed": false,
         "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
-      },
-      {
-        "id": "7acca2be270291610ca7592c",
-        "sourceId": "dmr",
-        "title": "ประกาศฉบับที่ 15/2569 ให้อาสาสมัครเครือข่ายกรมทรัพยากรธรณี เฝ้าระวังภัยดินถล่มและน้ำป่าไหลหลาก ในระหว่างวันที่ 23-27 กันยายน 2569",
-        "url": "https://www.dmr.go.th/%e0%b8%9b%e0%b8%a3%e0%b8%b0%e0%b8%81%e0%b8%b2%e0%b8%a8%e0%b8%89%e0%b8%9a%e0%b8%b1%e0%b8%9a%e0%b8%97%e0%b8%b5%e0%b9%88-15-2569-%e0%b9%83%e0%b8%ab%e0%b9%89%e0%b8%ad%e0%b8%b2%e0%b8%aa%e0%b8%b2%e0%b8%aa%e0%b8%a1%e0%b8%b1%e0%b8%84%e0%b8%a3%e0%b9%80%e0%b8%84%e0%b8%a3%e0%b8%b7%e0%b8%ad%e0%b8%82%e0%b9%88%e0%b8%b2%e0%b8%a2%e0%b8%81%e0%b8%a3%e0%b8%a1%e0%b8%97%e0%b8%a3%e0%b8%b1%e0%b8%9e%e0%b8%a2%e0%b8%b2%e0%b8%81%e0%b8%a3%e0%b8%98%e0%b8%a3%e0%b8%93%e0%b8%b5-%e0%b9%80%e0%b8%9d%e0%b9%89%e0%b8%b2%e0%b8%a3%e0%b8%b0%e0%b8%a7%e0%b8%b1%e0%b8%87%e0%b8%a0%e0%b8%b1%e0%b8%a2%e0%b8%94%e0%b8%b4%e0%b8%99%e0%b8%96%e0%b8%a5%e0%b9%88%e0%b8%a1%e0%b9%81%e0%b8%a5%e0%b8%b0%e0%b8%99%e0%b9%89%e0%b8%b3%e0%b8%9b%e0%b9%88%e0%b8%b2%e0%b9%84%e0%b8%ab%e0%b8%a5%e0%b8%ab%e0%b8%a5%e0%b8%b2%e0%b8%81-%e0%b9%83%e0%b8%99%e0%b8%a3%e0%b8%b0%e0%b8%ab%e0%b8%a7%e0%b9%88%e0%b8%b2%e0%b8%87%e0%b8%a7%e0%b8%b1%e0%b8%99%e0%b8%97%e0%b8%b5%e0%b9%88-23-27-%e0%b8%81%e0%b8%b1%e0%b8%99%e0%b8%a2%e0%b8%b2%e0%b8%a2%e0%b8%99-2569/",
-        "publishedAt": "2026-09-23T10:46:48+00:00",
-        "hazards": [
-          "slide",
-          "flood"
-        ],
-        "mentionedProvinces": [],
-        "areaStatus": "not_verified",
-        "verification": "official_feed",
-        "impactConfirmed": false,
-        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
       }
     ],
     "status": "ok",
@@ -197,9 +181,24 @@
     ],
     "intervalHours": 2,
     "staleHours": 48,
-    "lastAttemptAt": "2026-09-30T06:43:44+00:00",
-    "lastSuccessAt": "2026-09-30T06:43:44+00:00",
+    "lastAttemptAt": "2026-09-30T13:44:11+00:00",
+    "lastSuccessAt": "2026-09-30T13:44:11+00:00",
     "events": [
+      {
+        "id": "a214248fe1b7ac100bbaff2a",
+        "sourceId": "tmd-earthquake",
+        "title": "แผ่นดินไหว ประเทศเวียดนาม (15.114,108.052) ขนาด 4.7 วันที่ 30 กันยายน 2569 เวลา 18:24 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
+        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17149",
+        "publishedAt": "2026-09-30T11:24:45+00:00",
+        "hazards": [
+          "eq"
+        ],
+        "mentionedProvinces": [],
+        "areaStatus": "not_verified",
+        "verification": "official_feed",
+        "impactConfirmed": false,
+        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
+      },
       {
         "id": "1eb5f30315a46a20fc18f885",
         "sourceId": "tmd-earthquake",
@@ -336,24 +335,9 @@
         "verification": "official_feed",
         "impactConfirmed": false,
         "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
-      },
-      {
-        "id": "a649c41a8c48e2ddbc3623ab",
-        "sourceId": "tmd-earthquake",
-        "title": "แผ่นดินไหว ประเทศเมียนมา (20.973,100.412) ขนาด 2.0 วันที่ 27 กันยายน 2569 เวลา 22:43 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
-        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17139",
-        "publishedAt": "2026-09-27T15:43:05+00:00",
-        "hazards": [
-          "eq"
-        ],
-        "mentionedProvinces": [],
-        "areaStatus": "not_verified",
-        "verification": "official_feed",
-        "impactConfirmed": false,
-        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
       }
     ],
     "status": "ok",
-    "newestPublishedAt": "2026-09-30T02:36:57+00:00"
+    "newestPublishedAt": "2026-09-30T11:24:45+00:00"
   }
 }
