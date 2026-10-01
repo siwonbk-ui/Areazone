@@ -12,7 +12,7 @@
     "staleHours": 48,
     "intervalHours": 30,
     "fetchIntervalHours": 1,
-    "lastAttemptAt": "2026-10-01T18:55:35+00:00",
+    "lastAttemptAt": "2026-10-01T23:12:50+00:00",
     "lastSuccessAt": "2026-09-30T04:00:11+00:00",
     "events": [
       {
@@ -164,9 +164,43 @@
     ],
     "intervalHours": 2,
     "staleHours": 48,
-    "lastAttemptAt": "2026-10-01T18:55:35+00:00",
-    "lastSuccessAt": "2026-10-01T18:55:35+00:00",
+    "lastAttemptAt": "2026-10-01T23:12:50+00:00",
+    "lastSuccessAt": "2026-10-01T23:12:50+00:00",
     "events": [
+      {
+        "id": "adbee383bd9c37d66fa4c909",
+        "sourceId": "tmd-earthquake",
+        "title": "แผ่นดินไหว ต.นาคอเรือ  อ.ฮอด จ.เชียงใหม่ (18.014,98.529) ขนาด 1.5 วันที่ 2 ตุลาคม 2569 เวลา 03:24 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
+        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17155",
+        "publishedAt": "2026-10-01T20:24:36+00:00",
+        "hazards": [
+          "eq"
+        ],
+        "mentionedProvinces": [
+          "เชียงใหม่"
+        ],
+        "areaStatus": "not_verified",
+        "verification": "official_feed",
+        "impactConfirmed": false,
+        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
+      },
+      {
+        "id": "73c663150a4953a4c0a21d23",
+        "sourceId": "tmd-earthquake",
+        "title": "แผ่นดินไหว ต.นาคอเรือ อ.ฮอด จ.เชียงใหม่ (18.000,98.538) ขนาด 1.7 วันที่ 2 ตุลาคม 2569 เวลา 02:22 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
+        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17154",
+        "publishedAt": "2026-10-01T19:22:33+00:00",
+        "hazards": [
+          "eq"
+        ],
+        "mentionedProvinces": [
+          "เชียงใหม่"
+        ],
+        "areaStatus": "not_verified",
+        "verification": "official_feed",
+        "impactConfirmed": false,
+        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
+      },
       {
         "id": "9c8d58d3f936ce9ad019a7e4",
         "sourceId": "tmd-earthquake",
@@ -292,41 +326,9 @@
         "verification": "official_feed",
         "impactConfirmed": false,
         "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
-      },
-      {
-        "id": "7bded1a2dc5e60dd3b3c36e1",
-        "sourceId": "tmd-earthquake",
-        "title": "แผ่นดินไหว ประเทศเมียนมา (21.931,96.286) ขนาด 3.2 วันที่ 29 กันยายน 2569 เวลา 23:50 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
-        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17145",
-        "publishedAt": "2026-09-29T16:50:08+00:00",
-        "hazards": [
-          "eq"
-        ],
-        "mentionedProvinces": [],
-        "areaStatus": "not_verified",
-        "verification": "official_feed",
-        "impactConfirmed": false,
-        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
-      },
-      {
-        "id": "15648f42efe79296794fbb52",
-        "sourceId": "tmd-earthquake",
-        "title": "แผ่นดินไหว ต.โหล่งขอด อ.พร้าว จ.เชียงใหม่ (19.103,99.279) ขนาด 1.4 วันที่ 29 กันยายน 2569 เวลา 19:08 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
-        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17144",
-        "publishedAt": "2026-09-29T12:08:28+00:00",
-        "hazards": [
-          "eq"
-        ],
-        "mentionedProvinces": [
-          "เชียงใหม่"
-        ],
-        "areaStatus": "not_verified",
-        "verification": "official_feed",
-        "impactConfirmed": false,
-        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
       }
     ],
     "status": "ok",
-    "newestPublishedAt": "2026-10-01T18:50:07+00:00"
+    "newestPublishedAt": "2026-10-01T20:24:36+00:00"
   }
 }
