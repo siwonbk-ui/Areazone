@@ -12,7 +12,7 @@
     "staleHours": 48,
     "intervalHours": 30,
     "fetchIntervalHours": 1,
-    "lastAttemptAt": "2026-10-01T23:12:50+00:00",
+    "lastAttemptAt": "2026-10-02T02:16:33+00:00",
     "lastSuccessAt": "2026-09-30T04:00:11+00:00",
     "events": [
       {
@@ -164,9 +164,39 @@
     ],
     "intervalHours": 2,
     "staleHours": 48,
-    "lastAttemptAt": "2026-10-01T23:12:50+00:00",
-    "lastSuccessAt": "2026-10-01T23:12:50+00:00",
+    "lastAttemptAt": "2026-10-02T02:16:33+00:00",
+    "lastSuccessAt": "2026-10-02T02:16:33+00:00",
     "events": [
+      {
+        "id": "42145abaf4795b81f49fada9",
+        "sourceId": "tmd-earthquake",
+        "title": "แผ่นดินไหว หมู่เกาะอันดามัน ประเทศอินเดีย (14.277,93.502) ขนาด 3.5 วันที่ 2 ตุลาคม 2569 เวลา 07:52 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
+        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17157",
+        "publishedAt": "2026-10-02T00:52:41+00:00",
+        "hazards": [
+          "eq"
+        ],
+        "mentionedProvinces": [],
+        "areaStatus": "not_verified",
+        "verification": "official_feed",
+        "impactConfirmed": false,
+        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
+      },
+      {
+        "id": "eb303bebe96365c1b778e9e3",
+        "sourceId": "tmd-earthquake",
+        "title": "แผ่นดินไหว ประเทศเวียดนาม (15.083,107.742) ขนาด 3.2 วันที่ 2 ตุลาคม 2569 เวลา 06:52 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
+        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17156",
+        "publishedAt": "2026-10-01T23:52:29+00:00",
+        "hazards": [
+          "eq"
+        ],
+        "mentionedProvinces": [],
+        "areaStatus": "not_verified",
+        "verification": "official_feed",
+        "impactConfirmed": false,
+        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
+      },
       {
         "id": "adbee383bd9c37d66fa4c909",
         "sourceId": "tmd-earthquake",
@@ -296,39 +326,9 @@
         "verification": "official_feed",
         "impactConfirmed": false,
         "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
-      },
-      {
-        "id": "923bdcd7ca000b6655aeaf82",
-        "sourceId": "tmd-earthquake",
-        "title": "แผ่นดินไหว ตอนเหนือของหมู่เกาะสุมาตรา ประเทศอินโดนีเซีย (4.987,95.394) ขนาด 4.1 วันที่ 30 กันยายน 2569 เวลา 09:35 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
-        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17147",
-        "publishedAt": "2026-09-30T02:35:57+00:00",
-        "hazards": [
-          "eq"
-        ],
-        "mentionedProvinces": [],
-        "areaStatus": "not_verified",
-        "verification": "official_feed",
-        "impactConfirmed": false,
-        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
-      },
-      {
-        "id": "a22f074d6499df00bd95c2d1",
-        "sourceId": "tmd-earthquake",
-        "title": "แผ่นดินไหว ประเทศเวียดนาม (14.871,108.023) ขนาด 4.6 วันที่ 30 กันยายน 2569 เวลา 08:37 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
-        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17146",
-        "publishedAt": "2026-09-30T01:37:21+00:00",
-        "hazards": [
-          "eq"
-        ],
-        "mentionedProvinces": [],
-        "areaStatus": "not_verified",
-        "verification": "official_feed",
-        "impactConfirmed": false,
-        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
       }
     ],
     "status": "ok",
-    "newestPublishedAt": "2026-10-01T20:24:36+00:00"
+    "newestPublishedAt": "2026-10-02T00:52:41+00:00"
   }
 }
