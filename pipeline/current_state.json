@@ -12,7 +12,7 @@
     "staleHours": 48,
     "intervalHours": 30,
     "fetchIntervalHours": 1,
-    "lastAttemptAt": "2026-10-03T06:33:25+00:00",
+    "lastAttemptAt": "2026-10-03T12:34:21+00:00",
     "lastSuccessAt": "2026-10-03T04:00:11+00:00",
     "events": [
       {
@@ -181,9 +181,24 @@
     ],
     "intervalHours": 2,
     "staleHours": 48,
-    "lastAttemptAt": "2026-10-03T06:33:25+00:00",
-    "lastSuccessAt": "2026-10-03T06:33:25+00:00",
+    "lastAttemptAt": "2026-10-03T12:34:21+00:00",
+    "lastSuccessAt": "2026-10-03T12:34:21+00:00",
     "events": [
+      {
+        "id": "60fc9e21cfd710c0b16fe452",
+        "sourceId": "tmd-earthquake",
+        "title": "แผ่นดินไหว ประเทศลาว (18.764,102.308) ขนาด 2.1 วันที่ 3 ตุลาคม 2569 เวลา 17:59 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
+        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17163",
+        "publishedAt": "2026-10-03T10:59:25+00:00",
+        "hazards": [
+          "eq"
+        ],
+        "mentionedProvinces": [],
+        "areaStatus": "not_verified",
+        "verification": "official_feed",
+        "impactConfirmed": false,
+        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
+      },
       {
         "id": "38b7b0743b4d6bd026bcb5a9",
         "sourceId": "tmd-earthquake",
@@ -324,26 +339,9 @@
         "verification": "official_feed",
         "impactConfirmed": false,
         "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
-      },
-      {
-        "id": "9c8d58d3f936ce9ad019a7e4",
-        "sourceId": "tmd-earthquake",
-        "title": "แผ่นดินไหว ต.นาคอเรือ อ.ฮอด จ.เชียงใหม่ (18.025,98.522) ขนาด 2.8 วันที่ 2 ตุลาคม 2569 เวลา 01:50 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
-        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17153",
-        "publishedAt": "2026-10-01T18:50:07+00:00",
-        "hazards": [
-          "eq"
-        ],
-        "mentionedProvinces": [
-          "เชียงใหม่"
-        ],
-        "areaStatus": "not_verified",
-        "verification": "official_feed",
-        "impactConfirmed": false,
-        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
       }
     ],
     "status": "ok",
-    "newestPublishedAt": "2026-10-03T00:15:16+00:00"
+    "newestPublishedAt": "2026-10-03T10:59:25+00:00"
   }
 }
