@@ -12,9 +12,26 @@
     "staleHours": 48,
     "intervalHours": 30,
     "fetchIntervalHours": 1,
-    "lastAttemptAt": "2026-10-05T00:55:55+00:00",
-    "lastSuccessAt": "2026-10-04T04:00:10+00:00",
+    "lastAttemptAt": "2026-10-05T04:00:29+00:00",
+    "lastSuccessAt": "2026-10-05T04:00:17+00:00",
     "events": [
+      {
+        "id": "eaf21baa8f444cba3eae5599",
+        "sourceId": "dmr",
+        "title": "รายงานสถานการณ์ธรณีพิบัติภัยประจำวัน วันจันทร์ที่ 5 ตุลาคม พ.ศ. 2569",
+        "url": "https://www.dmr.go.th/%e0%b8%a3%e0%b8%b2%e0%b8%a2%e0%b8%87%e0%b8%b2%e0%b8%99%e0%b8%aa%e0%b8%96%e0%b8%b2%e0%b8%99%e0%b8%81%e0%b8%b2%e0%b8%a3%e0%b8%93%e0%b9%8c%e0%b8%98%e0%b8%a3%e0%b8%93%e0%b8%b5%e0%b8%9e%e0%b8%b4%e0%b8%9a%e0%b8%b1%e0%b8%95%e0%b8%b4%e0%b8%a0%e0%b8%b1%e0%b8%a2%e0%b8%9b%e0%b8%a3%e0%b8%b0%e0%b8%88%e0%b8%b3%e0%b8%a7%e0%b8%b1%e0%b8%99-%e0%b8%a7%e0%b8%b1%e0%b8%99%e0%b8%88%e0%b8%b1%e0%b8%99%e0%b8%97%e0%b8%a3%e0%b9%8c%e0%b8%97%e0%b8%b5%e0%b9%88-5-%e0%b8%95%e0%b8%b8%e0%b8%a5%e0%b8%b2%e0%b8%84%e0%b8%a1-%e0%b8%9e-%e0%b8%a8-2569/",
+        "publishedAt": "2026-10-05T03:09:17+00:00",
+        "hazards": [
+          "slide",
+          "flood",
+          "eq"
+        ],
+        "mentionedProvinces": [],
+        "areaStatus": "not_verified",
+        "verification": "official_feed",
+        "impactConfirmed": false,
+        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
+      },
       {
         "id": "5efe6178485b26cdbf7f0082",
         "sourceId": "dmr",
@@ -132,27 +149,10 @@
         "verification": "official_feed",
         "impactConfirmed": false,
         "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
-      },
-      {
-        "id": "ea04234f23592577a066cb64",
-        "sourceId": "dmr",
-        "title": "รายสถานการณ์ธรณีพิบัติภัยประจำวัน วันจันทร์ที่ 28 กันยายน พ.ศ.2569",
-        "url": "https://www.dmr.go.th/%e0%b8%a3%e0%b8%b2%e0%b8%a2%e0%b8%aa%e0%b8%96%e0%b8%b2%e0%b8%99%e0%b8%81%e0%b8%b2%e0%b8%a3%e0%b8%93%e0%b9%8c%e0%b8%98%e0%b8%a3%e0%b8%93%e0%b8%b5%e0%b8%9e%e0%b8%b4%e0%b8%9a%e0%b8%b1%e0%b8%95%e0%b8%b4%e0%b8%a0%e0%b8%b1%e0%b8%a2%e0%b8%9b%e0%b8%a3%e0%b8%b0%e0%b8%88%e0%b8%b3%e0%b8%a7%e0%b8%b1%e0%b8%99-%e0%b8%a7%e0%b8%b1%e0%b8%99%e0%b8%88%e0%b8%b1%e0%b8%99%e0%b8%97%e0%b8%a3%e0%b9%8c%e0%b8%97%e0%b8%b5%e0%b9%88-28-%e0%b8%81%e0%b8%b1%e0%b8%99%e0%b8%a2%e0%b8%b2%e0%b8%a2%e0%b8%99-%e0%b8%9e-%e0%b8%a8-2569/",
-        "publishedAt": "2026-09-28T02:53:27+00:00",
-        "hazards": [
-          "slide",
-          "flood",
-          "eq"
-        ],
-        "mentionedProvinces": [],
-        "areaStatus": "not_verified",
-        "verification": "official_feed",
-        "impactConfirmed": false,
-        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
       }
     ],
     "status": "ok",
-    "newestPublishedAt": "2026-10-04T02:12:52+00:00",
+    "newestPublishedAt": "2026-10-05T03:09:17+00:00",
     "transport": "n8n-relay"
   },
   "tmd-earthquake": {
@@ -165,8 +165,8 @@
     ],
     "intervalHours": 2,
     "staleHours": 48,
-    "lastAttemptAt": "2026-10-05T00:55:55+00:00",
-    "lastSuccessAt": "2026-10-05T00:55:55+00:00",
+    "lastAttemptAt": "2026-10-05T04:00:29+00:00",
+    "lastSuccessAt": "2026-10-05T04:00:29+00:00",
     "events": [
       {
         "id": "c0e0ba82e963153d98b7f7c9",
