@@ -12,7 +12,7 @@
     "staleHours": 48,
     "intervalHours": 30,
     "fetchIntervalHours": 1,
-    "lastAttemptAt": "2026-10-06T10:18:18+00:00",
+    "lastAttemptAt": "2026-10-06T17:11:31+00:00",
     "lastSuccessAt": "2026-10-06T04:00:03+00:00",
     "events": [
       {
@@ -133,22 +133,6 @@
         "verification": "official_feed",
         "impactConfirmed": false,
         "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
-      },
-      {
-        "id": "02c9f0c45f2545ecbf4bdf59",
-        "sourceId": "dmr",
-        "title": "รายงานการติดตามและเฝ้าระวังสถานการณ์แผ่นดินถล่มและน้ำป่าไหลหลาก วันที่ 29 กันยายน 2569",
-        "url": "https://www.dmr.go.th/%e0%b8%a3%e0%b8%b2%e0%b8%a2%e0%b8%87%e0%b8%b2%e0%b8%99%e0%b8%81%e0%b8%b2%e0%b8%a3%e0%b8%95%e0%b8%b4%e0%b8%94%e0%b8%95%e0%b8%b2%e0%b8%a1%e0%b9%81%e0%b8%a5%e0%b8%b0%e0%b9%80%e0%b8%9d%e0%b9%89%e0%b8%b2%e0%b8%a3%e0%b8%b0%e0%b8%a7%e0%b8%b1%e0%b8%87%e0%b8%aa%e0%b8%96%e0%b8%b2%e0%b8%99%e0%b8%81%e0%b8%b2%e0%b8%a3%e0%b8%93%e0%b9%8c%e0%b9%81%e0%b8%9c%e0%b9%88%e0%b8%99%e0%b8%94%e0%b8%b4%e0%b8%99%e0%b8%96%e0%b8%a5%e0%b9%88%e0%b8%a1%e0%b9%81%e0%b8%a5%e0%b8%b0%e0%b8%99%e0%b9%89%e0%b8%b3%e0%b8%9b%e0%b9%88%e0%b8%b2%e0%b9%84%e0%b8%ab%e0%b8%a5%e0%b8%ab%e0%b8%a5%e0%b8%b2%e0%b8%81-%e0%b8%a7%e0%b8%b1%e0%b8%99%e0%b8%97%e0%b8%b5%e0%b9%88-29-%e0%b8%81%e0%b8%b1%e0%b8%99%e0%b8%a2%e0%b8%b2%e0%b8%a2%e0%b8%99-2569/",
-        "publishedAt": "2026-09-29T10:38:11+00:00",
-        "hazards": [
-          "slide",
-          "flood"
-        ],
-        "mentionedProvinces": [],
-        "areaStatus": "not_verified",
-        "verification": "official_feed",
-        "impactConfirmed": false,
-        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
       }
     ],
     "status": "ok",
@@ -165,8 +149,8 @@
     ],
     "intervalHours": 2,
     "staleHours": 48,
-    "lastAttemptAt": "2026-10-06T10:18:18+00:00",
-    "lastSuccessAt": "2026-10-06T10:18:18+00:00",
+    "lastAttemptAt": "2026-10-06T17:11:31+00:00",
+    "lastSuccessAt": "2026-10-06T17:11:31+00:00",
     "events": [
       {
         "id": "3a2ae7ad3e279022ca924e5b",
