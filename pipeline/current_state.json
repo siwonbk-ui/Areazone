@@ -12,7 +12,7 @@
     "staleHours": 48,
     "intervalHours": 30,
     "fetchIntervalHours": 1,
-    "lastAttemptAt": "2026-10-08T08:58:26+00:00",
+    "lastAttemptAt": "2026-10-08T16:28:52+00:00",
     "lastSuccessAt": "2026-10-08T04:00:11+00:00",
     "events": [
       {
@@ -133,23 +133,6 @@
         "verification": "official_feed",
         "impactConfirmed": false,
         "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
-      },
-      {
-        "id": "4a1bde48aa712b36adf79ea4",
-        "sourceId": "dmr",
-        "title": "รายสถานการณ์ธรณีพิบัติภัยประจำวัน วันพุธที่ 30 กันยายน พ.ศ.2569",
-        "url": "https://www.dmr.go.th/%e0%b8%a3%e0%b8%b2%e0%b8%a2%e0%b8%aa%e0%b8%96%e0%b8%b2%e0%b8%99%e0%b8%81%e0%b8%b2%e0%b8%a3%e0%b8%93%e0%b9%8c%e0%b8%98%e0%b8%a3%e0%b8%93%e0%b8%b5%e0%b8%9e%e0%b8%b4%e0%b8%9a%e0%b8%b1%e0%b8%95%e0%b8%b4-2/",
-        "publishedAt": "2026-10-01T11:43:33+00:00",
-        "hazards": [
-          "slide",
-          "flood",
-          "eq"
-        ],
-        "mentionedProvinces": [],
-        "areaStatus": "not_verified",
-        "verification": "official_feed",
-        "impactConfirmed": false,
-        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
       }
     ],
     "status": "ok",
@@ -166,8 +149,8 @@
     ],
     "intervalHours": 2,
     "staleHours": 48,
-    "lastAttemptAt": "2026-10-08T08:58:26+00:00",
-    "lastSuccessAt": "2026-10-08T08:58:26+00:00",
+    "lastAttemptAt": "2026-10-08T16:28:52+00:00",
+    "lastSuccessAt": "2026-10-08T16:28:52+00:00",
     "events": [
       {
         "id": "c4d39829690cdaf78352ecda",
