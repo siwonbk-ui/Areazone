@@ -12,7 +12,7 @@
     "staleHours": 48,
     "intervalHours": 30,
     "fetchIntervalHours": 1,
-    "lastAttemptAt": "2026-10-08T04:00:25+00:00",
+    "lastAttemptAt": "2026-10-08T08:58:26+00:00",
     "lastSuccessAt": "2026-10-08T04:00:11+00:00",
     "events": [
       {
@@ -166,9 +166,39 @@
     ],
     "intervalHours": 2,
     "staleHours": 48,
-    "lastAttemptAt": "2026-10-08T04:00:25+00:00",
-    "lastSuccessAt": "2026-10-08T04:00:25+00:00",
+    "lastAttemptAt": "2026-10-08T08:58:26+00:00",
+    "lastSuccessAt": "2026-10-08T08:58:26+00:00",
     "events": [
+      {
+        "id": "c4d39829690cdaf78352ecda",
+        "sourceId": "tmd-earthquake",
+        "title": "แผ่นดินไหว ตอนเหนือของหมู่เกาะสุมาตรา ประเทศอินโดนีเซีย (5.637,94.885) ขนาด 4.1 วันที่ 8 ตุลาคม 2569 เวลา 14:45 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
+        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17181",
+        "publishedAt": "2026-10-08T07:45:12+00:00",
+        "hazards": [
+          "eq"
+        ],
+        "mentionedProvinces": [],
+        "areaStatus": "not_verified",
+        "verification": "official_feed",
+        "impactConfirmed": false,
+        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
+      },
+      {
+        "id": "6b604e343750d5a392ccd5f6",
+        "sourceId": "tmd-earthquake",
+        "title": "แผ่นดินไหว ประเทศลาว (19.897,100.991) ขนาด 1.7 วันที่ 8 ตุลาคม 2569 เวลา 11:57 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
+        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17180",
+        "publishedAt": "2026-10-08T04:57:39+00:00",
+        "hazards": [
+          "eq"
+        ],
+        "mentionedProvinces": [],
+        "areaStatus": "not_verified",
+        "verification": "official_feed",
+        "impactConfirmed": false,
+        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
+      },
       {
         "id": "9202c5560eb7e85048d0f056",
         "sourceId": "tmd-earthquake",
@@ -288,39 +318,9 @@
         "verification": "official_feed",
         "impactConfirmed": false,
         "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
-      },
-      {
-        "id": "0f5e6580cc337ce4f61e94ea",
-        "sourceId": "tmd-earthquake",
-        "title": "แผ่นดินไหว พรมแดนประเทศเมียนมา - ประเทศจีน (24.298,97.605) ขนาด 4.7 วันที่ 5 ตุลาคม 2569 เวลา 22:38 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
-        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17171",
-        "publishedAt": "2026-10-05T15:38:59+00:00",
-        "hazards": [
-          "eq"
-        ],
-        "mentionedProvinces": [],
-        "areaStatus": "not_verified",
-        "verification": "official_feed",
-        "impactConfirmed": false,
-        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
-      },
-      {
-        "id": "1c3de8b91f1e62bf431696d9",
-        "sourceId": "tmd-earthquake",
-        "title": "แผ่นดินไหว มณฑลยูนนาน, ประเทศจีน (21.510,101.551) ขนาด 3.0 วันที่ 5 ตุลาคม 2569 เวลา 18:34 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
-        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17170",
-        "publishedAt": "2026-10-05T11:34:47+00:00",
-        "hazards": [
-          "eq"
-        ],
-        "mentionedProvinces": [],
-        "areaStatus": "not_verified",
-        "verification": "official_feed",
-        "impactConfirmed": false,
-        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
       }
     ],
     "status": "ok",
-    "newestPublishedAt": "2026-10-07T21:55:53+00:00"
+    "newestPublishedAt": "2026-10-08T07:45:12+00:00"
   }
 }
