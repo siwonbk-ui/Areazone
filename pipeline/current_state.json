@@ -12,9 +12,26 @@
     "staleHours": 48,
     "intervalHours": 30,
     "fetchIntervalHours": 1,
-    "lastAttemptAt": "2026-10-10T00:51:44+00:00",
-    "lastSuccessAt": "2026-10-09T04:00:10+00:00",
+    "lastAttemptAt": "2026-10-10T04:00:20+00:00",
+    "lastSuccessAt": "2026-10-10T04:00:09+00:00",
     "events": [
+      {
+        "id": "dd26752431d04aaf5e91ffbf",
+        "sourceId": "dmr",
+        "title": "รายงานสถานการณ์ธรณีพิบัติภัยประจำวัน วันเสาร์ที่ 10 ตุลาคม พ.ศ. 2569",
+        "url": "https://www.dmr.go.th/%e0%b8%a3%e0%b8%b2%e0%b8%a2%e0%b8%87%e0%b8%b2%e0%b8%99%e0%b8%aa%e0%b8%96%e0%b8%b2%e0%b8%99%e0%b8%81%e0%b8%b2%e0%b8%a3%e0%b8%93%e0%b9%8c%e0%b8%98%e0%b8%a3%e0%b8%93%e0%b8%b5%e0%b8%9e%e0%b8%b4%e0%b8%9a%e0%b8%b1%e0%b8%95%e0%b8%b4%e0%b8%a0%e0%b8%b1%e0%b8%a2%e0%b8%9b%e0%b8%a3%e0%b8%b0%e0%b8%88%e0%b8%b3%e0%b8%a7%e0%b8%b1%e0%b8%99-%e0%b8%a7%e0%b8%b1%e0%b8%99%e0%b9%80%e0%b8%aa%e0%b8%b2%e0%b8%a3%e0%b9%8c%e0%b8%97%e0%b8%b5%e0%b9%88-10-%e0%b8%95%e0%b8%b8%e0%b8%a5%e0%b8%b2%e0%b8%84%e0%b8%a1-%e0%b8%9e-%e0%b8%a8-2569/",
+        "publishedAt": "2026-10-10T02:27:07+00:00",
+        "hazards": [
+          "slide",
+          "flood",
+          "eq"
+        ],
+        "mentionedProvinces": [],
+        "areaStatus": "not_verified",
+        "verification": "official_feed",
+        "impactConfirmed": false,
+        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
+      },
       {
         "id": "4083d5c9dbb89fff93216059",
         "sourceId": "dmr",
@@ -116,27 +133,10 @@
         "verification": "official_feed",
         "impactConfirmed": false,
         "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
-      },
-      {
-        "id": "cd6adf0f3b8b3e12c5a5d61e",
-        "sourceId": "dmr",
-        "title": "รายสถานการณ์ธรณีพิบัติภัยประจำวัน วันเสาร์ที่ 3 ตุลาคม พ.ศ.2569",
-        "url": "https://www.dmr.go.th/%e0%b8%a3%e0%b8%b2%e0%b8%a2%e0%b8%aa%e0%b8%96%e0%b8%b2%e0%b8%99%e0%b8%81%e0%b8%b2%e0%b8%a3%e0%b8%93%e0%b9%8c%e0%b8%98%e0%b8%a3%e0%b8%93%e0%b8%b5%e0%b8%9e%e0%b8%b4%e0%b8%9a%e0%b8%b1%e0%b8%95%e0%b8%b4%e0%b8%a0%e0%b8%b1%e0%b8%a2%e0%b8%9b%e0%b8%a3%e0%b8%b0%e0%b8%88%e0%b8%b3%e0%b8%a7%e0%b8%b1%e0%b8%99-%e0%b8%a7%e0%b8%b1%e0%b8%99%e0%b9%80%e0%b8%aa%e0%b8%b2%e0%b8%a3%e0%b9%8c%e0%b8%97%e0%b8%b5%e0%b9%88-3-%e0%b8%95%e0%b8%b8%e0%b8%a5%e0%b8%b2%e0%b8%84%e0%b8%a1-%e0%b8%9e-%e0%b8%a8-2569/",
-        "publishedAt": "2026-10-03T02:22:05+00:00",
-        "hazards": [
-          "slide",
-          "flood",
-          "eq"
-        ],
-        "mentionedProvinces": [],
-        "areaStatus": "not_verified",
-        "verification": "official_feed",
-        "impactConfirmed": false,
-        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
       }
     ],
     "status": "ok",
-    "newestPublishedAt": "2026-10-09T02:25:46+00:00",
+    "newestPublishedAt": "2026-10-10T02:27:07+00:00",
     "transport": "n8n-relay"
   },
   "tmd-earthquake": {
@@ -149,9 +149,39 @@
     ],
     "intervalHours": 2,
     "staleHours": 48,
-    "lastAttemptAt": "2026-10-10T00:51:44+00:00",
-    "lastSuccessAt": "2026-10-10T00:51:44+00:00",
+    "lastAttemptAt": "2026-10-10T04:00:20+00:00",
+    "lastSuccessAt": "2026-10-10T04:00:20+00:00",
     "events": [
+      {
+        "id": "bb45fa0c924093045f02db01",
+        "sourceId": "tmd-earthquake",
+        "title": "แผ่นดินไหว พรมแดนประเทศเมียนมา - ประเทศจีน (21.762,98.978) ขนาด 3.2 วันที่ 10 ตุลาคม 2569 เวลา 08:29 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
+        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17189",
+        "publishedAt": "2026-10-10T01:29:14+00:00",
+        "hazards": [
+          "eq"
+        ],
+        "mentionedProvinces": [],
+        "areaStatus": "not_verified",
+        "verification": "official_feed",
+        "impactConfirmed": false,
+        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
+      },
+      {
+        "id": "1713220cb1988b295ec7150a",
+        "sourceId": "tmd-earthquake",
+        "title": "แผ่นดินไหว พรมแดนประเทศเมียนมา - ประเทศจีน (21.807,99.083) ขนาด 4.5 วันที่ 10 ตุลาคม 2569 เวลา 08:23 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
+        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17188",
+        "publishedAt": "2026-10-10T01:23:35+00:00",
+        "hazards": [
+          "eq"
+        ],
+        "mentionedProvinces": [],
+        "areaStatus": "not_verified",
+        "verification": "official_feed",
+        "impactConfirmed": false,
+        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
+      },
       {
         "id": "e2e1b2cca2496a50f3b389b8",
         "sourceId": "tmd-earthquake",
@@ -271,39 +301,9 @@
         "verification": "official_feed",
         "impactConfirmed": false,
         "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
-      },
-      {
-        "id": "9202c5560eb7e85048d0f056",
-        "sourceId": "tmd-earthquake",
-        "title": "แผ่นดินไหว ประเทศเมียนมา (21.086,99.935) ขนาด 1.7 วันที่ 8 ตุลาคม 2569 เวลา 04:55 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
-        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17179",
-        "publishedAt": "2026-10-07T21:55:53+00:00",
-        "hazards": [
-          "eq"
-        ],
-        "mentionedProvinces": [],
-        "areaStatus": "not_verified",
-        "verification": "official_feed",
-        "impactConfirmed": false,
-        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
-      },
-      {
-        "id": "965c02212e752473389d6f1a",
-        "sourceId": "tmd-earthquake",
-        "title": "แผ่นดินไหว ประเทศเมียนมา (20.667,99.898) ขนาด 1.6 วันที่ 8 ตุลาคม 2569 เวลา 04:50 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
-        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17178",
-        "publishedAt": "2026-10-07T21:50:48+00:00",
-        "hazards": [
-          "eq"
-        ],
-        "mentionedProvinces": [],
-        "areaStatus": "not_verified",
-        "verification": "official_feed",
-        "impactConfirmed": false,
-        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
       }
     ],
     "status": "ok",
-    "newestPublishedAt": "2026-10-10T00:10:47+00:00"
+    "newestPublishedAt": "2026-10-10T01:29:14+00:00"
   }
 }
