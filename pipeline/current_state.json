@@ -12,7 +12,7 @@
     "staleHours": 48,
     "intervalHours": 30,
     "fetchIntervalHours": 1,
-    "lastAttemptAt": "2026-10-10T04:00:20+00:00",
+    "lastAttemptAt": "2026-10-10T07:08:05+00:00",
     "lastSuccessAt": "2026-10-10T04:00:09+00:00",
     "events": [
       {
@@ -149,9 +149,26 @@
     ],
     "intervalHours": 2,
     "staleHours": 48,
-    "lastAttemptAt": "2026-10-10T04:00:20+00:00",
-    "lastSuccessAt": "2026-10-10T04:00:20+00:00",
+    "lastAttemptAt": "2026-10-10T07:08:05+00:00",
+    "lastSuccessAt": "2026-10-10T07:08:05+00:00",
     "events": [
+      {
+        "id": "fa4def2f1ee86c7297427207",
+        "sourceId": "tmd-earthquake",
+        "title": "แผ่นดินไหว ต.แม่นาเปิง อ.ปาย จ.แม่ฮ่องสอน (19.540,98.386) ขนาด 2.2 วันที่ 10 ตุลาคม 2569 เวลา 13:29 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
+        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17190",
+        "publishedAt": "2026-10-10T06:29:00+00:00",
+        "hazards": [
+          "eq"
+        ],
+        "mentionedProvinces": [
+          "แม่ฮ่องสอน"
+        ],
+        "areaStatus": "not_verified",
+        "verification": "official_feed",
+        "impactConfirmed": false,
+        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
+      },
       {
         "id": "bb45fa0c924093045f02db01",
         "sourceId": "tmd-earthquake",
@@ -286,24 +303,9 @@
         "verification": "official_feed",
         "impactConfirmed": false,
         "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
-      },
-      {
-        "id": "6b604e343750d5a392ccd5f6",
-        "sourceId": "tmd-earthquake",
-        "title": "แผ่นดินไหว ประเทศลาว (19.897,100.991) ขนาด 1.7 วันที่ 8 ตุลาคม 2569 เวลา 11:57 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
-        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17180",
-        "publishedAt": "2026-10-08T04:57:39+00:00",
-        "hazards": [
-          "eq"
-        ],
-        "mentionedProvinces": [],
-        "areaStatus": "not_verified",
-        "verification": "official_feed",
-        "impactConfirmed": false,
-        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
       }
     ],
     "status": "ok",
-    "newestPublishedAt": "2026-10-10T01:29:14+00:00"
+    "newestPublishedAt": "2026-10-10T06:29:00+00:00"
   }
 }
