@@ -12,7 +12,7 @@
     "staleHours": 48,
     "intervalHours": 30,
     "fetchIntervalHours": 1,
-    "lastAttemptAt": "2026-10-10T22:32:39+00:00",
+    "lastAttemptAt": "2026-10-11T01:54:02+00:00",
     "lastSuccessAt": "2026-10-10T04:00:09+00:00",
     "events": [
       {
@@ -149,9 +149,39 @@
     ],
     "intervalHours": 2,
     "staleHours": 48,
-    "lastAttemptAt": "2026-10-10T22:32:39+00:00",
-    "lastSuccessAt": "2026-10-10T22:32:39+00:00",
+    "lastAttemptAt": "2026-10-11T01:54:02+00:00",
+    "lastSuccessAt": "2026-10-11T01:54:02+00:00",
     "events": [
+      {
+        "id": "8e924bfb128a88b378bf20eb",
+        "sourceId": "tmd-earthquake",
+        "title": "แผ่นดินไหว ประเทศเมียนมา (20.566,98.254) ขนาด 2.4 วันที่ 11 ตุลาคม 2569 เวลา 07:28 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
+        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17202",
+        "publishedAt": "2026-10-11T00:28:06+00:00",
+        "hazards": [
+          "eq"
+        ],
+        "mentionedProvinces": [],
+        "areaStatus": "not_verified",
+        "verification": "official_feed",
+        "impactConfirmed": false,
+        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
+      },
+      {
+        "id": "bcd241bde27858b19fcdd28e",
+        "sourceId": "tmd-earthquake",
+        "title": "แผ่นดินไหว ประเทศเวียดนาม (15.217,107.659) ขนาด 3.4 วันที่ 11 ตุลาคม 2569 เวลา 05:28 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
+        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17201",
+        "publishedAt": "2026-10-10T22:28:52+00:00",
+        "hazards": [
+          "eq"
+        ],
+        "mentionedProvinces": [],
+        "areaStatus": "not_verified",
+        "verification": "official_feed",
+        "impactConfirmed": false,
+        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
+      },
       {
         "id": "fd6797526f4b6b4f66403137",
         "sourceId": "tmd-earthquake",
@@ -273,39 +303,9 @@
         "verification": "official_feed",
         "impactConfirmed": false,
         "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
-      },
-      {
-        "id": "af53c54f8f514666a39199d5",
-        "sourceId": "tmd-earthquake",
-        "title": "แผ่นดินไหว ประเทศเมียนมา (21.054,94.074) ขนาด 3.6 วันที่ 10 ตุลาคม 2569 เวลา 16:03 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
-        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17192",
-        "publishedAt": "2026-10-10T09:03:35+00:00",
-        "hazards": [
-          "eq"
-        ],
-        "mentionedProvinces": [],
-        "areaStatus": "not_verified",
-        "verification": "official_feed",
-        "impactConfirmed": false,
-        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
-      },
-      {
-        "id": "6fdada1bb5daf8ab89eeefef",
-        "sourceId": "tmd-earthquake",
-        "title": "แผ่นดินไหว ประเทศเมียนมา (23.376,97.131) ขนาด 3.4 วันที่ 10 ตุลาคม 2569 เวลา 15:50 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
-        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17191",
-        "publishedAt": "2026-10-10T08:50:41+00:00",
-        "hazards": [
-          "eq"
-        ],
-        "mentionedProvinces": [],
-        "areaStatus": "not_verified",
-        "verification": "official_feed",
-        "impactConfirmed": false,
-        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
       }
     ],
     "status": "ok",
-    "newestPublishedAt": "2026-10-10T20:19:47+00:00"
+    "newestPublishedAt": "2026-10-11T00:28:06+00:00"
   }
 }
