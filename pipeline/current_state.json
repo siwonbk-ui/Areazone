@@ -12,7 +12,7 @@
     "staleHours": 48,
     "intervalHours": 30,
     "fetchIntervalHours": 1,
-    "lastAttemptAt": "2026-10-11T04:00:21+00:00",
+    "lastAttemptAt": "2026-10-11T08:51:47+00:00",
     "lastSuccessAt": "2026-10-11T04:00:10+00:00",
     "events": [
       {
@@ -149,9 +149,24 @@
     ],
     "intervalHours": 2,
     "staleHours": 48,
-    "lastAttemptAt": "2026-10-11T04:00:21+00:00",
-    "lastSuccessAt": "2026-10-11T04:00:21+00:00",
+    "lastAttemptAt": "2026-10-11T08:51:47+00:00",
+    "lastSuccessAt": "2026-10-11T08:51:47+00:00",
     "events": [
+      {
+        "id": "f59562fce1a8ccba5d7c5e3a",
+        "sourceId": "tmd-earthquake",
+        "title": "แผ่นดินไหว ประเทศเมียนมา (18.828,96.656) ขนาด 2.8 วันที่ 11 ตุลาคม 2569 เวลา 15:01 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
+        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17203",
+        "publishedAt": "2026-10-11T08:01:05+00:00",
+        "hazards": [
+          "eq"
+        ],
+        "mentionedProvinces": [],
+        "areaStatus": "not_verified",
+        "verification": "official_feed",
+        "impactConfirmed": false,
+        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
+      },
       {
         "id": "8e924bfb128a88b378bf20eb",
         "sourceId": "tmd-earthquake",
@@ -286,26 +301,9 @@
         "verification": "official_feed",
         "impactConfirmed": false,
         "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
-      },
-      {
-        "id": "e37036dfeb2e7ea4c2b53184",
-        "sourceId": "tmd-earthquake",
-        "title": "แผ่นดินไหว ต.แม่นาเติง  อ.ปาย จ.แม่ฮ่องสอน (19.676,98.421) ขนาด 1.5 วันที่ 10 ตุลาคม 2569 เวลา 16:27 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
-        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17193",
-        "publishedAt": "2026-10-10T09:27:48+00:00",
-        "hazards": [
-          "eq"
-        ],
-        "mentionedProvinces": [
-          "แม่ฮ่องสอน"
-        ],
-        "areaStatus": "not_verified",
-        "verification": "official_feed",
-        "impactConfirmed": false,
-        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
       }
     ],
     "status": "ok",
-    "newestPublishedAt": "2026-10-11T00:28:06+00:00"
+    "newestPublishedAt": "2026-10-11T08:01:05+00:00"
   }
 }
