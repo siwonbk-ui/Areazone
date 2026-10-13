@@ -12,9 +12,26 @@
     "staleHours": 48,
     "intervalHours": 30,
     "fetchIntervalHours": 1,
-    "lastAttemptAt": "2026-10-13T00:40:19+00:00",
-    "lastSuccessAt": "2026-10-12T04:00:10+00:00",
+    "lastAttemptAt": "2026-10-13T04:00:23+00:00",
+    "lastSuccessAt": "2026-10-13T04:00:11+00:00",
     "events": [
+      {
+        "id": "ad8cc4b459e1ee836b68603d",
+        "sourceId": "dmr",
+        "title": "รายงานสถานการณ์ธรณีพิบัติภัยประจำวัน วันอังคารที่ 13 ตุลาคม พ.ศ. 2569",
+        "url": "https://www.dmr.go.th/%e0%b8%a3%e0%b8%b2%e0%b8%a2%e0%b8%87%e0%b8%b2%e0%b8%99%e0%b8%aa%e0%b8%96%e0%b8%b2%e0%b8%99%e0%b8%81%e0%b8%b2%e0%b8%a3%e0%b8%93%e0%b9%8c%e0%b8%98%e0%b8%a3%e0%b8%93%e0%b8%b5%e0%b8%9e%e0%b8%b4%e0%b8%9a%e0%b8%b1%e0%b8%95%e0%b8%b4%e0%b8%a0%e0%b8%b1%e0%b8%a2%e0%b8%9b%e0%b8%a3%e0%b8%b0%e0%b8%88%e0%b8%b3%e0%b8%a7%e0%b8%b1%e0%b8%99-%e0%b8%a7%e0%b8%b1%e0%b8%99%e0%b8%ad%e0%b8%b1%e0%b8%87%e0%b8%84%e0%b8%b2%e0%b8%a3%e0%b8%97%e0%b8%b5%e0%b9%88-13-%e0%b8%95%e0%b8%b8%e0%b8%a5%e0%b8%b2%e0%b8%84%e0%b8%a1-%e0%b8%9e-%e0%b8%a8-2569/",
+        "publishedAt": "2026-10-13T01:33:48+00:00",
+        "hazards": [
+          "slide",
+          "flood",
+          "eq"
+        ],
+        "mentionedProvinces": [],
+        "areaStatus": "not_verified",
+        "verification": "official_feed",
+        "impactConfirmed": false,
+        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
+      },
       {
         "id": "cdda33f5f822f1a67b136206",
         "sourceId": "dmr",
@@ -116,27 +133,10 @@
         "verification": "official_feed",
         "impactConfirmed": false,
         "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
-      },
-      {
-        "id": "5f695bd9ad22e2774233fbdf",
-        "sourceId": "dmr",
-        "title": "รายงานสถานการณ์ธรณีพิบัติภัยประจำวัน วันอังคารที่ 6 ตุลาคม พ.ศ. 2569",
-        "url": "https://www.dmr.go.th/%e0%b8%a3%e0%b8%b2%e0%b8%a2%e0%b8%87%e0%b8%b2%e0%b8%99%e0%b8%aa%e0%b8%96%e0%b8%b2%e0%b8%99%e0%b8%81%e0%b8%b2%e0%b8%a3%e0%b8%93%e0%b9%8c%e0%b8%98%e0%b8%a3%e0%b8%93%e0%b8%b5%e0%b8%9e%e0%b8%b4%e0%b8%9a%e0%b8%b1%e0%b8%95%e0%b8%b4%e0%b8%a0%e0%b8%b1%e0%b8%a2%e0%b8%9b%e0%b8%a3%e0%b8%b0%e0%b8%88%e0%b8%b3%e0%b8%a7%e0%b8%b1%e0%b8%99-%e0%b8%a7%e0%b8%b1%e0%b8%99%e0%b8%ad%e0%b8%b1%e0%b8%87%e0%b8%84%e0%b8%b2%e0%b8%a3%e0%b8%97%e0%b8%b5%e0%b9%88-6-%e0%b8%95%e0%b8%b8%e0%b8%a5%e0%b8%b2%e0%b8%84%e0%b8%a1-%e0%b8%9e-%e0%b8%a8-2569/",
-        "publishedAt": "2026-10-06T02:31:36+00:00",
-        "hazards": [
-          "slide",
-          "flood",
-          "eq"
-        ],
-        "mentionedProvinces": [],
-        "areaStatus": "not_verified",
-        "verification": "official_feed",
-        "impactConfirmed": false,
-        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
       }
     ],
     "status": "ok",
-    "newestPublishedAt": "2026-10-12T02:38:57+00:00",
+    "newestPublishedAt": "2026-10-13T01:33:48+00:00",
     "transport": "n8n-relay"
   },
   "tmd-earthquake": {
@@ -149,9 +149,39 @@
     ],
     "intervalHours": 2,
     "staleHours": 48,
-    "lastAttemptAt": "2026-10-13T00:40:19+00:00",
-    "lastSuccessAt": "2026-10-13T00:40:19+00:00",
+    "lastAttemptAt": "2026-10-13T04:00:23+00:00",
+    "lastSuccessAt": "2026-10-13T04:00:23+00:00",
     "events": [
+      {
+        "id": "7437e52119d13c502b056c9e",
+        "sourceId": "tmd-earthquake",
+        "title": "แผ่นดินไหว ประเทศเวียดนาม (14.986,107.751) ขนาด 3.4 วันที่ 13 ตุลาคม 2569 เวลา 08:09 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
+        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17214",
+        "publishedAt": "2026-10-13T01:09:10+00:00",
+        "hazards": [
+          "eq"
+        ],
+        "mentionedProvinces": [],
+        "areaStatus": "not_verified",
+        "verification": "official_feed",
+        "impactConfirmed": false,
+        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
+      },
+      {
+        "id": "e36d0a949131e9d690172901",
+        "sourceId": "tmd-earthquake",
+        "title": "แผ่นดินไหว ประเทศเวียดนาม (15.028,107.660) ขนาด 3.2 วันที่ 13 ตุลาคม 2569 เวลา 08:06 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
+        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17213",
+        "publishedAt": "2026-10-13T01:06:19+00:00",
+        "hazards": [
+          "eq"
+        ],
+        "mentionedProvinces": [],
+        "areaStatus": "not_verified",
+        "verification": "official_feed",
+        "impactConfirmed": false,
+        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
+      },
       {
         "id": "85ac876e6460cb4a67ddf30d",
         "sourceId": "tmd-earthquake",
@@ -273,39 +303,9 @@
         "verification": "official_feed",
         "impactConfirmed": false,
         "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
-      },
-      {
-        "id": "66e6a2af2e943213c0f7519c",
-        "sourceId": "tmd-earthquake",
-        "title": "แผ่นดินไหว ตอนเหนือของหมู่เกาะสุมาตรา ประเทศอินโดนีเซีย (4.270,97.444) ขนาด 3.9 วันที่ 12 ตุลาคม 2569 เวลา 04:25 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
-        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17205",
-        "publishedAt": "2026-10-11T21:25:10+00:00",
-        "hazards": [
-          "eq"
-        ],
-        "mentionedProvinces": [],
-        "areaStatus": "not_verified",
-        "verification": "official_feed",
-        "impactConfirmed": false,
-        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
-      },
-      {
-        "id": "f59562fce1a8ccba5d7c5e3a",
-        "sourceId": "tmd-earthquake",
-        "title": "แผ่นดินไหว ประเทศเมียนมา (18.828,96.656) ขนาด 2.8 วันที่ 11 ตุลาคม 2569 เวลา 15:01 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
-        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17203",
-        "publishedAt": "2026-10-11T08:01:05+00:00",
-        "hazards": [
-          "eq"
-        ],
-        "mentionedProvinces": [],
-        "areaStatus": "not_verified",
-        "verification": "official_feed",
-        "impactConfirmed": false,
-        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
       }
     ],
     "status": "ok",
-    "newestPublishedAt": "2026-10-12T20:18:58+00:00"
+    "newestPublishedAt": "2026-10-13T01:09:10+00:00"
   }
 }
