@@ -12,7 +12,7 @@
     "staleHours": 48,
     "intervalHours": 30,
     "fetchIntervalHours": 1,
-    "lastAttemptAt": "2026-10-17T09:22:00+00:00",
+    "lastAttemptAt": "2026-10-17T13:43:33+00:00",
     "lastSuccessAt": "2026-10-17T04:00:09+00:00",
     "events": [
       {
@@ -165,9 +165,39 @@
     ],
     "intervalHours": 2,
     "staleHours": 48,
-    "lastAttemptAt": "2026-10-17T09:22:00+00:00",
-    "lastSuccessAt": "2026-10-17T09:22:00+00:00",
+    "lastAttemptAt": "2026-10-17T13:43:33+00:00",
+    "lastSuccessAt": "2026-10-17T13:43:33+00:00",
     "events": [
+      {
+        "id": "cc35edbe55b77b44e9af0ade",
+        "sourceId": "tmd-earthquake",
+        "title": "แผ่นดินไหว ประเทศเวียดนาม (14.989,107.886) ขนาด 3.4 วันที่ 17 ตุลาคม 2569 เวลา 16:51 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
+        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17235",
+        "publishedAt": "2026-10-17T09:51:33+00:00",
+        "hazards": [
+          "eq"
+        ],
+        "mentionedProvinces": [],
+        "areaStatus": "not_verified",
+        "verification": "official_feed",
+        "impactConfirmed": false,
+        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
+      },
+      {
+        "id": "b39f9a499faff56d26e4e100",
+        "sourceId": "tmd-earthquake",
+        "title": "แผ่นดินไหว หมู่เกาะนิโคบาร์ ประเทศอินเดีย (9.843,93.307) ขนาด 3.8 วันที่ 17 ตุลาคม 2569 เวลา 16:43 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
+        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17236",
+        "publishedAt": "2026-10-17T09:43:05+00:00",
+        "hazards": [
+          "eq"
+        ],
+        "mentionedProvinces": [],
+        "areaStatus": "not_verified",
+        "verification": "official_feed",
+        "impactConfirmed": false,
+        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
+      },
       {
         "id": "169ed1ff28dc06cae08b2472",
         "sourceId": "tmd-earthquake",
@@ -291,41 +321,9 @@
         "verification": "official_feed",
         "impactConfirmed": false,
         "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
-      },
-      {
-        "id": "123a842ed4f7988aeb82d76a",
-        "sourceId": "tmd-earthquake",
-        "title": "แผ่นดินไหว ต.เวียงชัย อ.เวียงชัย จ.เชียงราย (19.876,99.918) ขนาด 1.7 วันที่ 15 ตุลาคม 2569 เวลา 18:30 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
-        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17226",
-        "publishedAt": "2026-10-15T11:30:45+00:00",
-        "hazards": [
-          "eq"
-        ],
-        "mentionedProvinces": [
-          "เชียงราย"
-        ],
-        "areaStatus": "not_verified",
-        "verification": "official_feed",
-        "impactConfirmed": false,
-        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
-      },
-      {
-        "id": "2111eac9265e5e4eaf4e3feb",
-        "sourceId": "tmd-earthquake",
-        "title": "แผ่นดินไหว พรมแดนประเทศเมียนมา - ประเทศจีน (22.985,99.538) ขนาด 3.2 วันที่ 15 ตุลาคม 2569 เวลา 02:25 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
-        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17225",
-        "publishedAt": "2026-10-14T19:25:20+00:00",
-        "hazards": [
-          "eq"
-        ],
-        "mentionedProvinces": [],
-        "areaStatus": "not_verified",
-        "verification": "official_feed",
-        "impactConfirmed": false,
-        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
       }
     ],
     "status": "ok",
-    "newestPublishedAt": "2026-10-17T01:55:52+00:00"
+    "newestPublishedAt": "2026-10-17T09:51:33+00:00"
   }
 }
