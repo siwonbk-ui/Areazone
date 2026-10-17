@@ -12,7 +12,7 @@
     "staleHours": 48,
     "intervalHours": 30,
     "fetchIntervalHours": 1,
-    "lastAttemptAt": "2026-10-17T19:24:24+00:00",
+    "lastAttemptAt": "2026-10-17T22:19:11+00:00",
     "lastSuccessAt": "2026-10-17T04:00:09+00:00",
     "events": [
       {
@@ -165,9 +165,84 @@
     ],
     "intervalHours": 2,
     "staleHours": 48,
-    "lastAttemptAt": "2026-10-17T19:24:24+00:00",
-    "lastSuccessAt": "2026-10-17T19:24:24+00:00",
+    "lastAttemptAt": "2026-10-17T22:19:11+00:00",
+    "lastSuccessAt": "2026-10-17T22:19:11+00:00",
     "events": [
+      {
+        "id": "13a9acd18bc1a870e9f4f589",
+        "sourceId": "tmd-earthquake",
+        "title": "แผ่นดินไหว พรมแดนประเทศเมียนมา - ประเทศจีน (22.115,99.148) ขนาด 3.8 วันที่ 18 ตุลาคม 2569 เวลา 04:25 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
+        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17242",
+        "publishedAt": "2026-10-17T21:25:10+00:00",
+        "hazards": [
+          "eq"
+        ],
+        "mentionedProvinces": [],
+        "areaStatus": "not_verified",
+        "verification": "official_feed",
+        "impactConfirmed": false,
+        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
+      },
+      {
+        "id": "890a1ee586e31f4aa36d83d9",
+        "sourceId": "tmd-earthquake",
+        "title": "แผ่นดินไหว พรมแดนประเทศเมียนมา - ประเทศจีน (21.678,99.051) ขนาด 2.7 วันที่ 18 ตุลาคม 2569 เวลา 04:19 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
+        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17241",
+        "publishedAt": "2026-10-17T21:19:42+00:00",
+        "hazards": [
+          "eq"
+        ],
+        "mentionedProvinces": [],
+        "areaStatus": "not_verified",
+        "verification": "official_feed",
+        "impactConfirmed": false,
+        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
+      },
+      {
+        "id": "2b1a2036274da15dd2a0291f",
+        "sourceId": "tmd-earthquake",
+        "title": "แผ่นดินไหว พรมแดนประเทศเมียนมา - ประเทศจีน (22.158,99.150) ขนาด 4.9 วันที่ 18 ตุลาคม 2569 เวลา 04:08 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
+        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17239",
+        "publishedAt": "2026-10-17T21:08:20+00:00",
+        "hazards": [
+          "eq"
+        ],
+        "mentionedProvinces": [],
+        "areaStatus": "not_verified",
+        "verification": "official_feed",
+        "impactConfirmed": false,
+        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
+      },
+      {
+        "id": "27d03b5d8d293df0c976bd79",
+        "sourceId": "tmd-earthquake",
+        "title": "แผ่นดินไหว พรมแดนประเทศเมียนมา - ประเทศจีน (21.368,100.218) ขนาด 2.8 วันที่ 18 ตุลาคม 2569 เวลา 04:05 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
+        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17240",
+        "publishedAt": "2026-10-17T21:05:14+00:00",
+        "hazards": [
+          "eq"
+        ],
+        "mentionedProvinces": [],
+        "areaStatus": "not_verified",
+        "verification": "official_feed",
+        "impactConfirmed": false,
+        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
+      },
+      {
+        "id": "76432477fc5e1e18a05d4921",
+        "sourceId": "tmd-earthquake",
+        "title": "แผ่นดินไหว ประเทศเมียนมา (20.393,97.995) ขนาด 1.9 วันที่ 18 ตุลาคม 2569 เวลา 03:34 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
+        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17238",
+        "publishedAt": "2026-10-17T20:34:08+00:00",
+        "hazards": [
+          "eq"
+        ],
+        "mentionedProvinces": [],
+        "areaStatus": "not_verified",
+        "verification": "official_feed",
+        "impactConfirmed": false,
+        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
+      },
       {
         "id": "329b6faf77b0e2ed93574bdb",
         "sourceId": "tmd-earthquake",
@@ -244,84 +319,9 @@
         "verification": "official_feed",
         "impactConfirmed": false,
         "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
-      },
-      {
-        "id": "dd2f7ad18bc557991b9504ff",
-        "sourceId": "tmd-earthquake",
-        "title": "แผ่นดินไหว หมู่เกาะอันดามัน ประเทศอินเดีย (10.365,93.303) ขนาด 3.8 วันที่ 17 ตุลาคม 2569 เวลา 01:20 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
-        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17232",
-        "publishedAt": "2026-10-16T18:20:47+00:00",
-        "hazards": [
-          "eq"
-        ],
-        "mentionedProvinces": [],
-        "areaStatus": "not_verified",
-        "verification": "official_feed",
-        "impactConfirmed": false,
-        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
-      },
-      {
-        "id": "3f3a2e96e0b9ed3cd4ce80c2",
-        "sourceId": "tmd-earthquake",
-        "title": "แผ่นดินไหว ประเทศเมียนมา (21.116,99.761) ขนาด 2.6 วันที่ 16 ตุลาคม 2569 เวลา 20:00 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
-        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17231",
-        "publishedAt": "2026-10-16T13:00:06+00:00",
-        "hazards": [
-          "eq"
-        ],
-        "mentionedProvinces": [],
-        "areaStatus": "not_verified",
-        "verification": "official_feed",
-        "impactConfirmed": false,
-        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
-      },
-      {
-        "id": "c4dcab78acc732daae391be4",
-        "sourceId": "tmd-earthquake",
-        "title": "แผ่นดินไหว ประเทศเมียนมา (20.827,96.307) ขนาด 2.5 วันที่ 16 ตุลาคม 2569 เวลา 18:14 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
-        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17230",
-        "publishedAt": "2026-10-16T11:14:10+00:00",
-        "hazards": [
-          "eq"
-        ],
-        "mentionedProvinces": [],
-        "areaStatus": "not_verified",
-        "verification": "official_feed",
-        "impactConfirmed": false,
-        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
-      },
-      {
-        "id": "8d2c75a471019a6e14cef9ab",
-        "sourceId": "tmd-earthquake",
-        "title": "แผ่นดินไหว ประเทศเมียนมา (18.744,96.197) ขนาด 2.9 วันที่ 16 ตุลาคม 2569 เวลา 16:13 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
-        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17229",
-        "publishedAt": "2026-10-16T09:13:16+00:00",
-        "hazards": [
-          "eq"
-        ],
-        "mentionedProvinces": [],
-        "areaStatus": "not_verified",
-        "verification": "official_feed",
-        "impactConfirmed": false,
-        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
-      },
-      {
-        "id": "be9f09ce88754bf929945c47",
-        "sourceId": "tmd-earthquake",
-        "title": "แผ่นดินไหว ประเทศเวียดนาม (14.923,107.848) ขนาด 3.1 วันที่ 16 ตุลาคม 2569 เวลา 02:15 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
-        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17228",
-        "publishedAt": "2026-10-15T19:15:35+00:00",
-        "hazards": [
-          "eq"
-        ],
-        "mentionedProvinces": [],
-        "areaStatus": "not_verified",
-        "verification": "official_feed",
-        "impactConfirmed": false,
-        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
       }
     ],
     "status": "ok",
-    "newestPublishedAt": "2026-10-17T18:48:11+00:00"
+    "newestPublishedAt": "2026-10-17T21:25:10+00:00"
   }
 }
