@@ -12,7 +12,7 @@
     "staleHours": 48,
     "intervalHours": 30,
     "fetchIntervalHours": 1,
-    "lastAttemptAt": "2026-10-18T14:35:00+00:00",
+    "lastAttemptAt": "2026-10-18T18:06:07+00:00",
     "lastSuccessAt": "2026-10-17T04:00:09+00:00",
     "events": [
       {
@@ -148,9 +148,24 @@
     ],
     "intervalHours": 2,
     "staleHours": 48,
-    "lastAttemptAt": "2026-10-18T14:35:00+00:00",
-    "lastSuccessAt": "2026-10-18T14:35:00+00:00",
+    "lastAttemptAt": "2026-10-18T18:06:07+00:00",
+    "lastSuccessAt": "2026-10-18T18:06:07+00:00",
     "events": [
+      {
+        "id": "5ebd42c00acaf7f5cb78ff6e",
+        "sourceId": "tmd-earthquake",
+        "title": "แผ่นดินไหว ประเทศเวียดนาม (15.200,107.935) ขนาด 3.5 วันที่ 18 ตุลาคม 2569 เวลา 22:12 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
+        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17249",
+        "publishedAt": "2026-10-18T15:12:49+00:00",
+        "hazards": [
+          "eq"
+        ],
+        "mentionedProvinces": [],
+        "areaStatus": "not_verified",
+        "verification": "official_feed",
+        "impactConfirmed": false,
+        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
+      },
       {
         "id": "22b8166c63a5b10f5632128d",
         "sourceId": "tmd-earthquake",
@@ -285,24 +300,9 @@
         "verification": "official_feed",
         "impactConfirmed": false,
         "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
-      },
-      {
-        "id": "27d03b5d8d293df0c976bd79",
-        "sourceId": "tmd-earthquake",
-        "title": "แผ่นดินไหว พรมแดนประเทศเมียนมา - ประเทศจีน (21.368,100.218) ขนาด 2.8 วันที่ 18 ตุลาคม 2569 เวลา 04:05 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
-        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17240",
-        "publishedAt": "2026-10-17T21:05:14+00:00",
-        "hazards": [
-          "eq"
-        ],
-        "mentionedProvinces": [],
-        "areaStatus": "not_verified",
-        "verification": "official_feed",
-        "impactConfirmed": false,
-        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
       }
     ],
     "status": "ok",
-    "newestPublishedAt": "2026-10-18T07:30:56+00:00"
+    "newestPublishedAt": "2026-10-18T15:12:49+00:00"
   }
 }
