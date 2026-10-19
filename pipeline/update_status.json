@@ -4,11 +4,11 @@
   "baselineStatus": "ok",
   "baselineError": null,
   "currentSources": {
-    "dmr": "ok",
+    "dmr": "stale",
     "tmd-earthquake": "ok"
   },
-  "checkedAt": "2026-10-19T01:17:26+00:00",
-  "status": "ok",
+  "checkedAt": "2026-10-19T07:46:58+00:00",
+  "status": "degraded",
   "review": {
     "status": "pending_review",
     "reviewHash": "49b2b37fe53e1d0f327051f6bd8011c1945de065ea82ed5c604402702efe3664",
