@@ -12,7 +12,7 @@
     "staleHours": 48,
     "intervalHours": 30,
     "fetchIntervalHours": 1,
-    "lastAttemptAt": "2026-10-19T15:36:30+00:00",
+    "lastAttemptAt": "2026-10-19T21:03:24+00:00",
     "lastSuccessAt": "2026-10-17T04:00:09+00:00",
     "events": [
       {
@@ -119,7 +119,8 @@
     ],
     "status": "stale",
     "newestPublishedAt": "2026-10-17T02:55:12+00:00",
-    "transport": "n8n-relay"
+    "transport": "n8n-relay",
+    "errorDetail": "n8n relay has not delivered a new feed in time"
   },
   "tmd-earthquake": {
     "id": "tmd-earthquake",
@@ -131,8 +132,8 @@
     ],
     "intervalHours": 2,
     "staleHours": 48,
-    "lastAttemptAt": "2026-10-19T15:36:30+00:00",
-    "lastSuccessAt": "2026-10-19T15:36:30+00:00",
+    "lastAttemptAt": "2026-10-19T21:03:24+00:00",
+    "lastSuccessAt": "2026-10-19T21:03:24+00:00",
     "events": [
       {
         "id": "1f49d2a9d834bcb75fafe1b2",
