@@ -12,7 +12,7 @@
     "staleHours": 48,
     "intervalHours": 30,
     "fetchIntervalHours": 1,
-    "lastAttemptAt": "2026-10-21T19:20:07+00:00",
+    "lastAttemptAt": "2026-10-21T23:19:47+00:00",
     "lastSuccessAt": "2026-10-17T04:00:09+00:00",
     "events": [
       {
@@ -82,9 +82,24 @@
     ],
     "intervalHours": 2,
     "staleHours": 48,
-    "lastAttemptAt": "2026-10-21T19:20:07+00:00",
-    "lastSuccessAt": "2026-10-21T19:20:07+00:00",
+    "lastAttemptAt": "2026-10-21T23:19:47+00:00",
+    "lastSuccessAt": "2026-10-21T23:19:47+00:00",
     "events": [
+      {
+        "id": "1f29f07f490c73b44f54ff34",
+        "sourceId": "tmd-earthquake",
+        "title": "แผ่นดินไหว ประเทศเมียนมา (19.851,97.884) ขนาด 1.7 วันที่ 22 ตุลาคม 2569 เวลา 05:58 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
+        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17271",
+        "publishedAt": "2026-10-21T22:58:32+00:00",
+        "hazards": [
+          "eq"
+        ],
+        "mentionedProvinces": [],
+        "areaStatus": "not_verified",
+        "verification": "official_feed",
+        "impactConfirmed": false,
+        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
+      },
       {
         "id": "412f87ddac82369cf52e29e4",
         "sourceId": "tmd-earthquake",
@@ -221,26 +236,9 @@
         "verification": "official_feed",
         "impactConfirmed": false,
         "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
-      },
-      {
-        "id": "85615237dc11f30737c58895",
-        "sourceId": "tmd-earthquake",
-        "title": "แผ่นดินไหว ต.คลองมะพลับ อ.ศรีนคร จ.สุโขทัย (17.306,99.929) ขนาด 2.0 วันที่ 20 ตุลาคม 2569 เวลา 05:46 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
-        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17261",
-        "publishedAt": "2026-10-19T22:46:42+00:00",
-        "hazards": [
-          "eq"
-        ],
-        "mentionedProvinces": [
-          "สุโขทัย"
-        ],
-        "areaStatus": "not_verified",
-        "verification": "official_feed",
-        "impactConfirmed": false,
-        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
       }
     ],
     "status": "ok",
-    "newestPublishedAt": "2026-10-21T13:57:50+00:00"
+    "newestPublishedAt": "2026-10-21T22:58:32+00:00"
   }
 }
