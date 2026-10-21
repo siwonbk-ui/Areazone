@@ -12,7 +12,7 @@
     "staleHours": 48,
     "intervalHours": 30,
     "fetchIntervalHours": 1,
-    "lastAttemptAt": "2026-10-21T04:48:09+00:00",
+    "lastAttemptAt": "2026-10-21T10:08:55+00:00",
     "lastSuccessAt": "2026-10-17T04:00:09+00:00",
     "events": [
       {
@@ -65,22 +65,6 @@
         "verification": "official_feed",
         "impactConfirmed": false,
         "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
-      },
-      {
-        "id": "f795c8479248a59d11d908dc",
-        "sourceId": "dmr",
-        "title": "ประกาศฉบับที่ 17/2569 ให้อาสาสมัครเครือข่ายกรมทรัพยากรธรณี เฝ้าระวังภัยดินถล่มและน้ำป่าไหลหลาก ในระหว่างวันที่ 14-16 ตุลาคม 2569",
-        "url": "https://www.dmr.go.th/%e0%b8%9b%e0%b8%a3%e0%b8%b0%e0%b8%81%e0%b8%b2%e0%b8%a8%e0%b8%89%e0%b8%9a%e0%b8%b1%e0%b8%9a%e0%b8%97%e0%b8%b5%e0%b9%88-17-2569-%e0%b9%83%e0%b8%ab%e0%b9%89%e0%b8%ad%e0%b8%b2%e0%b8%aa%e0%b8%b2%e0%b8%aa%e0%b8%a1%e0%b8%b1%e0%b8%84%e0%b8%a3%e0%b9%80%e0%b8%84%e0%b8%a3%e0%b8%b7%e0%b8%ad%e0%b8%82%e0%b9%88%e0%b8%b2%e0%b8%a2%e0%b8%81%e0%b8%a3%e0%b8%a1%e0%b8%97%e0%b8%a3%e0%b8%b1%e0%b8%9e%e0%b8%a2%e0%b8%b2%e0%b8%81%e0%b8%a3%e0%b8%98%e0%b8%a3%e0%b8%93%e0%b8%b5-%e0%b9%80%e0%b8%9d%e0%b9%89%e0%b8%b2%e0%b8%a3%e0%b8%b0%e0%b8%a7%e0%b8%b1%e0%b8%87%e0%b8%a0%e0%b8%b1%e0%b8%a2%e0%b8%94%e0%b8%b4%e0%b8%99%e0%b8%96%e0%b8%a5%e0%b9%88%e0%b8%a1%e0%b9%81%e0%b8%a5%e0%b8%b0%e0%b8%99%e0%b9%89%e0%b8%b3%e0%b8%9b%e0%b9%88%e0%b8%b2%e0%b9%84%e0%b8%ab%e0%b8%a5%e0%b8%ab%e0%b8%a5%e0%b8%b2%e0%b8%81-%e0%b9%83%e0%b8%99%e0%b8%a3%e0%b8%b0%e0%b8%ab%e0%b8%a7%e0%b9%88%e0%b8%b2%e0%b8%87%e0%b8%a7%e0%b8%b1%e0%b8%99%e0%b8%97%e0%b8%b5%e0%b9%88-14-16-%e0%b8%95%e0%b8%b8%e0%b8%a5%e0%b8%b2%e0%b8%84%e0%b8%a1-2569/",
-        "publishedAt": "2026-10-14T07:36:42+00:00",
-        "hazards": [
-          "slide",
-          "flood"
-        ],
-        "mentionedProvinces": [],
-        "areaStatus": "not_verified",
-        "verification": "official_feed",
-        "impactConfirmed": false,
-        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
       }
     ],
     "status": "stale",
@@ -98,9 +82,26 @@
     ],
     "intervalHours": 2,
     "staleHours": 48,
-    "lastAttemptAt": "2026-10-21T04:48:09+00:00",
-    "lastSuccessAt": "2026-10-21T04:48:09+00:00",
+    "lastAttemptAt": "2026-10-21T10:08:55+00:00",
+    "lastSuccessAt": "2026-10-21T10:08:55+00:00",
     "events": [
+      {
+        "id": "58ccccd27353ce2431c2992b",
+        "sourceId": "tmd-earthquake",
+        "title": "แผ่นดินไหว ต.แม่ตีบ อ.งาว จ.ลำปาง (18.710,100.056) ขนาด 1.6 วันที่ 21 ตุลาคม 2569 เวลา 16:29 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
+        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17267",
+        "publishedAt": "2026-10-21T09:29:29+00:00",
+        "hazards": [
+          "eq"
+        ],
+        "mentionedProvinces": [
+          "ลำปาง"
+        ],
+        "areaStatus": "not_verified",
+        "verification": "official_feed",
+        "impactConfirmed": false,
+        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
+      },
       {
         "id": "648fd80d042b6f97c358c642",
         "sourceId": "tmd-earthquake",
@@ -237,24 +238,9 @@
         "verification": "official_feed",
         "impactConfirmed": false,
         "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
-      },
-      {
-        "id": "2232965980625b8c8b14422d",
-        "sourceId": "tmd-earthquake",
-        "title": "แผ่นดินไหว ตอนเหนือของหมู่เกาะสุมาตรา ประเทศอินโดนีเซีย (4.362,97.793) ขนาด 4.4 วันที่ 19 ตุลาคม 2569 เวลา 20:46 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
-        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17257",
-        "publishedAt": "2026-10-19T13:46:14+00:00",
-        "hazards": [
-          "eq"
-        ],
-        "mentionedProvinces": [],
-        "areaStatus": "not_verified",
-        "verification": "official_feed",
-        "impactConfirmed": false,
-        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
       }
     ],
     "status": "ok",
-    "newestPublishedAt": "2026-10-20T16:29:34+00:00"
+    "newestPublishedAt": "2026-10-21T09:29:29+00:00"
   }
 }
