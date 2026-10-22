@@ -12,7 +12,7 @@
     "staleHours": 48,
     "intervalHours": 30,
     "fetchIntervalHours": 1,
-    "lastAttemptAt": "2026-10-22T10:11:30+00:00",
+    "lastAttemptAt": "2026-10-22T15:16:57+00:00",
     "lastSuccessAt": "2026-10-17T04:00:09+00:00",
     "events": [
       {
@@ -65,9 +65,41 @@
     ],
     "intervalHours": 2,
     "staleHours": 48,
-    "lastAttemptAt": "2026-10-22T10:11:30+00:00",
-    "lastSuccessAt": "2026-10-22T10:11:30+00:00",
+    "lastAttemptAt": "2026-10-22T15:16:57+00:00",
+    "lastSuccessAt": "2026-10-22T15:16:57+00:00",
     "events": [
+      {
+        "id": "f101e74db885a67441c9e574",
+        "sourceId": "tmd-earthquake",
+        "title": "แผ่นดินไหว ประเทศเมียนมา (18.888,96.496) ขนาด 2.4 วันที่ 22 ตุลาคม 2569 เวลา 18:57 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
+        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17273",
+        "publishedAt": "2026-10-22T11:57:03+00:00",
+        "hazards": [
+          "eq"
+        ],
+        "mentionedProvinces": [],
+        "areaStatus": "not_verified",
+        "verification": "official_feed",
+        "impactConfirmed": false,
+        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
+      },
+      {
+        "id": "929eb38a0bc07134a8c10dfb",
+        "sourceId": "tmd-earthquake",
+        "title": "แผ่นดินไหว ต. แม่ฮี้ อ.ปาย จ.แม่ฮ่องสอน (19.253,98.494) ขนาด 1.7 วันที่ 22 ตุลาคม 2569 เวลา 18:31 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
+        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17272",
+        "publishedAt": "2026-10-22T11:31:35+00:00",
+        "hazards": [
+          "eq"
+        ],
+        "mentionedProvinces": [
+          "แม่ฮ่องสอน"
+        ],
+        "areaStatus": "not_verified",
+        "verification": "official_feed",
+        "impactConfirmed": false,
+        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
+      },
       {
         "id": "1f29f07f490c73b44f54ff34",
         "sourceId": "tmd-earthquake",
@@ -189,39 +221,9 @@
         "verification": "official_feed",
         "impactConfirmed": false,
         "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
-      },
-      {
-        "id": "182c222d6c0f6211c6c1c5c7",
-        "sourceId": "tmd-earthquake",
-        "title": "แผ่นดินไหว ประเทศเมียนมา (22.577,96.323) ขนาด 3.7 วันที่ 20 ตุลาคม 2569 เวลา 09:05 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
-        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17263",
-        "publishedAt": "2026-10-20T02:05:55+00:00",
-        "hazards": [
-          "eq"
-        ],
-        "mentionedProvinces": [],
-        "areaStatus": "not_verified",
-        "verification": "official_feed",
-        "impactConfirmed": false,
-        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
-      },
-      {
-        "id": "a7a77d2e8af11c0860a0e1e8",
-        "sourceId": "tmd-earthquake",
-        "title": "แผ่นดินไหว ประเทศเวียดนาม (14.998,107.543) ขนาด 3.8 วันที่ 20 ตุลาคม 2569 เวลา 06:04 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
-        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17262",
-        "publishedAt": "2026-10-19T23:04:16+00:00",
-        "hazards": [
-          "eq"
-        ],
-        "mentionedProvinces": [],
-        "areaStatus": "not_verified",
-        "verification": "official_feed",
-        "impactConfirmed": false,
-        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
       }
     ],
     "status": "ok",
-    "newestPublishedAt": "2026-10-21T22:58:32+00:00"
+    "newestPublishedAt": "2026-10-22T11:57:03+00:00"
   }
 }
