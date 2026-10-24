@@ -1,13 +1,13 @@
 {
-  "baselineCheckDay": "2026-10-24",
-  "baselineCheckedAt": "2026-10-23T18:22:00+00:00",
+  "baselineCheckDay": "2026-10-25",
+  "baselineCheckedAt": "2026-10-24T18:09:43+00:00",
   "baselineStatus": "ok",
   "baselineError": null,
   "currentSources": {
     "dmr": "stale",
     "tmd-earthquake": "ok"
   },
-  "checkedAt": "2026-10-24T14:33:21+00:00",
+  "checkedAt": "2026-10-24T18:10:00+00:00",
   "status": "degraded",
   "review": {
     "status": "pending_review",
