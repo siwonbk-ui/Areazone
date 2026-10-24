@@ -12,7 +12,7 @@
     "staleHours": 48,
     "intervalHours": 30,
     "fetchIntervalHours": 1,
-    "lastAttemptAt": "2026-10-24T05:54:18+00:00",
+    "lastAttemptAt": "2026-10-24T11:01:13+00:00",
     "lastSuccessAt": "2026-10-17T04:00:09+00:00",
     "events": [],
     "status": "stale",
@@ -30,9 +30,54 @@
     ],
     "intervalHours": 2,
     "staleHours": 48,
-    "lastAttemptAt": "2026-10-24T05:54:18+00:00",
-    "lastSuccessAt": "2026-10-24T05:54:18+00:00",
+    "lastAttemptAt": "2026-10-24T11:01:13+00:00",
+    "lastSuccessAt": "2026-10-24T11:01:13+00:00",
     "events": [
+      {
+        "id": "df68e7eee596ae0c6aaf18e2",
+        "sourceId": "tmd-earthquake",
+        "title": "แผ่นดินไหว พรมแดนประเทศเมียนมา - ประเทศอินเดีย (23.395,93.765) ขนาด 4.6 วันที่ 24 ตุลาคม 2569 เวลา 17:16 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
+        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17298",
+        "publishedAt": "2026-10-24T10:16:09+00:00",
+        "hazards": [
+          "eq"
+        ],
+        "mentionedProvinces": [],
+        "areaStatus": "not_verified",
+        "verification": "official_feed",
+        "impactConfirmed": false,
+        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
+      },
+      {
+        "id": "47310f0fa323c6086657ff1b",
+        "sourceId": "tmd-earthquake",
+        "title": "แผ่นดินไหว ประเทศเมียนมา (21.787,95.883) ขนาด 4.3 วันที่ 24 ตุลาคม 2569 เวลา 17:06 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
+        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17297",
+        "publishedAt": "2026-10-24T10:06:47+00:00",
+        "hazards": [
+          "eq"
+        ],
+        "mentionedProvinces": [],
+        "areaStatus": "not_verified",
+        "verification": "official_feed",
+        "impactConfirmed": false,
+        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
+      },
+      {
+        "id": "4d038ee51a6cbd1d12e9a57a",
+        "sourceId": "tmd-earthquake",
+        "title": "แผ่นดินไหว ประเทศเมียนมา (20.184,98.004) ขนาด 2.1 วันที่ 24 ตุลาคม 2569 เวลา 17:04 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
+        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17296",
+        "publishedAt": "2026-10-24T10:04:22+00:00",
+        "hazards": [
+          "eq"
+        ],
+        "mentionedProvinces": [],
+        "areaStatus": "not_verified",
+        "verification": "official_feed",
+        "impactConfirmed": false,
+        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
+      },
       {
         "id": "b889c8543c763d9765097484",
         "sourceId": "tmd-earthquake",
@@ -139,56 +184,9 @@
         "verification": "official_feed",
         "impactConfirmed": false,
         "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
-      },
-      {
-        "id": "3b3761e918b784c4f9a23008",
-        "sourceId": "tmd-earthquake",
-        "title": "แผ่นดินไหว ต.ปากน้ำ อ.สวรรคโลก จ.สุโขทัย (17.257,99.928) ขนาด 2.4 วันที่ 23 ตุลาคม 2569 เวลา 22:20 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
-        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17287",
-        "publishedAt": "2026-10-23T15:20:09+00:00",
-        "hazards": [
-          "eq"
-        ],
-        "mentionedProvinces": [
-          "สุโขทัย"
-        ],
-        "areaStatus": "not_verified",
-        "verification": "official_feed",
-        "impactConfirmed": false,
-        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
-      },
-      {
-        "id": "3b42945efc0ee2e3f93e8a75",
-        "sourceId": "tmd-earthquake",
-        "title": "แผ่นดินไหว ประเทศลาว (19.903,101.087) ขนาด 1.9 วันที่ 23 ตุลาคม 2569 เวลา 18:01 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
-        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17285",
-        "publishedAt": "2026-10-23T11:01:49+00:00",
-        "hazards": [
-          "eq"
-        ],
-        "mentionedProvinces": [],
-        "areaStatus": "not_verified",
-        "verification": "official_feed",
-        "impactConfirmed": false,
-        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
-      },
-      {
-        "id": "61763fae6108d3006e0f6f0a",
-        "sourceId": "tmd-earthquake",
-        "title": "แผ่นดินไหว ประเทศลาว (20.195,101.217) ขนาด 1.6 วันที่ 23 ตุลาคม 2569 เวลา 17:43 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
-        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17286",
-        "publishedAt": "2026-10-23T10:43:29+00:00",
-        "hazards": [
-          "eq"
-        ],
-        "mentionedProvinces": [],
-        "areaStatus": "not_verified",
-        "verification": "official_feed",
-        "impactConfirmed": false,
-        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
       }
     ],
     "status": "ok",
-    "newestPublishedAt": "2026-10-24T04:33:44+00:00"
+    "newestPublishedAt": "2026-10-24T10:16:09+00:00"
   }
 }
