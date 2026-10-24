@@ -12,27 +12,9 @@
     "staleHours": 48,
     "intervalHours": 30,
     "fetchIntervalHours": 1,
-    "lastAttemptAt": "2026-10-24T00:42:56+00:00",
+    "lastAttemptAt": "2026-10-24T05:54:18+00:00",
     "lastSuccessAt": "2026-10-17T04:00:09+00:00",
-    "events": [
-      {
-        "id": "730ef26d5e739a44bbbf2b39",
-        "sourceId": "dmr",
-        "title": "รายงานสถานการณ์ธรณีพิบัติภัยประจำวัน วันเสาร์ที่ 17 ตุลาคม พ.ศ. 2569",
-        "url": "https://www.dmr.go.th/%e0%b8%a3%e0%b8%b2%e0%b8%a2%e0%b8%87%e0%b8%b2%e0%b8%99%e0%b8%aa%e0%b8%96%e0%b8%b2%e0%b8%99%e0%b8%81%e0%b8%b2%e0%b8%a3%e0%b8%93%e0%b9%8c%e0%b8%98%e0%b8%a3%e0%b8%93%e0%b8%b5%e0%b8%9e%e0%b8%b4%e0%b8%9a%e0%b8%b1%e0%b8%95%e0%b8%b4%e0%b8%a0%e0%b8%b1%e0%b8%a2%e0%b8%9b%e0%b8%a3%e0%b8%b0%e0%b8%88%e0%b8%b3%e0%b8%a7%e0%b8%b1%e0%b8%99-%e0%b8%a7%e0%b8%b1%e0%b8%99%e0%b9%80%e0%b8%aa%e0%b8%b2%e0%b8%a3%e0%b9%8c%e0%b8%97%e0%b8%b5%e0%b9%88-17-%e0%b8%95%e0%b8%b8%e0%b8%a5%e0%b8%b2%e0%b8%84%e0%b8%a1-%e0%b8%9e-%e0%b8%a8-2569/",
-        "publishedAt": "2026-10-17T02:55:12+00:00",
-        "hazards": [
-          "slide",
-          "flood",
-          "eq"
-        ],
-        "mentionedProvinces": [],
-        "areaStatus": "not_verified",
-        "verification": "official_feed",
-        "impactConfirmed": false,
-        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
-      }
-    ],
+    "events": [],
     "status": "stale",
     "newestPublishedAt": "2026-10-17T02:55:12+00:00",
     "transport": "n8n-relay",
@@ -48,9 +30,54 @@
     ],
     "intervalHours": 2,
     "staleHours": 48,
-    "lastAttemptAt": "2026-10-24T00:42:56+00:00",
-    "lastSuccessAt": "2026-10-24T00:42:56+00:00",
+    "lastAttemptAt": "2026-10-24T05:54:18+00:00",
+    "lastSuccessAt": "2026-10-24T05:54:18+00:00",
     "events": [
+      {
+        "id": "b889c8543c763d9765097484",
+        "sourceId": "tmd-earthquake",
+        "title": "แผ่นดินไหว ประเทศลาว (19.097,101.719) ขนาด 2.5 วันที่ 24 ตุลาคม 2569 เวลา 11:33 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
+        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17294",
+        "publishedAt": "2026-10-24T04:33:44+00:00",
+        "hazards": [
+          "eq"
+        ],
+        "mentionedProvinces": [],
+        "areaStatus": "not_verified",
+        "verification": "official_feed",
+        "impactConfirmed": false,
+        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
+      },
+      {
+        "id": "e2d72e043aed285ebd313aba",
+        "sourceId": "tmd-earthquake",
+        "title": "แผ่นดินไหว ประเทศลาว (19.326,102.225) ขนาด 2.3 วันที่ 24 ตุลาคม 2569 เวลา 11:20 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
+        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17295",
+        "publishedAt": "2026-10-24T04:20:47+00:00",
+        "hazards": [
+          "eq"
+        ],
+        "mentionedProvinces": [],
+        "areaStatus": "not_verified",
+        "verification": "official_feed",
+        "impactConfirmed": false,
+        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
+      },
+      {
+        "id": "3e1436694ec6aab4e63d0c79",
+        "sourceId": "tmd-earthquake",
+        "title": "แผ่นดินไหว ประเทศลาว (19.165,101.958) ขนาด 1.7 วันที่ 24 ตุลาคม 2569 เวลา 07:20 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
+        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17293",
+        "publishedAt": "2026-10-24T00:20:29+00:00",
+        "hazards": [
+          "eq"
+        ],
+        "mentionedProvinces": [],
+        "areaStatus": "not_verified",
+        "verification": "official_feed",
+        "impactConfirmed": false,
+        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
+      },
       {
         "id": "2e48dbbc25f603bc8cd3b77e",
         "sourceId": "tmd-earthquake",
@@ -159,56 +186,9 @@
         "verification": "official_feed",
         "impactConfirmed": false,
         "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
-      },
-      {
-        "id": "99098010f2fefcdf01b814fd",
-        "sourceId": "tmd-earthquake",
-        "title": "แผ่นดินไหว ต.เมืองนะ อ.เชียงดาว จ.เชียงใหม่ (19.761,98.940) ขนาด 1.9 วันที่ 23 ตุลาคม 2569 เวลา 16:39 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
-        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17284",
-        "publishedAt": "2026-10-23T09:39:24+00:00",
-        "hazards": [
-          "eq"
-        ],
-        "mentionedProvinces": [
-          "เชียงใหม่"
-        ],
-        "areaStatus": "not_verified",
-        "verification": "official_feed",
-        "impactConfirmed": false,
-        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
-      },
-      {
-        "id": "af690251727f2f31adfa8615",
-        "sourceId": "tmd-earthquake",
-        "title": "แผ่นดินไหว ประเทศเมียนมา (17.936,96.579) ขนาด 2.4 วันที่ 23 ตุลาคม 2569 เวลา 12:31 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
-        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17283",
-        "publishedAt": "2026-10-23T05:31:05+00:00",
-        "hazards": [
-          "eq"
-        ],
-        "mentionedProvinces": [],
-        "areaStatus": "not_verified",
-        "verification": "official_feed",
-        "impactConfirmed": false,
-        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
-      },
-      {
-        "id": "40d57cb9f05f42bf923c7708",
-        "sourceId": "tmd-earthquake",
-        "title": "แผ่นดินไหว ประเทศเมียนมา (21.544,98.565) ขนาด 2.5 วันที่ 23 ตุลาคม 2569 เวลา 11:49 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
-        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17282",
-        "publishedAt": "2026-10-23T04:49:23+00:00",
-        "hazards": [
-          "eq"
-        ],
-        "mentionedProvinces": [],
-        "areaStatus": "not_verified",
-        "verification": "official_feed",
-        "impactConfirmed": false,
-        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
       }
     ],
     "status": "ok",
-    "newestPublishedAt": "2026-10-23T23:51:34+00:00"
+    "newestPublishedAt": "2026-10-24T04:33:44+00:00"
   }
 }
