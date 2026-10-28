@@ -12,7 +12,7 @@
     "staleHours": 48,
     "intervalHours": 30,
     "fetchIntervalHours": 1,
-    "lastAttemptAt": "2026-10-28T16:03:14+00:00",
+    "lastAttemptAt": "2026-10-28T21:05:12+00:00",
     "lastSuccessAt": "2026-10-17T04:00:09+00:00",
     "events": [],
     "status": "stale",
@@ -30,9 +30,39 @@
     ],
     "intervalHours": 2,
     "staleHours": 48,
-    "lastAttemptAt": "2026-10-28T16:03:14+00:00",
-    "lastSuccessAt": "2026-10-28T16:03:14+00:00",
+    "lastAttemptAt": "2026-10-28T21:05:12+00:00",
+    "lastSuccessAt": "2026-10-28T21:05:12+00:00",
     "events": [
+      {
+        "id": "b897c49e300a87dd48cf29f4",
+        "sourceId": "tmd-earthquake",
+        "title": "แผ่นดินไหว ประเทศเมียนมา (22.341,98.523) ขนาด 2.7 วันที่ 29 ตุลาคม 2569 เวลา 03:15 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
+        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17334",
+        "publishedAt": "2026-10-28T20:15:59+00:00",
+        "hazards": [
+          "eq"
+        ],
+        "mentionedProvinces": [],
+        "areaStatus": "not_verified",
+        "verification": "official_feed",
+        "impactConfirmed": false,
+        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
+      },
+      {
+        "id": "2f6741f6da2a189ef10ef6f0",
+        "sourceId": "tmd-earthquake",
+        "title": "แผ่นดินไหว ประเทศลาว (21.177,101.924) ขนาด 3.7 วันที่ 29 ตุลาคม 2569 เวลา 02:54 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
+        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17333",
+        "publishedAt": "2026-10-28T19:54:56+00:00",
+        "hazards": [
+          "eq"
+        ],
+        "mentionedProvinces": [],
+        "areaStatus": "not_verified",
+        "verification": "official_feed",
+        "impactConfirmed": false,
+        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
+      },
       {
         "id": "4f3487c30ebd62a86da475ce",
         "sourceId": "tmd-earthquake",
@@ -152,41 +182,9 @@
         "verification": "official_feed",
         "impactConfirmed": false,
         "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
-      },
-      {
-        "id": "d68dfecd528005aefda398ac",
-        "sourceId": "tmd-earthquake",
-        "title": "แผ่นดินไหว ต.ป่าก่อดำ อ.แม่ลาว จ.เชียงราย (19.784,99.701) ขนาด 1.7 วันที่ 27 ตุลาคม 2569 เวลา 10:30 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
-        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17322",
-        "publishedAt": "2026-10-27T03:30:50+00:00",
-        "hazards": [
-          "eq"
-        ],
-        "mentionedProvinces": [
-          "เชียงราย"
-        ],
-        "areaStatus": "not_verified",
-        "verification": "official_feed",
-        "impactConfirmed": false,
-        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
-      },
-      {
-        "id": "9459c5fb703f13b65fa7d2b8",
-        "sourceId": "tmd-earthquake",
-        "title": "แผ่นดินไหว ประเทศเมียนมา (18.687,97.392) ขนาด 1.9 วันที่ 27 ตุลาคม 2569 เวลา 05:16 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
-        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17321",
-        "publishedAt": "2026-10-26T22:16:31+00:00",
-        "hazards": [
-          "eq"
-        ],
-        "mentionedProvinces": [],
-        "areaStatus": "not_verified",
-        "verification": "official_feed",
-        "impactConfirmed": false,
-        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
       }
     ],
     "status": "ok",
-    "newestPublishedAt": "2026-10-28T14:54:14+00:00"
+    "newestPublishedAt": "2026-10-28T20:15:59+00:00"
   }
 }
