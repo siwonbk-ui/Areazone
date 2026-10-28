@@ -12,7 +12,7 @@
     "staleHours": 48,
     "intervalHours": 30,
     "fetchIntervalHours": 1,
-    "lastAttemptAt": "2026-10-27T21:20:25+00:00",
+    "lastAttemptAt": "2026-10-28T01:22:17+00:00",
     "lastSuccessAt": "2026-10-17T04:00:09+00:00",
     "events": [],
     "status": "stale",
@@ -30,9 +30,24 @@
     ],
     "intervalHours": 2,
     "staleHours": 48,
-    "lastAttemptAt": "2026-10-27T21:20:25+00:00",
-    "lastSuccessAt": "2026-10-27T21:20:25+00:00",
+    "lastAttemptAt": "2026-10-28T01:22:17+00:00",
+    "lastSuccessAt": "2026-10-28T01:22:17+00:00",
     "events": [
+      {
+        "id": "a2dc6f88bb2b73f8bb7dc467",
+        "sourceId": "tmd-earthquake",
+        "title": "แผ่นดินไหว ประเทศเมียนมา (19.943,97.949) ขนาด 1.8 วันที่ 28 ตุลาคม 2569 เวลา 06:12 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
+        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17329",
+        "publishedAt": "2026-10-27T23:12:07+00:00",
+        "hazards": [
+          "eq"
+        ],
+        "mentionedProvinces": [],
+        "areaStatus": "not_verified",
+        "verification": "official_feed",
+        "impactConfirmed": false,
+        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
+      },
       {
         "id": "22b0af3906c9fce1c60dbf29",
         "sourceId": "tmd-earthquake",
@@ -73,23 +88,6 @@
           "eq"
         ],
         "mentionedProvinces": [],
-        "areaStatus": "not_verified",
-        "verification": "official_feed",
-        "impactConfirmed": false,
-        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
-      },
-      {
-        "id": "800d084eb3862787d1bc0d89",
-        "sourceId": "tmd-earthquake",
-        "title": "แผ่นดินไหว ต.บุญนาคพัฒนา อ.เมืองลำปาง จ.ลำปาง (18.509,99.604) ขนาด 1.6 วันที่ 27 ตุลาคม 2569 เวลา 16:00 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
-        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17323",
-        "publishedAt": "2026-10-27T09:00:09+00:00",
-        "hazards": [
-          "eq"
-        ],
-        "mentionedProvinces": [
-          "ลำปาง"
-        ],
         "areaStatus": "not_verified",
         "verification": "official_feed",
         "impactConfirmed": false,
@@ -189,6 +187,6 @@
       }
     ],
     "status": "ok",
-    "newestPublishedAt": "2026-10-27T20:57:27+00:00"
+    "newestPublishedAt": "2026-10-27T23:12:07+00:00"
   }
 }
