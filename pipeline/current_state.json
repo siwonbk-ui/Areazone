@@ -12,7 +12,7 @@
     "staleHours": 48,
     "intervalHours": 30,
     "fetchIntervalHours": 1,
-    "lastAttemptAt": "2026-11-02T15:53:42+00:00",
+    "lastAttemptAt": "2026-11-02T23:30:32+00:00",
     "lastSuccessAt": "2026-10-17T04:00:09+00:00",
     "events": [],
     "status": "stale",
@@ -30,9 +30,39 @@
     ],
     "intervalHours": 2,
     "staleHours": 48,
-    "lastAttemptAt": "2026-11-02T15:53:42+00:00",
-    "lastSuccessAt": "2026-11-02T15:53:42+00:00",
+    "lastAttemptAt": "2026-11-02T23:30:32+00:00",
+    "lastSuccessAt": "2026-11-02T23:30:32+00:00",
     "events": [
+      {
+        "id": "f0b586a5896365057070f31b",
+        "sourceId": "tmd-earthquake",
+        "title": "แผ่นดินไหว มณฑลยูนนาน, ประเทศจีน (22.662,100.540) ขนาด 3.4 วันที่ 3 พฤศจิกายน 2569 เวลา 03:19 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
+        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17359",
+        "publishedAt": "2026-11-02T20:19:14+00:00",
+        "hazards": [
+          "eq"
+        ],
+        "mentionedProvinces": [],
+        "areaStatus": "not_verified",
+        "verification": "official_feed",
+        "impactConfirmed": false,
+        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
+      },
+      {
+        "id": "654e1e13d9058db1d4782a30",
+        "sourceId": "tmd-earthquake",
+        "title": "แผ่นดินไหว ประเทศเวียดนาม (18.098,105.961) ขนาด 2.9 วันที่ 3 พฤศจิกายน 2569 เวลา 00:43 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
+        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17358",
+        "publishedAt": "2026-11-02T17:43:20+00:00",
+        "hazards": [
+          "eq"
+        ],
+        "mentionedProvinces": [],
+        "areaStatus": "not_verified",
+        "verification": "official_feed",
+        "impactConfirmed": false,
+        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
+      },
       {
         "id": "f0ddd49dd1f2f1a857048042",
         "sourceId": "tmd-earthquake",
@@ -158,41 +188,9 @@
         "verification": "official_feed",
         "impactConfirmed": false,
         "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
-      },
-      {
-        "id": "5ea04f8e70986031adad0006",
-        "sourceId": "tmd-earthquake",
-        "title": "แผ่นดินไหว ตอนเหนือของหมู่เกาะสุมาตรา ประเทศอินโดนีเซีย (4.887,96.432) ขนาด 4.0 วันที่ 1 พฤศจิกายน 2569 เวลา 12:39 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
-        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17350",
-        "publishedAt": "2026-11-01T05:39:02+00:00",
-        "hazards": [
-          "eq"
-        ],
-        "mentionedProvinces": [],
-        "areaStatus": "not_verified",
-        "verification": "official_feed",
-        "impactConfirmed": false,
-        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
-      },
-      {
-        "id": "c8f53ba795034c93b220f42f",
-        "sourceId": "tmd-earthquake",
-        "title": "แผ่นดินไหว ต.ปง อ.ปง จ.พะเยา (19.115,100.300) ขนาด 2.1 วันที่ 1 พฤศจิกายน 2569 เวลา 12:09 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
-        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17348",
-        "publishedAt": "2026-11-01T05:09:21+00:00",
-        "hazards": [
-          "eq"
-        ],
-        "mentionedProvinces": [
-          "พะเยา"
-        ],
-        "areaStatus": "not_verified",
-        "verification": "official_feed",
-        "impactConfirmed": false,
-        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
       }
     ],
     "status": "ok",
-    "newestPublishedAt": "2026-11-02T14:52:15+00:00"
+    "newestPublishedAt": "2026-11-02T20:19:14+00:00"
   }
 }
