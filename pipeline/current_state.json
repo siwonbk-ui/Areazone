@@ -12,7 +12,7 @@
     "staleHours": 48,
     "intervalHours": 30,
     "fetchIntervalHours": 1,
-    "lastAttemptAt": "2026-11-03T20:59:32+00:00",
+    "lastAttemptAt": "2026-11-04T01:21:42+00:00",
     "lastSuccessAt": "2026-10-17T04:00:09+00:00",
     "events": [],
     "status": "stale",
@@ -30,15 +30,45 @@
     ],
     "intervalHours": 2,
     "staleHours": 48,
-    "lastAttemptAt": "2026-11-03T20:59:32+00:00",
-    "lastSuccessAt": "2026-11-03T20:59:32+00:00",
+    "lastAttemptAt": "2026-11-04T01:21:42+00:00",
+    "lastSuccessAt": "2026-11-04T01:21:42+00:00",
     "events": [
+      {
+        "id": "0dac2849fcb34c47dd6fa1bd",
+        "sourceId": "tmd-earthquake",
+        "title": "แผ่นดินไหว ประเทศลาว (18.991,101.940) ขนาด 2.1 วันที่ 4 พฤศจิกายน 2569 เวลา 07:39 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
+        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17369",
+        "publishedAt": "2026-11-04T00:39:34+00:00",
+        "hazards": [
+          "eq"
+        ],
+        "mentionedProvinces": [],
+        "areaStatus": "not_verified",
+        "verification": "official_feed",
+        "impactConfirmed": false,
+        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
+      },
       {
         "id": "f345991ab051f3ee4f06dd0c",
         "sourceId": "tmd-earthquake",
         "title": "แผ่นดินไหว ประเทศเวียดนาม (14.859,107.789) ขนาด 3.3 วันที่ 4 พฤศจิกายน 2569 เวลา 03:08 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
         "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17366",
         "publishedAt": "2026-11-03T20:08:34+00:00",
+        "hazards": [
+          "eq"
+        ],
+        "mentionedProvinces": [],
+        "areaStatus": "not_verified",
+        "verification": "official_feed",
+        "impactConfirmed": false,
+        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
+      },
+      {
+        "id": "d668f903280d4b3405ea1e36",
+        "sourceId": "tmd-earthquake",
+        "title": "แผ่นดินไหว ประเทศเมียนมา (23.331,93.567) ขนาด 3.5 วันที่ 4 พฤศจิกายน 2569 เวลา 01:15 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
+        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17368",
+        "publishedAt": "2026-11-03T18:15:13+00:00",
         "hazards": [
           "eq"
         ],
@@ -152,39 +182,9 @@
         "verification": "official_feed",
         "impactConfirmed": false,
         "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
-      },
-      {
-        "id": "f0b586a5896365057070f31b",
-        "sourceId": "tmd-earthquake",
-        "title": "แผ่นดินไหว มณฑลยูนนาน, ประเทศจีน (22.662,100.540) ขนาด 3.4 วันที่ 3 พฤศจิกายน 2569 เวลา 03:19 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
-        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17359",
-        "publishedAt": "2026-11-02T20:19:14+00:00",
-        "hazards": [
-          "eq"
-        ],
-        "mentionedProvinces": [],
-        "areaStatus": "not_verified",
-        "verification": "official_feed",
-        "impactConfirmed": false,
-        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
-      },
-      {
-        "id": "654e1e13d9058db1d4782a30",
-        "sourceId": "tmd-earthquake",
-        "title": "แผ่นดินไหว ประเทศเวียดนาม (18.098,105.961) ขนาด 2.9 วันที่ 3 พฤศจิกายน 2569 เวลา 00:43 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
-        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17358",
-        "publishedAt": "2026-11-02T17:43:20+00:00",
-        "hazards": [
-          "eq"
-        ],
-        "mentionedProvinces": [],
-        "areaStatus": "not_verified",
-        "verification": "official_feed",
-        "impactConfirmed": false,
-        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
       }
     ],
     "status": "ok",
-    "newestPublishedAt": "2026-11-03T20:08:34+00:00"
+    "newestPublishedAt": "2026-11-04T00:39:34+00:00"
   }
 }
