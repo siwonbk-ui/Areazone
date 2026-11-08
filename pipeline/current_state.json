@@ -12,7 +12,7 @@
     "staleHours": 48,
     "intervalHours": 30,
     "fetchIntervalHours": 1,
-    "lastAttemptAt": "2026-11-08T00:36:26+00:00",
+    "lastAttemptAt": "2026-11-08T07:20:49+00:00",
     "lastSuccessAt": "2026-10-17T04:00:09+00:00",
     "events": [],
     "status": "stale",
@@ -30,9 +30,54 @@
     ],
     "intervalHours": 2,
     "staleHours": 48,
-    "lastAttemptAt": "2026-11-08T00:36:26+00:00",
-    "lastSuccessAt": "2026-11-08T00:36:26+00:00",
+    "lastAttemptAt": "2026-11-08T07:20:49+00:00",
+    "lastSuccessAt": "2026-11-08T07:20:49+00:00",
     "events": [
+      {
+        "id": "894031af9779cdb7b1b2f68d",
+        "sourceId": "tmd-earthquake",
+        "title": "แผ่นดินไหว ประเทศเมียนมา (18.924,96.288) ขนาด 4.2 วันที่ 8 พฤศจิกายน 2569 เวลา 13:54 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
+        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17393",
+        "publishedAt": "2026-11-08T06:54:47+00:00",
+        "hazards": [
+          "eq"
+        ],
+        "mentionedProvinces": [],
+        "areaStatus": "not_verified",
+        "verification": "official_feed",
+        "impactConfirmed": false,
+        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
+      },
+      {
+        "id": "b40d97e24162b6bac85d30ac",
+        "sourceId": "tmd-earthquake",
+        "title": "แผ่นดินไหว หมู่เกาะอันดามัน ประเทศอินเดีย (13.789,95.753) ขนาด 3.6 วันที่ 8 พฤศจิกายน 2569 เวลา 12:40 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
+        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17392",
+        "publishedAt": "2026-11-08T05:40:59+00:00",
+        "hazards": [
+          "eq"
+        ],
+        "mentionedProvinces": [],
+        "areaStatus": "not_verified",
+        "verification": "official_feed",
+        "impactConfirmed": false,
+        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
+      },
+      {
+        "id": "3e370a499d5a076e189e8dc0",
+        "sourceId": "tmd-earthquake",
+        "title": "แผ่นดินไหว ประเทศเมียนมา (19.105,96.374) ขนาด 2.8 วันที่ 8 พฤศจิกายน 2569 เวลา 12:10 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
+        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17391",
+        "publishedAt": "2026-11-08T05:10:31+00:00",
+        "hazards": [
+          "eq"
+        ],
+        "mentionedProvinces": [],
+        "areaStatus": "not_verified",
+        "verification": "official_feed",
+        "impactConfirmed": false,
+        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
+      },
       {
         "id": "0cd98b0e9032c46bbb73a44f",
         "sourceId": "tmd-earthquake",
@@ -137,56 +182,9 @@
         "verification": "official_feed",
         "impactConfirmed": false,
         "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
-      },
-      {
-        "id": "a0761f1f0f1e7b1403dd34d3",
-        "sourceId": "tmd-earthquake",
-        "title": "แผ่นดินไหว ประเทศเมียนมา (19.810,98.617) ขนาด 2.1 วันที่ 6 พฤศจิกายน 2569 เวลา 21:08 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
-        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17383",
-        "publishedAt": "2026-11-06T14:08:16+00:00",
-        "hazards": [
-          "eq"
-        ],
-        "mentionedProvinces": [],
-        "areaStatus": "not_verified",
-        "verification": "official_feed",
-        "impactConfirmed": false,
-        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
-      },
-      {
-        "id": "7099a372704fa2365725aa68",
-        "sourceId": "tmd-earthquake",
-        "title": "แผ่นดินไหว ประเทศเมียนมา (21.166,98.369) ขนาด 2.9 วันที่ 6 พฤศจิกายน 2569 เวลา 11:46 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
-        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17382",
-        "publishedAt": "2026-11-06T04:46:03+00:00",
-        "hazards": [
-          "eq"
-        ],
-        "mentionedProvinces": [],
-        "areaStatus": "not_verified",
-        "verification": "official_feed",
-        "impactConfirmed": false,
-        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
-      },
-      {
-        "id": "e7b18ae20d3d787196345114",
-        "sourceId": "tmd-earthquake",
-        "title": "แผ่นดินไหว ต.แม่แฝกใหม่ อ.สันทราย จ.เชียงใหม่ (18.978,99.005) ขนาด 1.8 วันที่ 6 พฤศจิกายน 2569 เวลา 09:47 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
-        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17381",
-        "publishedAt": "2026-11-06T02:47:29+00:00",
-        "hazards": [
-          "eq"
-        ],
-        "mentionedProvinces": [
-          "เชียงใหม่"
-        ],
-        "areaStatus": "not_verified",
-        "verification": "official_feed",
-        "impactConfirmed": false,
-        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
       }
     ],
     "status": "ok",
-    "newestPublishedAt": "2026-11-07T13:11:20+00:00"
+    "newestPublishedAt": "2026-11-08T06:54:47+00:00"
   }
 }
