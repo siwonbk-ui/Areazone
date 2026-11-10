@@ -12,7 +12,7 @@
     "staleHours": 48,
     "intervalHours": 30,
     "fetchIntervalHours": 1,
-    "lastAttemptAt": "2026-11-10T01:31:35+00:00",
+    "lastAttemptAt": "2026-11-10T09:50:42+00:00",
     "lastSuccessAt": "2026-10-17T04:00:09+00:00",
     "events": [],
     "status": "stale",
@@ -30,9 +30,39 @@
     ],
     "intervalHours": 2,
     "staleHours": 48,
-    "lastAttemptAt": "2026-11-10T01:31:35+00:00",
-    "lastSuccessAt": "2026-11-10T01:31:35+00:00",
+    "lastAttemptAt": "2026-11-10T09:50:42+00:00",
+    "lastSuccessAt": "2026-11-10T09:50:42+00:00",
     "events": [
+      {
+        "id": "b7a520cbbce015bbda28582a",
+        "sourceId": "tmd-earthquake",
+        "title": "แผ่นดินไหว ประเทศเมียนมา (22.156,96.338) ขนาด 3.0 วันที่ 10 พฤศจิกายน 2569 เวลา 15:11 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
+        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17402",
+        "publishedAt": "2026-11-10T08:11:27+00:00",
+        "hazards": [
+          "eq"
+        ],
+        "mentionedProvinces": [],
+        "areaStatus": "not_verified",
+        "verification": "official_feed",
+        "impactConfirmed": false,
+        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
+      },
+      {
+        "id": "9f668e06a5d2e96ac4966394",
+        "sourceId": "tmd-earthquake",
+        "title": "แผ่นดินไหว ตอนเหนือของหมู่เกาะสุมาตรา ประเทศอินโดนีเซีย (4.756,96.374) ขนาด 3.4 วันที่ 10 พฤศจิกายน 2569 เวลา 14:36 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
+        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17403",
+        "publishedAt": "2026-11-10T07:36:22+00:00",
+        "hazards": [
+          "eq"
+        ],
+        "mentionedProvinces": [],
+        "areaStatus": "not_verified",
+        "verification": "official_feed",
+        "impactConfirmed": false,
+        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
+      },
       {
         "id": "986a546ce9d507f1683355bd",
         "sourceId": "tmd-earthquake",
@@ -152,39 +182,9 @@
         "verification": "official_feed",
         "impactConfirmed": false,
         "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
-      },
-      {
-        "id": "894031af9779cdb7b1b2f68d",
-        "sourceId": "tmd-earthquake",
-        "title": "แผ่นดินไหว ประเทศเมียนมา (18.924,96.288) ขนาด 4.2 วันที่ 8 พฤศจิกายน 2569 เวลา 13:54 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
-        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17393",
-        "publishedAt": "2026-11-08T06:54:47+00:00",
-        "hazards": [
-          "eq"
-        ],
-        "mentionedProvinces": [],
-        "areaStatus": "not_verified",
-        "verification": "official_feed",
-        "impactConfirmed": false,
-        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
-      },
-      {
-        "id": "b40d97e24162b6bac85d30ac",
-        "sourceId": "tmd-earthquake",
-        "title": "แผ่นดินไหว หมู่เกาะอันดามัน ประเทศอินเดีย (13.789,95.753) ขนาด 3.6 วันที่ 8 พฤศจิกายน 2569 เวลา 12:40 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
-        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17392",
-        "publishedAt": "2026-11-08T05:40:59+00:00",
-        "hazards": [
-          "eq"
-        ],
-        "mentionedProvinces": [],
-        "areaStatus": "not_verified",
-        "verification": "official_feed",
-        "impactConfirmed": false,
-        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
       }
     ],
     "status": "ok",
-    "newestPublishedAt": "2026-11-10T00:30:29+00:00"
+    "newestPublishedAt": "2026-11-10T08:11:27+00:00"
   }
 }
