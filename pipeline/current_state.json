@@ -12,7 +12,7 @@
     "staleHours": 48,
     "intervalHours": 30,
     "fetchIntervalHours": 1,
-    "lastAttemptAt": "2026-11-11T21:58:23+00:00",
+    "lastAttemptAt": "2026-11-12T02:59:43+00:00",
     "lastSuccessAt": "2026-10-17T04:00:09+00:00",
     "events": [],
     "status": "stale",
@@ -30,9 +30,41 @@
     ],
     "intervalHours": 2,
     "staleHours": 48,
-    "lastAttemptAt": "2026-11-11T21:58:23+00:00",
-    "lastSuccessAt": "2026-11-11T21:58:23+00:00",
+    "lastAttemptAt": "2026-11-12T02:59:43+00:00",
+    "lastSuccessAt": "2026-11-12T02:59:43+00:00",
     "events": [
+      {
+        "id": "5adf02966b2e9284876d0cc7",
+        "sourceId": "tmd-earthquake",
+        "title": "แผ่นดินไหว ต.เชียงของ อ.นาน้อย จ.น่าน (18.250,100.922) ขนาด 2.2 วันที่ 12 พฤศจิกายน 2569 เวลา 08:07 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
+        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17422",
+        "publishedAt": "2026-11-12T01:07:22+00:00",
+        "hazards": [
+          "eq"
+        ],
+        "mentionedProvinces": [
+          "น่าน"
+        ],
+        "areaStatus": "not_verified",
+        "verification": "official_feed",
+        "impactConfirmed": false,
+        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
+      },
+      {
+        "id": "1bd5b04aaca89733e8b1e9b7",
+        "sourceId": "tmd-earthquake",
+        "title": "แผ่นดินไหว ประเทศเมียนมา (20.107,97.968) ขนาด 2.1 วันที่ 12 พฤศจิกายน 2569 เวลา 07:17 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
+        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17421",
+        "publishedAt": "2026-11-12T00:17:58+00:00",
+        "hazards": [
+          "eq"
+        ],
+        "mentionedProvinces": [],
+        "areaStatus": "not_verified",
+        "verification": "official_feed",
+        "impactConfirmed": false,
+        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
+      },
       {
         "id": "c9cf946898363dfad5e24f22",
         "sourceId": "tmd-earthquake",
@@ -152,39 +184,9 @@
         "verification": "official_feed",
         "impactConfirmed": false,
         "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
-      },
-      {
-        "id": "feeb81d5ccee8f90898284f1",
-        "sourceId": "tmd-earthquake",
-        "title": "แผ่นดินไหว ประเทศเมียนมา (20.053,97.947) ขนาด 1.6 วันที่ 11 พฤศจิกายน 2569 เวลา 02:17 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
-        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17412",
-        "publishedAt": "2026-11-10T19:17:58+00:00",
-        "hazards": [
-          "eq"
-        ],
-        "mentionedProvinces": [],
-        "areaStatus": "not_verified",
-        "verification": "official_feed",
-        "impactConfirmed": false,
-        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
-      },
-      {
-        "id": "90f1829bb91f52f3f9f477f7",
-        "sourceId": "tmd-earthquake",
-        "title": "แผ่นดินไหว ประเทศเมียนมา (19.985,98.044) ขนาด 1.8 วันที่ 11 พฤศจิกายน 2569 เวลา 00:16 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
-        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17409",
-        "publishedAt": "2026-11-10T17:16:52+00:00",
-        "hazards": [
-          "eq"
-        ],
-        "mentionedProvinces": [],
-        "areaStatus": "not_verified",
-        "verification": "official_feed",
-        "impactConfirmed": false,
-        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
       }
     ],
     "status": "ok",
-    "newestPublishedAt": "2026-11-11T12:24:28+00:00"
+    "newestPublishedAt": "2026-11-12T01:07:22+00:00"
   }
 }
