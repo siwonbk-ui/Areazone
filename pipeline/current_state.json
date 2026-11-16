@@ -12,7 +12,7 @@
     "staleHours": 48,
     "intervalHours": 30,
     "fetchIntervalHours": 1,
-    "lastAttemptAt": "2026-11-15T21:49:20+00:00",
+    "lastAttemptAt": "2026-11-16T02:08:11+00:00",
     "lastSuccessAt": "2026-10-17T04:00:09+00:00",
     "events": [],
     "status": "stale",
@@ -30,8 +30,8 @@
     ],
     "intervalHours": 2,
     "staleHours": 48,
-    "lastAttemptAt": "2026-11-15T21:49:20+00:00",
-    "lastSuccessAt": "2026-11-15T21:49:20+00:00",
+    "lastAttemptAt": "2026-11-16T02:08:11+00:00",
+    "lastSuccessAt": "2026-11-16T02:08:11+00:00",
     "events": [
       {
         "id": "9acbfd58d35d1b66b3f7bfcf",
