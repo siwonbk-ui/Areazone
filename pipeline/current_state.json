@@ -12,7 +12,7 @@
     "staleHours": 48,
     "intervalHours": 30,
     "fetchIntervalHours": 1,
-    "lastAttemptAt": "2026-11-20T03:15:35+00:00",
+    "lastAttemptAt": "2026-11-20T11:49:39+00:00",
     "lastSuccessAt": "2026-10-17T04:00:09+00:00",
     "events": [],
     "status": "stale",
@@ -30,9 +30,41 @@
     ],
     "intervalHours": 2,
     "staleHours": 48,
-    "lastAttemptAt": "2026-11-20T03:15:35+00:00",
-    "lastSuccessAt": "2026-11-20T03:15:35+00:00",
+    "lastAttemptAt": "2026-11-20T11:49:39+00:00",
+    "lastSuccessAt": "2026-11-20T11:49:39+00:00",
     "events": [
+      {
+        "id": "4d31958a7354fec30981e3cc",
+        "sourceId": "tmd-earthquake",
+        "title": "แผ่นดินไหว ประเทศเมียนมา (20.715,100.146) ขนาด 2.1 วันที่ 20 พฤศจิกายน 2569 เวลา 18:34 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
+        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17466",
+        "publishedAt": "2026-11-20T11:34:20+00:00",
+        "hazards": [
+          "eq"
+        ],
+        "mentionedProvinces": [],
+        "areaStatus": "not_verified",
+        "verification": "official_feed",
+        "impactConfirmed": false,
+        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
+      },
+      {
+        "id": "62bd5224f5256bb1968f9c10",
+        "sourceId": "tmd-earthquake",
+        "title": "แผ่นดินไหว ต.แม่สูน อ.ฝาง จ.เชียงใหม่ (19.810,99.162) ขนาด 2.1 วันที่ 20 พฤศจิกายน 2569 เวลา 12:38 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
+        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17465",
+        "publishedAt": "2026-11-20T05:38:12+00:00",
+        "hazards": [
+          "eq"
+        ],
+        "mentionedProvinces": [
+          "เชียงใหม่"
+        ],
+        "areaStatus": "not_verified",
+        "verification": "official_feed",
+        "impactConfirmed": false,
+        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
+      },
       {
         "id": "44b969554f0de5776c520719",
         "sourceId": "tmd-earthquake",
@@ -158,41 +190,9 @@
         "verification": "official_feed",
         "impactConfirmed": false,
         "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
-      },
-      {
-        "id": "62a39f79f926de4a9206de7f",
-        "sourceId": "tmd-earthquake",
-        "title": "แผ่นดินไหว ประเทศเวียดนาม (14.922,107.629) ขนาด 3.2 วันที่ 19 พฤศจิกายน 2569 เวลา 07:51 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
-        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17456",
-        "publishedAt": "2026-11-19T00:51:24+00:00",
-        "hazards": [
-          "eq"
-        ],
-        "mentionedProvinces": [],
-        "areaStatus": "not_verified",
-        "verification": "official_feed",
-        "impactConfirmed": false,
-        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
-      },
-      {
-        "id": "5d71af8b7dd7014830bf8d5d",
-        "sourceId": "tmd-earthquake",
-        "title": "แผ่นดินไหว ต.แม่วิน อ.แม่วาง จ.เชียงใหม่ (18.592,98.530) ขนาด 1.5 วันที่ 19 พฤศจิกายน 2569 เวลา 05:39 น. ตามเวลาประเทศไทย [TMD] #แผ่นดินไหว #กองเฝ้าระวังแผ่นดินไหว #earthquaketmd",
-        "url": "https://earthquake.tmd.go.th/inside-info.html?earthquake=17455",
-        "publishedAt": "2026-11-18T22:39:08+00:00",
-        "hazards": [
-          "eq"
-        ],
-        "mentionedProvinces": [
-          "เชียงใหม่"
-        ],
-        "areaStatus": "not_verified",
-        "verification": "official_feed",
-        "impactConfirmed": false,
-        "note": "ตรวจแหล่งเผยแพร่และวันเวลาแล้ว; ยังไม่ยืนยันขอบเขตผลกระทบหรือความเสียหายรายพื้นที่"
       }
     ],
     "status": "ok",
-    "newestPublishedAt": "2026-11-19T23:34:43+00:00"
+    "newestPublishedAt": "2026-11-20T11:34:20+00:00"
   }
 }
